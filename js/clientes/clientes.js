@@ -3248,8 +3248,14 @@ var inicio = {
                 'data_proyecto_base': data_proyecto_base,
                 'pedido': pedido,
             }
-            var response = true;    
-                        //hace el envio de la informacion a la bd, se crea el pedido
+            var response = true;    //hace el envio de la informacion a la bd, se crea el pedido
+            
+            //Envio de correo
+                $.ajax({
+                    url: '../EnvioCorreoPedido.php',
+                    type: 'post',
+                });
+
             toastr.options = {
                 "closeButton": false,
                 "debug": false,
