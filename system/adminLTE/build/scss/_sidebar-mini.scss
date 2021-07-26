@@ -73,27 +73,27 @@
   .main-sidebar {
     .nav-child-indent .nav-treeview {
       .nav-link {
-        width: calc(#{$sidebar-width} - #{$sidebar-padding-x} * 2 - 1rem);
+        width: calc(#{$sidebar-width} - #{$sidebar-padding-x});
       }
 
       .nav-treeview {
         .nav-link {
-          width: calc(#{$sidebar-width} - #{$sidebar-padding-x} * 2 - 2rem);
+          width: calc(#{$sidebar-width} - #{$sidebar-padding-x});
         }
 
         .nav-treeview {
           .nav-link {
-            width: calc(#{$sidebar-width} - #{$sidebar-padding-x} * 2 - 3rem);
+            width: calc(#{$sidebar-width} - #{$sidebar-padding-x});
           }
 
           .nav-treeview {
             .nav-link {
-              width: calc(#{$sidebar-width} - #{$sidebar-padding-x} * 2 - 4rem);
+              width: calc(#{$sidebar-width} - #{$sidebar-padding-x});
             }
 
             .nav-treeview {
               .nav-link {
-                width: calc(#{$sidebar-width} - #{$sidebar-padding-x} * 2 - 5rem);
+                width: calc(#{$sidebar-width} - #{$sidebar-padding-x});
               }
             }
           }
@@ -174,27 +174,27 @@
     }
     .nav-child-indent.nav-compact .nav-treeview {
       .nav-link {
-        width: calc(#{$sidebar-width} - #{$sidebar-padding-x} * 2 - .5rem);
+        width: calc(#{$sidebar-width} - #{$sidebar-padding-x});
       }
 
       .nav-treeview {
         .nav-link {
-          width: calc(#{$sidebar-width} - #{$sidebar-padding-x} * 2 - 1rem);
+          width: calc(#{$sidebar-width} - #{$sidebar-padding-x});
         }
 
         .nav-treeview {
           .nav-link {
-            width: calc(#{$sidebar-width} - #{$sidebar-padding-x} * 2 - 1.5rem);
+            width: calc(#{$sidebar-width} - #{$sidebar-padding-x});
           }
 
           .nav-treeview {
             .nav-link {
-              width: calc(#{$sidebar-width} - #{$sidebar-padding-x} * 2 - 2rem);
+              width: calc(#{$sidebar-width} - #{$sidebar-padding-x});
             }
 
             .nav-treeview {
               .nav-link {
-                width: calc(#{$sidebar-width} - #{$sidebar-padding-x} * 2 - 2.5rem);
+                width: calc(#{$sidebar-width} - #{$sidebar-padding-x});
               }
             }
           }
@@ -372,22 +372,22 @@
 
             .nav-treeview {
               .nav-link {
-                width: calc(#{$sidebar-width} - .5rem * 2);
+                width: calc(#{$sidebar-width} - .5rem);
               }
 
               .nav-treeview {
                 .nav-link {
-                  width: calc(#{$sidebar-width} - .5rem * 3);
+                  width: calc(#{$sidebar-width} - .5rem);
                 }
 
                 .nav-treeview {
                   .nav-link {
-                    width: calc(#{$sidebar-width} - .5rem * 4);
+                    width: calc(#{$sidebar-width} - .5rem);
                   }
 
                   .nav-treeview {
                     .nav-link {
-                      width: calc(#{$sidebar-width} - .5rem * 5);
+                      width: calc(#{$sidebar-width} - .5rem);
                     }
                   }
                 }

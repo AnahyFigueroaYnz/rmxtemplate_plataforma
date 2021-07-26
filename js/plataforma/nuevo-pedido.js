@@ -1523,94 +1523,94 @@ var inicio = {
     activos: function () {
         progressBarPaso1();
         funcSetp1();
-        $(".popValidacion").popover();
+        // $(".popValidacion").popover();
         //select2 en input nombre proveedor
-        $("#inpt_nombre_proveedor").select2({
-            data: data_proveedor_cliente,
-            tags: true,
-            selectOnClose: true,
-            closeOnSelect: true,
-            placeholder: "Nombre del proveedor",
-            allowClear: true,
-        }).on("select2:unselecting", function () {
-            $(this).data("unselecting", true);
-            nuevoProveedor();
-        }).on("select2:select", function (e) {
-            var long = Object.keys(pedido).length;
-            var name_text_val = $("#inpt_nombre_proveedor").val();
-            flechasOnCLick();
-            if (long != 0) {
-                //Comprueba que exista algo en el objeto
-                for (const test in pedido) {
-                    //recorre el objeto
-                    for (var i = 0; i < long; i++) {
-                        //recorre el array
-                        if (pedido[i].tipo_data == "proveedor_cliente") {
-                            //comprueba que el arreglo sea con la data que se necesita
-                            if (name_text_val == parseInt(name_text_val, 10) || bool_editar_prov == true) {
-                                //Comprueba si el valor es int (id), si no no es seleccionado del arreglo
-                                if (pedido[i].id_prov_interno == name_text_val) {
-                                    //si es el mismo entonces lo declara
-                                    id_provisional_prov_i = pedido[i].id_prov_interno; //se iguala el id para guardar el nuevo producto con el proveedor
-                                    bool_prov_selected = true;
-                                    var invoice = pedido[i].invoice_path;
-                                    var direccion = pedido[i].direccion;
-                                    var telefono = pedido[i].telefono;
-                                    var lada = pedido[i].id_lada
-
-                                    //muestra valores
-                                    $("#inpt_contacto_proveedor").val(pedido[i].contacto);
-                                    $("#inpt_email_proveedor").val(pedido[i].email);
-
-                                    if (direccion != "") {
-                                        $("#inpt_direccion_proveedor").val(pedido[i].direccion);
-                                    } else {
-                                        $("#inpt_direccion_proveedor").val('');
-                                    }
-
-                                    if (telefono != "") {
-                                        $("#inpt_telefono_proveedor").val(telefono);
-                                        $("#sel_ladaProv").val(lada);
-                                        if (lada == 0) {
-                                            $("#spLadaProv").html('');
-                                        } else {
-                                            $("#spLadaProv").html($("#sel_ladaProv option:selected").text());
-                                        }
-                                    } else {
-                                        $("#sel_ladaProv").val(0);
-                                        $("#spLadaProv").html('');
-                                        $("#inpt_telefono_proveedor").val('');
-                                        $("#inpt_telefono_proveedor").attr("placeholder", "(000) 000 0000");
-                                    }
-
-                                    if (invoice != null) {
-                                        var filName = invoice.split('_')[1];
-                                        $("#lblFactura").html(filName);
-                                        $("#lblFactura").removeClass("file-placeholder");
-                                    } else {
-                                        file_Files_invoice = " ";
-                                        $("#inputFactura").val("");
-                                        $("#lblFactura").html("Seleccionar una foto");
-                                        $("#lblFactura").addClass("file-placeholder");
-                                    }
-                                    $("#editar_proveedor").css("display", "");
-                                    $("#btnsEdicion").css("display", "");
-                                    $("#btnsEdicion").addClass("valid");
-                                    bloquear_campos_proveedor();
-                                }
-                            } else {
-                                nuevoProveedor();
-                            }
-                        }
-                    }
-                }
-            }
-        }).on("select2:opening", function (e) {
-            if ($(this).data("unselecting")) {
-                $(this).removeData("unselecting");
-                e.preventDefault();
-            }
-        });
+//         $("#inpt_nombre_proveedor").select2({
+//             data: data_proveedor_cliente,
+//             tags: true,
+//             selectOnClose: true,
+//             closeOnSelect: true,
+//             placeholder: "Nombre del proveedor",
+//             allowClear: true,
+//         }).on("select2:unselecting", function () {
+//             $(this).data("unselecting", true);
+//             nuevoProveedor();
+//         }).on("select2:select", function (e) {
+//             var long = Object.keys(pedido).length;
+//             var name_text_val = $("#inpt_nombre_proveedor").val();
+//             flechasOnCLick();
+//             if (long != 0) {
+//                 //Comprueba que exista algo en el objeto
+//                 for (const test in pedido) {
+//                     //recorre el objeto
+//                     for (var i = 0; i < long; i++) {
+//                         //recorre el array
+//                         if (pedido[i].tipo_data == "proveedor_cliente") {
+//                             //comprueba que el arreglo sea con la data que se necesita
+//                             if (name_text_val == parseInt(name_text_val, 10) || bool_editar_prov == true) {
+//                                 //Comprueba si el valor es int (id), si no no es seleccionado del arreglo
+//                                 if (pedido[i].id_prov_interno == name_text_val) {
+//                                     //si es el mismo entonces lo declara
+//                                     id_provisional_prov_i = pedido[i].id_prov_interno; //se iguala el id para guardar el nuevo producto con el proveedor
+//                                     bool_prov_selected = true;
+//                                     var invoice = pedido[i].invoice_path;
+//                                     var direccion = pedido[i].direccion;
+//                                     var telefono = pedido[i].telefono;
+//                                     var lada = pedido[i].id_lada
+// 
+//                                     //muestra valores
+//                                     $("#inpt_contacto_proveedor").val(pedido[i].contacto);
+//                                     $("#inpt_email_proveedor").val(pedido[i].email);
+// 
+//                                     if (direccion != "") {
+//                                         $("#inpt_direccion_proveedor").val(pedido[i].direccion);
+//                                     } else {
+//                                         $("#inpt_direccion_proveedor").val('');
+//                                     }
+// 
+//                                     if (telefono != "") {
+//                                         $("#inpt_telefono_proveedor").val(telefono);
+//                                         $("#sel_ladaProv").val(lada);
+//                                         if (lada == 0) {
+//                                             $("#spLadaProv").html('');
+//                                         } else {
+//                                             $("#spLadaProv").html($("#sel_ladaProv option:selected").text());
+//                                         }
+//                                     } else {
+//                                         $("#sel_ladaProv").val(0);
+//                                         $("#spLadaProv").html('');
+//                                         $("#inpt_telefono_proveedor").val('');
+//                                         $("#inpt_telefono_proveedor").attr("placeholder", "(000) 000 0000");
+//                                     }
+// 
+//                                     if (invoice != null) {
+//                                         var filName = invoice.split('_')[1];
+//                                         $("#lblFactura").html(filName);
+//                                         $("#lblFactura").removeClass("file-placeholder");
+//                                     } else {
+//                                         file_Files_invoice = " ";
+//                                         $("#inputFactura").val("");
+//                                         $("#lblFactura").html("Seleccionar una foto");
+//                                         $("#lblFactura").addClass("file-placeholder");
+//                                     }
+//                                     $("#editar_proveedor").css("display", "");
+//                                     $("#btnsEdicion").css("display", "");
+//                                     $("#btnsEdicion").addClass("valid");
+//                                     bloquear_campos_proveedor();
+//                                 }
+//                             } else {
+//                                 nuevoProveedor();
+//                             }
+//                         }
+//                     }
+//                 }
+//             }
+//         }).on("select2:opening", function (e) {
+//             if ($(this).data("unselecting")) {
+//                 $(this).removeData("unselecting");
+//                 e.preventDefault();
+//             }
+//         });
         // close
         selProv = $("#inpt_nombre_proveedor");
         // al seleccionar un color del colorpicker poner el nombre en el input y el color en el icono
@@ -1794,104 +1794,104 @@ var inicio = {
             img_path_edicion_provisional = $("#fileNameProd" + id_producto + "").html();
             var eliminado = false;
 
-            for (var i = 0; i < long_pedido; i++) {
-                if (pedido[i].tipo_data == "productos_sp_cliente") {
-                    if (pedido[i].producto == name_producto_provisional && pedido[i].cantidad == cantidad_producto_provisional
-                        && pedido[i].especificaciones == descripcion_producto_provisional && pedido[i].unidades == unidades_producto_provisional) {
-                        if (pedido[i].img_path != null) {
-                            // eliminar de arreglo imagenes y frmdata
-                            frmData.delete(pedido[i].id);
-                            for (var j = 0; j < arreglo_imagenes.length; j++) {
-                                if (img_path_edicion_provisional == arreglo_imagenes[j].nombre_original) {
-                                    arreglo_imagenes.splice(j,1);
-                                    break;
-                                }
-                            }
-                        }
-                        pedido.splice(i,1);
-                        eliminado = true;
-                        break;
-                    }
-                }
-            }
-
-            for (var i = 0; i < long_prov; i++) {
-                if (productos_prov[i].prod == name_producto_provisional && productos_prov[i].cant == cantidad_producto_provisional
-                    && productos_prov[i].unidades == unidades_producto_provisional && productos_prov[i].especificaciones == descripcion_producto_provisional) {
-                    if (productos_prov[i].img_path != null) {
-                        // eliminar de arreglo imagenes y frmdata
-                        frmData_prov.delete(productos_prov[i].id);
-                        for (var j = 0; j < arreglo_imagenes_prov.length; j++) {
-                            if (img_path_edicion_provisional == arreglo_imagenes_prov[j].nombre_original) {
-                                arreglo_imagenes_prov.splice(j,1);
-                                break;
-                            }
-                        }
-                    }
-                    productos_prov.splice(i,1);
-                    eliminado = true;
-                    break;
-                }
-            }
-
-            if (eliminado == true) {
-                if (cardsPedidos == 1 || cardsPedidos == 0) {
-                    $("#lblDestino").html("");
-                    $("#lblEmpaque").html("");
-                    $("#lblComentario").html("");
-                    envComplete = false;
-                    comComplete = false;
-                    $("#listaProductos").css('display', 'none');
-                    $("#incioProductos").css('display', '');
-                    $('#conten-productos').addClass('d-flex-partial cont-inicio');
-                    $("#progressForm").css("display", "");
-                    $("#numProgress").html("0% progreso");
-                    $("#barProgress").css("width", "0%");                        
-                    $("#txtStepActivo").val(1);
-                    $("#txtStepForm").val(1);
-                    funcSetp1();
-                    reset_formulario();
-                    $("#cardProducto" + id_producto + "").remove();
-                } else {
-                    $("#listaProductos").css('display', '');
-                    $("#incioProductos").css('display', 'none');
-                    $('#conten-productos').removeClass('d-flex-partial cont-inicio');
-                    pasoActual();
-                    $("#cardProducto" + id_producto + "").remove();
-                }
-            } else {
-                if (cardsPedidos == 1 || cardsPedidos == 0) {
-                    $("#lblDestino").html("");
-                    $("#lblEmpaque").html("");
-                    $("#lblComentario").html("");
-                    envComplete = false;
-                    comComplete = false;
-                    $("#listaProductos").css('display', 'none');
-                    $("#incioProductos").css('display', '');
-                    $('#conten-productos').addClass('d-flex-partial cont-inicio');
-                    $("#progressForm").css("display", "");
-                    $("#numProgress").html("0% progreso");
-                    $("#barProgress").css("width", "0%");                        
-                    $("#txtStepActivo").val(1);
-                    $("#txtStepForm").val(1);
-                    funcSetp1();
-                    reset_formulario();
-                    $("#cardProducto" + id_producto + "").remove();
-                } else {
-                    $("#listaProductos").css('display', '');
-                    $("#incioProductos").css('display', 'none');
-                    $('#conten-productos').removeClass('d-flex-partial cont-inicio');
-                    pasoActual();
-                    $("#cardProducto" + id_producto + "").remove();
-                }
-            }
-            cardsPedidos--;
-            name_producto_provisional = null;
-            cantidad_producto_provisional = null;
-            unidades_producto_provisional = null;
-            descripcion_producto_provisional = null;
-            color_esp_provisional = null;
-            img_path_edicion_provisional = null;
+//             for (var i = 0; i < long_pedido; i++) {
+//                 if (pedido[i].tipo_data == "productos_sp_cliente") {
+//                     if (pedido[i].producto == name_producto_provisional && pedido[i].cantidad == cantidad_producto_provisional
+//                         && pedido[i].especificaciones == descripcion_producto_provisional && pedido[i].unidades == unidades_producto_provisional) {
+//                         if (pedido[i].img_path != null) {
+//                             // eliminar de arreglo imagenes y frmdata
+//                             frmData.delete(pedido[i].id);
+//                             for (var j = 0; j < arreglo_imagenes.length; j++) {
+//                                 if (img_path_edicion_provisional == arreglo_imagenes[j].nombre_original) {
+//                                     arreglo_imagenes.splice(j,1);
+//                                     break;
+//                                 }
+//                             }
+//                         }
+//                         pedido.splice(i,1);
+//                         eliminado = true;
+//                         break;
+//                     }
+//                 }
+//             }
+// 
+//             for (var i = 0; i < long_prov; i++) {
+//                 if (productos_prov[i].prod == name_producto_provisional && productos_prov[i].cant == cantidad_producto_provisional
+//                     && productos_prov[i].unidades == unidades_producto_provisional && productos_prov[i].especificaciones == descripcion_producto_provisional) {
+//                     if (productos_prov[i].img_path != null) {
+//                         // eliminar de arreglo imagenes y frmdata
+//                         frmData_prov.delete(productos_prov[i].id);
+//                         for (var j = 0; j < arreglo_imagenes_prov.length; j++) {
+//                             if (img_path_edicion_provisional == arreglo_imagenes_prov[j].nombre_original) {
+//                                 arreglo_imagenes_prov.splice(j,1);
+//                                 break;
+//                             }
+//                         }
+//                     }
+//                     productos_prov.splice(i,1);
+//                     eliminado = true;
+//                     break;
+//                 }
+//             }
+// 
+//             if (eliminado == true) {
+//                 if (cardsPedidos == 1 || cardsPedidos == 0) {
+//                     $("#lblDestino").html("");
+//                     $("#lblEmpaque").html("");
+//                     $("#lblComentario").html("");
+//                     envComplete = false;
+//                     comComplete = false;
+//                     $("#listaProductos").css('display', 'none');
+//                     $("#incioProductos").css('display', '');
+//                     $('#conten-productos').addClass('d-flex-partial cont-inicio');
+//                     $("#progressForm").css("display", "");
+//                     $("#numProgress").html("0% progreso");
+//                     $("#barProgress").css("width", "0%");                        
+//                     $("#txtStepActivo").val(1);
+//                     $("#txtStepForm").val(1);
+//                     funcSetp1();
+//                     reset_formulario();
+//                     $("#cardProducto" + id_producto + "").remove();
+//                 } else {
+//                     $("#listaProductos").css('display', '');
+//                     $("#incioProductos").css('display', 'none');
+//                     $('#conten-productos').removeClass('d-flex-partial cont-inicio');
+//                     pasoActual();
+//                     $("#cardProducto" + id_producto + "").remove();
+//                 }
+//             } else {
+//                 if (cardsPedidos == 1 || cardsPedidos == 0) {
+//                     $("#lblDestino").html("");
+//                     $("#lblEmpaque").html("");
+//                     $("#lblComentario").html("");
+//                     envComplete = false;
+//                     comComplete = false;
+//                     $("#listaProductos").css('display', 'none');
+//                     $("#incioProductos").css('display', '');
+//                     $('#conten-productos').addClass('d-flex-partial cont-inicio');
+//                     $("#progressForm").css("display", "");
+//                     $("#numProgress").html("0% progreso");
+//                     $("#barProgress").css("width", "0%");                        
+//                     $("#txtStepActivo").val(1);
+//                     $("#txtStepForm").val(1);
+//                     funcSetp1();
+//                     reset_formulario();
+//                     $("#cardProducto" + id_producto + "").remove();
+//                 } else {
+//                     $("#listaProductos").css('display', '');
+//                     $("#incioProductos").css('display', 'none');
+//                     $('#conten-productos').removeClass('d-flex-partial cont-inicio');
+//                     pasoActual();
+//                     $("#cardProducto" + id_producto + "").remove();
+//                 }
+//             }
+//             cardsPedidos--;
+//             name_producto_provisional = null;
+//             cantidad_producto_provisional = null;
+//             unidades_producto_provisional = null;
+//             descripcion_producto_provisional = null;
+//             color_esp_provisional = null;
+//             img_path_edicion_provisional = null;
         });
     },
 
@@ -1902,132 +1902,132 @@ var inicio = {
             var id = idProd_Edit;
             Validacion_producto_f1();
 
-            if (val_done == true) {
-                var long_prov = Object.keys(productos_prov).length;
-                var long_pedido = Object.keys(pedido).length;
-
-                if (long_pedido != 0 || long_prov != 0) {
-
-                    for (var i = 0; i < long_pedido; i++) {
-                        if (pedido[i].tipo_data == "productos_sp_cliente") {
-                            if (pedido[i].producto == name_producto_provisional && pedido[i].cantidad == cantidad_producto_provisional
-                                && pedido[i].especificaciones == descripcion_producto_provisional && pedido[i].unidades == unidades_producto_provisional) {
-
-                                pedido[i].producto = $('#inpt_form_producto').val();
-                                pedido[i].cantidad = parseFloat(($('#inpt_form_cantidad').val()).replace(/,/g, ""));
-                                pedido[i].especificaciones = $('#inpt_form_especificaciones').val();
-                                pedido[i].unidades = $('#selUnidades_prod_sp').val();
-
-                                if (file_Files_provicional != file_Files) {
-                                    var comprobacion = frmData.get(pedido[i].id);
-                                    if (comprobacion != null) {
-                                        if (file_Files != " ") {
-                                            //si hay un archivo que reemplazar obtiene el nombre (para reemplazar en pedido[i]) y reemplaza en frmData
-                                            pedido[i].img_path = id + "_" +file_Files.name;
-                                            frmData.set(pedido[i].id, file_Files);
-                                            
-                                            for (var j = 0; j < arreglo_imagenes.length; j++) {
-                                                if (img_path_edicion_provisional == arreglo_imagenes[j].nombre_original) {
-                                                    arreglo_imagenes[j].nombre_original = file_Files.name;
-                                                }
-                                            }
-                                        }else{
-                                            //si se elimina el archivo se declara null (para reemplazar en pedido[i]) y se elimina del frmData
-
-                                            pedido[i].img_path = null;
-                                            frmData.delete(pedido[i].id);
-                                            
-                                            for (var j = 0; j < arreglo_imagenes.length; j++) {
-                                                if (img_path_edicion_provisional == arreglo_imagenes[j].nombre_original) {
-                                                    arreglo_imagenes.splice(j,1);
-                                                    break;
-                                                }
-                                            }
-                                        }
-                                    }else{
-                                        if (file_Files != " ") {
-                                            var data_img = {
-                                                id: id,
-                                                nombre_original: file_Files.name,
-                                                ruta: 'files/productos_sp/',
-                                            }
-
-                                            arreglo_imagenes.push(data_img);
-                                            frmData.append('' + id + '', file_Files);
-
-                                            pedido[i].img_path = id + "_" + file_Files.name;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    for (var i = 0; i < long_prov; i++) {
-                        if (productos_prov[i].prod == name_producto_provisional && productos_prov[i].cant == cantidad_producto_provisional
-                            && productos_prov[i].unidades == unidades_producto_provisional && productos_prov[i].especificaciones == descripcion_producto_provisional) {
-                            
-                            productos_prov[i].prod = $('#inpt_form_producto').val();
-                            productos_prov[i].cant = parseFloat(($('#inpt_form_cantidad').val()).replace(/,/g, ""));
-                            productos_prov[i].unidades = $('#selUnidades_prod_sp').val();
-                            productos_prov[i].especificaciones = $('#inpt_form_especificaciones').val();
-
-                            if (file_Files_provicional != file_Files) {
-                                var comprobacion = frmData_prov.get(productos_prov[i].id);
-                                if (comprobacion != null) {
-                                    if (file_Files != " ") {
-                                        //si hay un archivo que reemplazar obtiene el nombre (para reemplazar en pedido[i]) y reemplaza en frmData
-
-                                        productos_prov[i].img_path = id + "_" +file_Files.name;
-                                        frmData_prov.set(productos_prov[i].id, file_Files);
-                                        
-                                        for (var j = 0; j < arreglo_imagenes_prov.length; j++) {
-                                            if (img_path_edicion_provisional == arreglo_imagenes_prov[j].nombre_original) {
-                                                arreglo_imagenes_prov[j].nombre_original = file_Files.name;
-                                            }
-                                        }
-                                    }else{
-                                        //si se elimina el archivo se declara null (para reemplazar en pedido[i]) y se elimina del frmData
-
-                                        productos_prov[i].img_path = null;
-                                        frmData_prov.delete(productos_prov[i].id);
-                                        
-                                        for (var j = 0; j < arreglo_imagenes_prov.length; j++) {
-                                            if (img_path_edicion_provisional == arreglo_imagenes_prov[j].nombre_original) {
-                                                arreglo_imagenes_prov.splice(j,1);
-                                                break;
-                                            }
-                                        }
-                                    }
-                                }else{
-                                    if (file_Files != " ") {
-                                        var data_img = {
-                                            id: id,
-                                            nombre_original: file_Files.name,
-                                            ruta: 'files/productos_cp/',
-                                        }
-
-                                        arreglo_imagenes_prov.push(data_img);
-                                        frmData_prov.append('' + id + '', file_Files);
-
-                                        productos_prov[i].img_path = id + "_" + file_Files.name;
-                                    }
-                                }
-                            }                            
-                        }
-                    }
-                }
-
-                llenadoProducto(id);
-                pasoActual();
-                file_Files_provicional = " ";
-                name_producto_provisional = null;
-                cantidad_producto_provisional = null;
-                unidades_producto_provisional = null;
-                descripcion_producto_provisional = null;
-                color_esp_provisional = null;
-                img_path_edicion_provisional = null;
-            }
+//             if (val_done == true) {
+//                 var long_prov = Object.keys(productos_prov).length;
+//                 var long_pedido = Object.keys(pedido).length;
+// 
+//                 if (long_pedido != 0 || long_prov != 0) {
+// 
+//                     for (var i = 0; i < long_pedido; i++) {
+//                         if (pedido[i].tipo_data == "productos_sp_cliente") {
+//                             if (pedido[i].producto == name_producto_provisional && pedido[i].cantidad == cantidad_producto_provisional
+//                                 && pedido[i].especificaciones == descripcion_producto_provisional && pedido[i].unidades == unidades_producto_provisional) {
+// 
+//                                 pedido[i].producto = $('#inpt_form_producto').val();
+//                                 pedido[i].cantidad = parseFloat(($('#inpt_form_cantidad').val()).replace(/,/g, ""));
+//                                 pedido[i].especificaciones = $('#inpt_form_especificaciones').val();
+//                                 pedido[i].unidades = $('#selUnidades_prod_sp').val();
+// 
+//                                 if (file_Files_provicional != file_Files) {
+//                                     var comprobacion = frmData.get(pedido[i].id);
+//                                     if (comprobacion != null) {
+//                                         if (file_Files != " ") {
+//                                             //si hay un archivo que reemplazar obtiene el nombre (para reemplazar en pedido[i]) y reemplaza en frmData
+//                                             pedido[i].img_path = id + "_" +file_Files.name;
+//                                             frmData.set(pedido[i].id, file_Files);
+//                                             
+//                                             for (var j = 0; j < arreglo_imagenes.length; j++) {
+//                                                 if (img_path_edicion_provisional == arreglo_imagenes[j].nombre_original) {
+//                                                     arreglo_imagenes[j].nombre_original = file_Files.name;
+//                                                 }
+//                                             }
+//                                         }else{
+//                                             //si se elimina el archivo se declara null (para reemplazar en pedido[i]) y se elimina del frmData
+// 
+//                                             pedido[i].img_path = null;
+//                                             frmData.delete(pedido[i].id);
+//                                             
+//                                             for (var j = 0; j < arreglo_imagenes.length; j++) {
+//                                                 if (img_path_edicion_provisional == arreglo_imagenes[j].nombre_original) {
+//                                                     arreglo_imagenes.splice(j,1);
+//                                                     break;
+//                                                 }
+//                                             }
+//                                         }
+//                                     }else{
+//                                         if (file_Files != " ") {
+//                                             var data_img = {
+//                                                 id: id,
+//                                                 nombre_original: file_Files.name,
+//                                                 ruta: 'files/productos_sp/',
+//                                             }
+// 
+//                                             arreglo_imagenes.push(data_img);
+//                                             frmData.append('' + id + '', file_Files);
+// 
+//                                             pedido[i].img_path = id + "_" + file_Files.name;
+//                                         }
+//                                     }
+//                                 }
+//                             }
+//                         }
+//                     }
+// 
+//                     for (var i = 0; i < long_prov; i++) {
+//                         if (productos_prov[i].prod == name_producto_provisional && productos_prov[i].cant == cantidad_producto_provisional
+//                             && productos_prov[i].unidades == unidades_producto_provisional && productos_prov[i].especificaciones == descripcion_producto_provisional) {
+//                             
+//                             productos_prov[i].prod = $('#inpt_form_producto').val();
+//                             productos_prov[i].cant = parseFloat(($('#inpt_form_cantidad').val()).replace(/,/g, ""));
+//                             productos_prov[i].unidades = $('#selUnidades_prod_sp').val();
+//                             productos_prov[i].especificaciones = $('#inpt_form_especificaciones').val();
+// 
+//                             if (file_Files_provicional != file_Files) {
+//                                 var comprobacion = frmData_prov.get(productos_prov[i].id);
+//                                 if (comprobacion != null) {
+//                                     if (file_Files != " ") {
+//                                         //si hay un archivo que reemplazar obtiene el nombre (para reemplazar en pedido[i]) y reemplaza en frmData
+// 
+//                                         productos_prov[i].img_path = id + "_" +file_Files.name;
+//                                         frmData_prov.set(productos_prov[i].id, file_Files);
+//                                         
+//                                         for (var j = 0; j < arreglo_imagenes_prov.length; j++) {
+//                                             if (img_path_edicion_provisional == arreglo_imagenes_prov[j].nombre_original) {
+//                                                 arreglo_imagenes_prov[j].nombre_original = file_Files.name;
+//                                             }
+//                                         }
+//                                     }else{
+//                                         //si se elimina el archivo se declara null (para reemplazar en pedido[i]) y se elimina del frmData
+// 
+//                                         productos_prov[i].img_path = null;
+//                                         frmData_prov.delete(productos_prov[i].id);
+//                                         
+//                                         for (var j = 0; j < arreglo_imagenes_prov.length; j++) {
+//                                             if (img_path_edicion_provisional == arreglo_imagenes_prov[j].nombre_original) {
+//                                                 arreglo_imagenes_prov.splice(j,1);
+//                                                 break;
+//                                             }
+//                                         }
+//                                     }
+//                                 }else{
+//                                     if (file_Files != " ") {
+//                                         var data_img = {
+//                                             id: id,
+//                                             nombre_original: file_Files.name,
+//                                             ruta: 'files/productos_cp/',
+//                                         }
+// 
+//                                         arreglo_imagenes_prov.push(data_img);
+//                                         frmData_prov.append('' + id + '', file_Files);
+// 
+//                                         productos_prov[i].img_path = id + "_" + file_Files.name;
+//                                     }
+//                                 }
+//                             }                            
+//                         }
+//                     }
+//                 }
+// 
+//                 llenadoProducto(id);
+//                 pasoActual();
+//                 file_Files_provicional = " ";
+//                 name_producto_provisional = null;
+//                 cantidad_producto_provisional = null;
+//                 unidades_producto_provisional = null;
+//                 descripcion_producto_provisional = null;
+//                 color_esp_provisional = null;
+//                 img_path_edicion_provisional = null;
+//             }
         });
 
         // editar el producto (obtencion de datos)
@@ -2076,39 +2076,39 @@ var inicio = {
                 $("#selUnidades_prod_sp").val(8);
             }
 
-            if (fName == " " || fName == "") {
-                $("#filesImgProd").val("");
-                $("#filesImgProd").removeAttr("disabled");
-                $("#cancelImgProd").attr("disabled", "true");
-                $("#lblImgProducto").addClass("file-placeholder");
-                $("#lblImgProducto").html("Seleccionar una foto");
-            } else {
-                $("#filesImgProd").attr("disabled", "true");
-                $("#cancelImgProd").removeAttr("disabled");
-                $("#lblImgProducto").removeClass("file-placeholder");
-                $("#lblImgProducto").html(fName);
-                var long_prov = Object.keys(productos_prov).length;
-                var long_pedido = Object.keys(pedido).length;
-                for (var i = 0; i < long_pedido; i++) {
-                    if (pedido[i].tipo_data == "productos_sp_cliente") {
-                        if (pedido[i].producto == name_producto_provisional && pedido[i].cantidad == cantidad_producto_provisional && pedido[i].especificaciones == descripcion_producto_provisional && pedido[i].unidades == unidades_producto_provisional) {
-                            file_Files_provicional = frmData.get(pedido[i].id);   //obtenemos el archivo en una var temporal
-                        }
-                    }
-                }
-
-                for (var i = 0; i < long_prov; i++) {
-                    if (productos_prov[i].prod == name_producto_provisional && productos_prov[i].cant == cantidad_producto_provisional && productos_prov[i].unidades == unidades_producto_provisional && productos_prov[i].especificaciones == descripcion_producto_provisional) {
-                        file_Files_provicional = frmData_prov.get(productos_prov[i].id);   //obtenemos el archivo en una var temporal
-                    }
-                }
-                file_Files = file_Files_provicional;    //como existe lo ponemos en la variable usual, y reconocer si cambia para entrar a hacer la modificacion al array
-            }
-
-            $("#inpt_form_producto").val(nomProd);
-            $("#inpt_form_cantidad").val(cantN);
-            $("#inpt_form_especificaciones").val(espProd);
-            $("#btnEditProd").css("display", "");
+//             if (fName == " " || fName == "") {
+//                 $("#filesImgProd").val("");
+//                 $("#filesImgProd").removeAttr("disabled");
+//                 $("#cancelImgProd").attr("disabled", "true");
+//                 $("#lblImgProducto").addClass("file-placeholder");
+//                 $("#lblImgProducto").html("Seleccionar una foto");
+//             } else {
+//                 $("#filesImgProd").attr("disabled", "true");
+//                 $("#cancelImgProd").removeAttr("disabled");
+//                 $("#lblImgProducto").removeClass("file-placeholder");
+//                 $("#lblImgProducto").html(fName);
+//                 var long_prov = Object.keys(productos_prov).length;
+//                 var long_pedido = Object.keys(pedido).length;
+//                 for (var i = 0; i < long_pedido; i++) {
+//                     if (pedido[i].tipo_data == "productos_sp_cliente") {
+//                         if (pedido[i].producto == name_producto_provisional && pedido[i].cantidad == cantidad_producto_provisional && pedido[i].especificaciones == descripcion_producto_provisional && pedido[i].unidades == unidades_producto_provisional) {
+//                             file_Files_provicional = frmData.get(pedido[i].id);   //obtenemos el archivo en una var temporal
+//                         }
+//                     }
+//                 }
+// 
+//                 for (var i = 0; i < long_prov; i++) {
+//                     if (productos_prov[i].prod == name_producto_provisional && productos_prov[i].cant == cantidad_producto_provisional && productos_prov[i].unidades == unidades_producto_provisional && productos_prov[i].especificaciones == descripcion_producto_provisional) {
+//                         file_Files_provicional = frmData_prov.get(productos_prov[i].id);   //obtenemos el archivo en una var temporal
+//                     }
+//                 }
+//                 file_Files = file_Files_provicional;    //como existe lo ponemos en la variable usual, y reconocer si cambia para entrar a hacer la modificacion al array
+//             }
+// 
+//             $("#inpt_form_producto").val(nomProd);
+//             $("#inpt_form_cantidad").val(cantN);
+//             $("#inpt_form_especificaciones").val(espProd);
+//             $("#btnEditProd").css("display", "");
         });
     },
 
@@ -2118,40 +2118,40 @@ var inicio = {
             form.preventDefault();
             var id = idProd_Edit;
             Validacion_personalizar_f2();
-            if (val_personalizar == true) {
-                var long_prov = Object.keys(productos_prov).length;
-                var long_pedido = Object.keys(pedido).length;
-
-                if (long_pedido != 0 || long_prov != 0) {
-                    for (var i = 0; i < long_pedido; i++) {
-                        if (pedido[i].tipo_data == "productos_sp_cliente") {
-                            if (pedido[i].producto == name_producto_provisional && pedido[i].cantidad == cantidad_producto_provisional
-                                && pedido[i].color_oem == color_esp_provisional) {
-
-                                pedido[i].color_oem = $('#inpt_form_colores').val();
-                            }
-                        }
-                    }
-
-                    for (var i = 0; i < long_prov; i++) {
-                        if (productos_prov[i].prod == name_producto_provisional && productos_prov[i].cant == cantidad_producto_provisional
-                            && productos_prov[i].color_oem == color_esp_provisional) {
-
-                            productos_prov[i].color_oem = $('#inpt_form_colores').val();
-                        }
-                    }
-                }
-
-                llenadoPersonalizar(id);
-                pasoActual();
-
-                name_producto_provisional = null;
-                cantidad_producto_provisional = null;
-                unidades_producto_provisional = null;
-                descripcion_producto_provisional = null;
-                color_esp_provisional = null;
-                img_path_edicion_provisional = null;
-            }
+//             if (val_personalizar == true) {
+//                 var long_prov = Object.keys(productos_prov).length;
+//                 var long_pedido = Object.keys(pedido).length;
+// 
+//                 if (long_pedido != 0 || long_prov != 0) {
+//                     for (var i = 0; i < long_pedido; i++) {
+//                         if (pedido[i].tipo_data == "productos_sp_cliente") {
+//                             if (pedido[i].producto == name_producto_provisional && pedido[i].cantidad == cantidad_producto_provisional
+//                                 && pedido[i].color_oem == color_esp_provisional) {
+// 
+//                                 pedido[i].color_oem = $('#inpt_form_colores').val();
+//                             }
+//                         }
+//                     }
+// 
+//                     for (var i = 0; i < long_prov; i++) {
+//                         if (productos_prov[i].prod == name_producto_provisional && productos_prov[i].cant == cantidad_producto_provisional
+//                             && productos_prov[i].color_oem == color_esp_provisional) {
+// 
+//                             productos_prov[i].color_oem = $('#inpt_form_colores').val();
+//                         }
+//                     }
+//                 }
+// 
+//                 llenadoPersonalizar(id);
+//                 pasoActual();
+// 
+//                 name_producto_provisional = null;
+//                 cantidad_producto_provisional = null;
+//                 unidades_producto_provisional = null;
+//                 descripcion_producto_provisional = null;
+//                 color_esp_provisional = null;
+//                 img_path_edicion_provisional = null;
+//             }
         });
 
         // editar la personalizacion (obtiene los datos)
@@ -2507,108 +2507,108 @@ var inicio = {
         });
         // opcion NO de la personalizacion del producto
         $("#radioProdNo").on("change", function () {
-            if ($(this).is(":checked")) {
-                $("#radioProdSi").attr("value", "false");
-                $("#radioProdNo").attr("value", "true");
-                radOEM = "No";
-                val_personalizar = true;
-                oemEdicion = false;
-                file_Files_oem = " ";
-                idProd_Edit = idProducto;
-                id_producto = idProd_Edit;
-                oemCompleto = true;
-                $("#valRadioProd").val(false);
-                $("#container-esp").css("display", "none");
-                $("#inpt_form_colores").val("");
-                $("#filesOEM").val("");
-                $("#lblLogotipo").html("");
-                $("#iconColor").css("color", "#fff");
-                $("#div_val_radio_personalizar").css("display", "none");
-                $("#lblProdSi").css("color", "#5b6670");
-                $("#lblProdNo").css("color", "#5b6670");
-                $("#listPerzonalizar" + id_producto + "").css("display", "");
-                $("#pNoPersonalizado" + id_producto + "").css("display", "");
-                $("#pColors" + id_producto + "").css("display", "none");
-                $("#pLogotipo" + id_producto + "").css("display", "none");
-                $("#pColors" + id_producto + "").css("display", "none");
-                $("#pLogotipo" + id_producto + "").css("display", "none");
-                $("#iColor" + id_producto + "").css('color', '#fff');
-                $("#txtColor" + id_producto + "").html('#fff');
-                $("#imgLogotipo" + id_producto + "").html('');
-                $("#btnEditEspP").css("display", "");
-                $("#btnAgregarEspP").css("display", "none");
-                Validacion_personalizar_f2();
-                
-                var Step = $("#txtStepActivo").val();
-                if (envComplete == false && comComplete == false) {
-                    if (proveedorCompleto == true) {
-                        funcSetp4();
-                        if (Step == "2") {
-                            var step = 4;
-                            $("#txtStepActivo").val(step);
-                            $("#txtStepForm").val(step);
-                        } else {
-                            var step = parseInt(Step);
-                            $("#txtStepForm").val(step);
-                        }
-                    } else {
-                        funcSetp3();
-                        if (Step == "2") {
-                            var step = 3;
-                            $("#txtStepActivo").val(step);
-                            $("#txtStepForm").val(step);
-                        } else {
-                            var step = parseInt(Step);
-                            $("#txtStepForm").val(step);
-                        }
-                    }
-                } else if (envComplete == true && comComplete == false) {
-                    if (proveedorCompleto == true) {
-                        funcSetp5();
-                        if (Step == "2") {
-                            var step = 5;
-                            $("#txtStepActivo").val(step);
-                            $("#txtStepForm").val(step);
-                        } else {
-                            var step = parseInt(Step);
-                            $("#txtStepForm").val(step);
-                        }
-                    } else {
-                        funcSetp3();
-                        if (Step == "2") {
-                            var step = 3;
-                            $("#txtStepActivo").val(step);
-                            $("#txtStepForm").val(step);
-                        } else {
-                            var step = parseInt(Step);
-                            $("#txtStepForm").val(step);
-                        }
-                    }
-                } else if (envComplete == true && comComplete == true) {
-                    if (proveedorCompleto == true) {
-                        funcSetp6();
-                        if (Step == "2") {
-                            var step = 6;
-                            $("#txtStepActivo").val(step);
-                            $("#txtStepForm").val(step);
-                        } else {
-                            var step = parseInt(Step);
-                            $("#txtStepForm").val(step);
-                        }
-                    } else {
-                        funcSetp3();
-                        if (Step == "2") {
-                            var step = 3;
-                            $("#txtStepActivo").val(step);
-                            $("#txtStepForm").val(step);
-                        } else {
-                            var step = parseInt(Step);
-                            $("#txtStepForm").val(step);
-                        }
-                    }
-                }
-                
-            }
+            // if ($(this).is(":checked")) {
+            //     $("#radioProdSi").attr("value", "false");
+            //     $("#radioProdNo").attr("value", "true");
+            //     radOEM = "No";
+            //     val_personalizar = true;
+            //     oemEdicion = false;
+            //     file_Files_oem = " ";
+            //     idProd_Edit = idProducto;
+            //     id_producto = idProd_Edit;
+            //     oemCompleto = true;
+            //     $("#valRadioProd").val(false);
+            //     $("#container-esp").css("display", "none");
+            //     $("#inpt_form_colores").val("");
+            //     $("#filesOEM").val("");
+            //     $("#lblLogotipo").html("");
+            //     $("#iconColor").css("color", "#fff");
+            //     $("#div_val_radio_personalizar").css("display", "none");
+            //     $("#lblProdSi").css("color", "#5b6670");
+            //     $("#lblProdNo").css("color", "#5b6670");
+            //     $("#listPerzonalizar" + id_producto + "").css("display", "");
+            //     $("#pNoPersonalizado" + id_producto + "").css("display", "");
+            //     $("#pColors" + id_producto + "").css("display", "none");
+            //     $("#pLogotipo" + id_producto + "").css("display", "none");
+            //     $("#pColors" + id_producto + "").css("display", "none");
+            //     $("#pLogotipo" + id_producto + "").css("display", "none");
+            //     $("#iColor" + id_producto + "").css('color', '#fff');
+            //     $("#txtColor" + id_producto + "").html('#fff');
+            //     $("#imgLogotipo" + id_producto + "").html('');
+            //     $("#btnEditEspP").css("display", "");
+            //     $("#btnAgregarEspP").css("display", "none");
+            //     Validacion_personalizar_f2();
+            //     
+            //     var Step = $("#txtStepActivo").val();
+            //     if (envComplete == false && comComplete == false) {
+            //         if (proveedorCompleto == true) {
+            //             funcSetp4();
+            //             if (Step == "2") {
+            //                 var step = 4;
+            //                 $("#txtStepActivo").val(step);
+            //                 $("#txtStepForm").val(step);
+            //             } else {
+            //                 var step = parseInt(Step);
+            //                 $("#txtStepForm").val(step);
+            //             }
+            //         } else {
+            //             funcSetp3();
+            //             if (Step == "2") {
+            //                 var step = 3;
+            //                 $("#txtStepActivo").val(step);
+            //                 $("#txtStepForm").val(step);
+            //             } else {
+            //                 var step = parseInt(Step);
+            //                 $("#txtStepForm").val(step);
+            //             }
+            //         }
+            //     } else if (envComplete == true && comComplete == false) {
+            //         if (proveedorCompleto == true) {
+            //             funcSetp5();
+            //             if (Step == "2") {
+            //                 var step = 5;
+            //                 $("#txtStepActivo").val(step);
+            //                 $("#txtStepForm").val(step);
+            //             } else {
+            //                 var step = parseInt(Step);
+            //                 $("#txtStepForm").val(step);
+            //             }
+            //         } else {
+            //             funcSetp3();
+            //             if (Step == "2") {
+            //                 var step = 3;
+            //                 $("#txtStepActivo").val(step);
+            //                 $("#txtStepForm").val(step);
+            //             } else {
+            //                 var step = parseInt(Step);
+            //                 $("#txtStepForm").val(step);
+            //             }
+            //         }
+            //     } else if (envComplete == true && comComplete == true) {
+            //         if (proveedorCompleto == true) {
+            //             funcSetp6();
+            //             if (Step == "2") {
+            //                 var step = 6;
+            //                 $("#txtStepActivo").val(step);
+            //                 $("#txtStepForm").val(step);
+            //             } else {
+            //                 var step = parseInt(Step);
+            //                 $("#txtStepForm").val(step);
+            //             }
+            //         } else {
+            //             funcSetp3();
+            //             if (Step == "2") {
+            //                 var step = 3;
+            //                 $("#txtStepActivo").val(step);
+            //                 $("#txtStepForm").val(step);
+            //             } else {
+            //                 var step = parseInt(Step);
+            //                 $("#txtStepForm").val(step);
+            //             }
+            //         }
+            //     }
+            //     
+            // }
         });
         // opcion SI de si se tiene proveedor del proveedor
         $("#radioProvSi").on("change", function () {
@@ -2638,96 +2638,96 @@ var inicio = {
         // opcion NO de si se tiene proveedor del producto
         $("#radioProvNo").on("change", function (e) {
             e.preventDefault();
-            if ($(this).is(":checked")) {
-                $("#radioProvSi").attr("value", "false");
-                $("#radioProvNo").attr("value", "true");
-                radProv = "No";
-                rad_prov = 'No';
-                val_proveedor = true;
-                provEdicion = false;
-                proveedorCompleto = true;
-                
-                idProd_Edit = idProducto;
-                if (idProd_Edit_p != null) {
-                    id_producto = idProd_Edit_p;
-                }
-                $("#valRadioProv").val(false);
-                $("#div_val_radio_proveedor").css("display", "none");
-                $("#lblProdSi").css("color", "#5b6670");
-                $("#lblProdNo").css("color", "#5b6670");
-                $("#listProveedor" + id_producto + "").css("display", "");
-                $("#pNoProveedor" + id_producto + "").css("display", "");
-                $("#pProveedor" + id_producto + "").css("display", "none");
-                $("#pPersona" + id_producto + "").css("display", "none");
-                $("#pCorreo" + id_producto + "").css("display", "none");
-                $("#pTelefono" + id_producto + "").css("display", "none");
-                $("#pDireccion" + id_producto + "").css("display", "none");
-                $("#pFactura" + id_producto + "").css("display", "none");
-                $("#btnEditProv").css("display", "");
-                $("#btnAgregarProv").css("display", "none");
-                $("#mnjEdicion").css("display", "none");
-                $("#container-prov").css("display", "none");
-                
-                $("#txtProveedor" + id_producto + "").html("");
-                $("#txtContacto" + id_producto + "").html("");
-                $("#txtCorreo" + id_producto + "").html("");
-                $("#txtLada" + id_producto + "").html("");
-                $("#txtTelefono" + id_producto + "").html("");
-                $("#txtLadaVal" + id_producto + "").html("");
-                $("#txtDireccion" + id_producto + "").html("");
-                $("#fileNameProv" + id_producto + "").html("");
-
-                selProv.val(null).trigger("change");
-                bool_prov_selected = true;
-                nuevoProveedor();
-
-                if (edicion_cambio_proveedor == true) {
-                    guardar_cambio_producto_prov_sin(id_producto);
-                    pasoActual();
-                }else{
-                    Validacion_personalizar_f2();
-                    var Step = $("#txtStepActivo").val();
-                    if (envComplete == false && comComplete == false) {
-                        funcSetp4();
-                        if (Step == "3") {
-                            var step = 4;
-                            $("#txtStepActivo").val(step);
-                            $("#txtStepForm").val(step);
-                        } else {
-                            var step = parseInt(Step);
-                            $("#txtStepForm").val(step);
-                        }
-                    } else if (envComplete == true && comComplete == false) {
-                        funcSetp5();
-                        if (Step == "3") {
-                            var step = 5;
-                            $("#txtStepActivo").val(step);
-                            $("#txtStepForm").val(step);
-                        } else if (Step == "4") {
-                            var step = 5;
-                            $("#txtStepActivo").val(step);
-                            $("#txtStepForm").val(step);
-                        } else {
-                            var step = parseInt(Step);
-                            $("#txtStepForm").val(step);
-                        }
-                    } else if (envComplete == true && comComplete == true) {
-                        funcSetp6();
-                        if (Step == "3") {
-                            var step = 6;
-                            $("#txtStepActivo").val(step);
-                            $("#txtStepForm").val(step);
-                        } else if (Step == "5") {
-                            var step = 6;
-                            $("#txtStepActivo").val(step);
-                            $("#txtStepForm").val(step);
-                        } else {
-                            var step = parseInt(Step);
-                            $("#txtStepForm").val(step);
-                        }
-                    }
-                }
-            }
+//             if ($(this).is(":checked")) {
+//                 $("#radioProvSi").attr("value", "false");
+//                 $("#radioProvNo").attr("value", "true");
+//                 radProv = "No";
+//                 rad_prov = 'No';
+//                 val_proveedor = true;
+//                 provEdicion = false;
+//                 proveedorCompleto = true;
+//                 
+//                 idProd_Edit = idProducto;
+//                 if (idProd_Edit_p != null) {
+//                     id_producto = idProd_Edit_p;
+//                 }
+//                 $("#valRadioProv").val(false);
+//                 $("#div_val_radio_proveedor").css("display", "none");
+//                 $("#lblProdSi").css("color", "#5b6670");
+//                 $("#lblProdNo").css("color", "#5b6670");
+//                 $("#listProveedor" + id_producto + "").css("display", "");
+//                 $("#pNoProveedor" + id_producto + "").css("display", "");
+//                 $("#pProveedor" + id_producto + "").css("display", "none");
+//                 $("#pPersona" + id_producto + "").css("display", "none");
+//                 $("#pCorreo" + id_producto + "").css("display", "none");
+//                 $("#pTelefono" + id_producto + "").css("display", "none");
+//                 $("#pDireccion" + id_producto + "").css("display", "none");
+//                 $("#pFactura" + id_producto + "").css("display", "none");
+//                 $("#btnEditProv").css("display", "");
+//                 $("#btnAgregarProv").css("display", "none");
+//                 $("#mnjEdicion").css("display", "none");
+//                 $("#container-prov").css("display", "none");
+//                 
+//                 $("#txtProveedor" + id_producto + "").html("");
+//                 $("#txtContacto" + id_producto + "").html("");
+//                 $("#txtCorreo" + id_producto + "").html("");
+//                 $("#txtLada" + id_producto + "").html("");
+//                 $("#txtTelefono" + id_producto + "").html("");
+//                 $("#txtLadaVal" + id_producto + "").html("");
+//                 $("#txtDireccion" + id_producto + "").html("");
+//                 $("#fileNameProv" + id_producto + "").html("");
+// 
+//                 selProv.val(null).trigger("change");
+//                 bool_prov_selected = true;
+//                 nuevoProveedor();
+// 
+//                 if (edicion_cambio_proveedor == true) {
+//                     guardar_cambio_producto_prov_sin(id_producto);
+//                     pasoActual();
+//                 }else{
+//                     Validacion_personalizar_f2();
+//                     var Step = $("#txtStepActivo").val();
+//                     if (envComplete == false && comComplete == false) {
+//                         funcSetp4();
+//                         if (Step == "3") {
+//                             var step = 4;
+//                             $("#txtStepActivo").val(step);
+//                             $("#txtStepForm").val(step);
+//                         } else {
+//                             var step = parseInt(Step);
+//                             $("#txtStepForm").val(step);
+//                         }
+//                     } else if (envComplete == true && comComplete == false) {
+//                         funcSetp5();
+//                         if (Step == "3") {
+//                             var step = 5;
+//                             $("#txtStepActivo").val(step);
+//                             $("#txtStepForm").val(step);
+//                         } else if (Step == "4") {
+//                             var step = 5;
+//                             $("#txtStepActivo").val(step);
+//                             $("#txtStepForm").val(step);
+//                         } else {
+//                             var step = parseInt(Step);
+//                             $("#txtStepForm").val(step);
+//                         }
+//                     } else if (envComplete == true && comComplete == true) {
+//                         funcSetp6();
+//                         if (Step == "3") {
+//                             var step = 6;
+//                             $("#txtStepActivo").val(step);
+//                             $("#txtStepForm").val(step);
+//                         } else if (Step == "5") {
+//                             var step = 6;
+//                             $("#txtStepActivo").val(step);
+//                             $("#txtStepForm").val(step);
+//                         } else {
+//                             var step = parseInt(Step);
+//                             $("#txtStepForm").val(step);
+//                         }
+//                     }
+//                 }
+//             }
         });
         // opcion de si el envio es maritimo
         $("#rad_maritimo").on("change", function () {
@@ -2756,194 +2756,194 @@ var inicio = {
     backNext: function () {
         // cambiar a un formulario anterio al actual
         $("#arrowBack").on('click', function (event) {
-            event.preventDefault();
-            var Step = $("#txtStepActivo").val();
-            var StepForm = $("#txtStepForm").val();
-            var prodSi = $("#radioProdSi").val();
-            var prodNo = $("#radioProdNo").val();
-            var provSi = $("#radioProvSi").val();
-            var provNo = $("#radioProvNo").val();
-            idProd_Edit_p = idProducto;
-            idProd_Edit = idProducto;
-            id_producto = idProducto; /*|| (Step != 3 && StepForm == 3)*/
-            if ((Step == 5 && StepForm == 5) || StepForm == 5) {
-                if (envComplete == false && comComplete == false) {
-                    var step = parseInt(StepForm) - 1;
-                    $("#txtStepForm").val(step);
-                } else if (envComplete == true && comComplete == false) {
-                    var step = parseInt(StepForm) - 2;
-                    $("#txtStepForm").val(step);
-                } else if (envComplete == true && comComplete == true) {
-                    var step = parseInt(StepForm) - 3;
-                    $("#txtStepForm").val(step);
-                }
-            } else if ((Step == 6 && StepForm == 6) || StepForm == 6) {
-                if (envComplete == false && comComplete == false) {
-                    var step = parseInt(StepForm) - 1;
-                    $("#txtStepForm").val(step);
-                } else if (envComplete == true && comComplete == false) {
-                    var step = parseInt(StepForm) - 1;
-                    $("#txtStepForm").val(step);
-                } else if (envComplete == true && comComplete == true) {
-                    var step = parseInt(StepForm) - 3;
-                    $("#txtStepForm").val(step);
-                }
-            } else {
-                var step = parseInt(StepForm) - 1;
-                $("#txtStepForm").val(step);
-            }
-
-            if (Step == StepForm) {
-                if (step == 1) {
-                    funcSetp1();
-                } else if (step == 2) {
-                    funcSetp2();
-                    if (prodSi == "true") {
-                        $("#radioProdSi").prop('checked', true);
-                        $("#radioProdSi").is(":checked");
-                    } else if (prodNo == "true") {
-                        $("#radioProdNo").prop('checked', true);
-                        $("#radioProdNo").is(":checked");
-                    }
-                } else if (step == 3) {
-                    funcSetp3();
-                    if (provSi == "true") {
-                        $("#radioProvSi").prop('checked', true);
-                        $("#radioProvSi").is(":checked");
-                    } else if (provNo == "true") {
-                        $("#radioProvNo").prop('checked', true);
-                        $("#radioProvNo").is(":checked");
-                    }
-                } else if (step == 4) {
-                    funcSetp4();
-                } else if (step == 5) {
-                    funcSetp5();
-                } else if (step == 6) {
-                    funcSetp6();
-                }
-            } else {
-                if (step == 1) {
-                    funcSetp1();
-                } else if (step == 2) {
-                    funcSetp2();
-                    if (prodSi == "true") {
-                        $("#radioProdSi").prop('checked', true);
-                        $("#radioProdSi").is(":checked");
-                    } else if (prodNo == "true") {
-                        $("#radioProdNo").prop('checked', true);
-                        $("#radioProdNo").is(":checked");
-                    }
-                } else if (step == 3) {
-                    funcSetp3();
-                    if (provSi == "true") {
-                        $("#radioProvSi").prop('checked', true);
-                        $("#radioProvSi").is(":checked");
-                    } else if (provNo == "true") {
-                        $("#radioProvNo").prop('checked', true);
-                        $("#radioProvNo").is(":checked");
-                    }
-                } else if (step == 4) {
-                    funcSetp4();
-                } else if (step == 5) {
-                    funcSetp5();
-                } else if (step == 6) {
-                    funcSetp6();
-                }
-            }
+//             event.preventDefault();
+//             var Step = $("#txtStepActivo").val();
+//             var StepForm = $("#txtStepForm").val();
+//             var prodSi = $("#radioProdSi").val();
+//             var prodNo = $("#radioProdNo").val();
+//             var provSi = $("#radioProvSi").val();
+//             var provNo = $("#radioProvNo").val();
+//             idProd_Edit_p = idProducto;
+//             idProd_Edit = idProducto;
+//             id_producto = idProducto; /*|| (Step != 3 && StepForm == 3)*/
+//             if ((Step == 5 && StepForm == 5) || StepForm == 5) {
+//                 if (envComplete == false && comComplete == false) {
+//                     var step = parseInt(StepForm) - 1;
+//                     $("#txtStepForm").val(step);
+//                 } else if (envComplete == true && comComplete == false) {
+//                     var step = parseInt(StepForm) - 2;
+//                     $("#txtStepForm").val(step);
+//                 } else if (envComplete == true && comComplete == true) {
+//                     var step = parseInt(StepForm) - 3;
+//                     $("#txtStepForm").val(step);
+//                 }
+//             } else if ((Step == 6 && StepForm == 6) || StepForm == 6) {
+//                 if (envComplete == false && comComplete == false) {
+//                     var step = parseInt(StepForm) - 1;
+//                     $("#txtStepForm").val(step);
+//                 } else if (envComplete == true && comComplete == false) {
+//                     var step = parseInt(StepForm) - 1;
+//                     $("#txtStepForm").val(step);
+//                 } else if (envComplete == true && comComplete == true) {
+//                     var step = parseInt(StepForm) - 3;
+//                     $("#txtStepForm").val(step);
+//                 }
+//             } else {
+//                 var step = parseInt(StepForm) - 1;
+//                 $("#txtStepForm").val(step);
+//             }
+// 
+//             if (Step == StepForm) {
+//                 if (step == 1) {
+//                     funcSetp1();
+//                 } else if (step == 2) {
+//                     funcSetp2();
+//                     if (prodSi == "true") {
+//                         $("#radioProdSi").prop('checked', true);
+//                         $("#radioProdSi").is(":checked");
+//                     } else if (prodNo == "true") {
+//                         $("#radioProdNo").prop('checked', true);
+//                         $("#radioProdNo").is(":checked");
+//                     }
+//                 } else if (step == 3) {
+//                     funcSetp3();
+//                     if (provSi == "true") {
+//                         $("#radioProvSi").prop('checked', true);
+//                         $("#radioProvSi").is(":checked");
+//                     } else if (provNo == "true") {
+//                         $("#radioProvNo").prop('checked', true);
+//                         $("#radioProvNo").is(":checked");
+//                     }
+//                 } else if (step == 4) {
+//                     funcSetp4();
+//                 } else if (step == 5) {
+//                     funcSetp5();
+//                 } else if (step == 6) {
+//                     funcSetp6();
+//                 }
+//             } else {
+//                 if (step == 1) {
+//                     funcSetp1();
+//                 } else if (step == 2) {
+//                     funcSetp2();
+//                     if (prodSi == "true") {
+//                         $("#radioProdSi").prop('checked', true);
+//                         $("#radioProdSi").is(":checked");
+//                     } else if (prodNo == "true") {
+//                         $("#radioProdNo").prop('checked', true);
+//                         $("#radioProdNo").is(":checked");
+//                     }
+//                 } else if (step == 3) {
+//                     funcSetp3();
+//                     if (provSi == "true") {
+//                         $("#radioProvSi").prop('checked', true);
+//                         $("#radioProvSi").is(":checked");
+//                     } else if (provNo == "true") {
+//                         $("#radioProvNo").prop('checked', true);
+//                         $("#radioProvNo").is(":checked");
+//                     }
+//                 } else if (step == 4) {
+//                     funcSetp4();
+//                 } else if (step == 5) {
+//                     funcSetp5();
+//                 } else if (step == 6) {
+//                     funcSetp6();
+//                 }
+//             }
         });
         // cambiar al formulario actual
         $("#arrowNext").on('click', function (event) {
             event.preventDefault();
-            var Step = $("#txtStepActivo").val();
-            var StepForm = $("#txtStepForm").val();
-            var prodSi = $("#radioProdSi").val();
-            var prodNo = $("#radioProdNo").val();
-            var provSi = $("#radioProvSi").val();
-            var provNo = $("#radioProvNo").val();
-            if ((Step == 5 && StepForm == 5) || (Step == 6 && StepForm == 6) || (StepForm == 3 && Step != 6)) {
-                if (envComplete == false && comComplete == false) {
-                    var step = parseInt(StepForm) + 1;
-                    $("#txtStepForm").val(step);
-                } else if (envComplete == true && comComplete == false) {
-                    var step = parseInt(StepForm) + 2;
-                    $("#txtStepForm").val(step);
-                } else if (envComplete == true && comComplete == true) {
-                    var step = parseInt(StepForm) + 3;
-                    $("#txtStepForm").val(step);
-                }
-            } else if (Step == 6 && StepForm == 3) {
-                if (envComplete == false && comComplete == false) {
-                    var step = parseInt(StepForm) + 1;
-                    $("#txtStepForm").val(step);
-                } else if (envComplete == true && comComplete == false) {
-                    var step = parseInt(StepForm) + 3;
-                    $("#txtStepForm").val(step);
-                } else if (envComplete == true && comComplete == true) {
-                    var step = parseInt(StepForm) + 3;
-                    $("#txtStepForm").val(step);
-                }
-                
-            } else {
-                var step = parseInt(StepForm) + 1;
-                $("#txtStepForm").val(step);
-            }
-            if (Step == StepForm) {
-                if (step == 1) {
-                    funcSetp1();
-                } else if (step == 2) {
-                    funcSetp2();
-                    if (prodSi == "true") {
-                        $("#radioProdSi").prop('checked', true);
-                        $("#radioProdSi").is(":checked");
-                    } else if (prodNo == "true") {
-                        $("#radioProdNo").prop('checked', true);
-                        $("#radioProdNo").is(":checked");
-                    }
-                } else if (step == 3) {
-                    funcSetp3();
-                    if (provSi == "true") {
-                        $("#radioProvSi").prop('checked', true);
-                        $("#radioProvSi").is(":checked");
-                    } else if (provNo == "true") {
-                        $("#radioProvNo").prop('checked', true);
-                        $("#radioProvNo").is(":checked");
-                    }
-                } else if (step == 4) {
-                    funcSetp4();
-                } else if (step == 5) {
-                    funcSetp5();
-                } else if (step == 6) {
-                    funcSetp6();
-                }
-            } else {
-                if (step == 1) {
-                    funcSetp1();
-                } else if (step == 2) {
-                    funcSetp2();
-                    if (prodSi == "true") {
-                        $("#radioProdSi").prop('checked', true);
-                        $("#radioProdSi").is(":checked");
-                    } else if (prodNo == "true") {
-                        $("#radioProdNo").prop('checked', true);
-                        $("#radioProdNo").is(":checked");
-                    }
-                } else if (step == 3) {
-                    funcSetp3();
-                    if (provSi == "true") {
-                        $("#radioProvSi").prop('checked', true);
-                        $("#radioProvSi").is(":checked");
-                    } else if (provNo == "true") {
-                        $("#radioProvNo").prop('checked', true);
-                        $("#radioProvNo").is(":checked");
-                    }
-                } else if (step == 4) {
-                    funcSetp4();
-                } else if (step == 5) {
-                    funcSetp5();
-                } else if (step == 6) {
-                    funcSetp6();
-                }
-            }
+            // var Step = $("#txtStepActivo").val();
+            // var StepForm = $("#txtStepForm").val();
+            // var prodSi = $("#radioProdSi").val();
+            // var prodNo = $("#radioProdNo").val();
+            // var provSi = $("#radioProvSi").val();
+            // var provNo = $("#radioProvNo").val();
+            // if ((Step == 5 && StepForm == 5) || (Step == 6 && StepForm == 6) || (StepForm == 3 && Step != 6)) {
+            //     if (envComplete == false && comComplete == false) {
+            //         var step = parseInt(StepForm) + 1;
+            //         $("#txtStepForm").val(step);
+            //     } else if (envComplete == true && comComplete == false) {
+            //         var step = parseInt(StepForm) + 2;
+            //         $("#txtStepForm").val(step);
+            //     } else if (envComplete == true && comComplete == true) {
+            //         var step = parseInt(StepForm) + 3;
+            //         $("#txtStepForm").val(step);
+            //     }
+            // } else if (Step == 6 && StepForm == 3) {
+            //     if (envComplete == false && comComplete == false) {
+            //         var step = parseInt(StepForm) + 1;
+            //         $("#txtStepForm").val(step);
+            //     } else if (envComplete == true && comComplete == false) {
+            //         var step = parseInt(StepForm) + 3;
+            //         $("#txtStepForm").val(step);
+            //     } else if (envComplete == true && comComplete == true) {
+            //         var step = parseInt(StepForm) + 3;
+            //         $("#txtStepForm").val(step);
+            //     }
+            //     
+            // } else {
+            //     var step = parseInt(StepForm) + 1;
+            //     $("#txtStepForm").val(step);
+            // }
+            // if (Step == StepForm) {
+            //     if (step == 1) {
+            //         funcSetp1();
+            //     } else if (step == 2) {
+            //         funcSetp2();
+            //         if (prodSi == "true") {
+            //             $("#radioProdSi").prop('checked', true);
+            //             $("#radioProdSi").is(":checked");
+            //         } else if (prodNo == "true") {
+            //             $("#radioProdNo").prop('checked', true);
+            //             $("#radioProdNo").is(":checked");
+            //         }
+            //     } else if (step == 3) {
+            //         funcSetp3();
+            //         if (provSi == "true") {
+            //             $("#radioProvSi").prop('checked', true);
+            //             $("#radioProvSi").is(":checked");
+            //         } else if (provNo == "true") {
+            //             $("#radioProvNo").prop('checked', true);
+            //             $("#radioProvNo").is(":checked");
+            //         }
+            //     } else if (step == 4) {
+            //         funcSetp4();
+            //     } else if (step == 5) {
+            //         funcSetp5();
+            //     } else if (step == 6) {
+            //         funcSetp6();
+            //     }
+            // } else {
+            //     if (step == 1) {
+            //         funcSetp1();
+            //     } else if (step == 2) {
+            //         funcSetp2();
+            //         if (prodSi == "true") {
+            //             $("#radioProdSi").prop('checked', true);
+            //             $("#radioProdSi").is(":checked");
+            //         } else if (prodNo == "true") {
+            //             $("#radioProdNo").prop('checked', true);
+            //             $("#radioProdNo").is(":checked");
+            //         }
+            //     } else if (step == 3) {
+            //         funcSetp3();
+            //         if (provSi == "true") {
+            //             $("#radioProvSi").prop('checked', true);
+            //             $("#radioProvSi").is(":checked");
+            //         } else if (provNo == "true") {
+            //             $("#radioProvNo").prop('checked', true);
+            //             $("#radioProvNo").is(":checked");
+            //         }
+            //     } else if (step == 4) {
+            //         funcSetp4();
+            //     } else if (step == 5) {
+            //         funcSetp5();
+            //     } else if (step == 6) {
+            //         funcSetp6();
+            //     }
+            // }
         });
     },
 
@@ -2957,262 +2957,262 @@ var inicio = {
             
             //eliminacion de proveedores que no tienen producto
                 //esto se hace con la finalidad de no insertar proveedores sin productos
-                var long_prov = Object.keys(productos_prov).length;
-                var long_pedido = Object.keys(pedido).length;
-                var data_eliminar= new Array();
-                //primero busca en pedido los proveedores
-                for (var i = 0; i < long_pedido; i++) {
-                    if (pedido[i].tipo_data == "proveedor_cliente") {
-                        //guardamos el id interno temporalmente y vamos a buscarlo en los productos
-                        var id_tempo_prov_eliminar = pedido[i].id_prov_interno;
-                        var count_elim = 0;
-                        for (var j = 0; j < long_prov; j++) {
-                            if (productos_prov[j].id_prov_interno == id_tempo_prov_eliminar) {
-                                count_elim++;
-                            }
-                        }
-                        if (count_elim == 0) {
-                            var push ={
-                                index: i,
-                            }
-                            data_eliminar.push(push);
-                        }
-                    }
-                }
-                //como no se puede eliminar en secuencia asendente porque cambiaria los indices obtenidos
-                //se hace un for aparte de manera descendente, por eso se creo la data_eliminar
-                var j= data_eliminar.length;
-                for (var i = data_eliminar.length; i > 0; i--) {
-                    j--;
-                    pedido.splice(data_eliminar[j].index, 1);
-                }
+                // var long_prov = Object.keys(productos_prov).length;
+                // var long_pedido = Object.keys(pedido).length;
+                // var data_eliminar= new Array();
+                // //primero busca en pedido los proveedores
+                // for (var i = 0; i < long_pedido; i++) {
+                //     if (pedido[i].tipo_data == "proveedor_cliente") {
+                //         //guardamos el id interno temporalmente y vamos a buscarlo en los productos
+                //         var id_tempo_prov_eliminar = pedido[i].id_prov_interno;
+                //         var count_elim = 0;
+                //         for (var j = 0; j < long_prov; j++) {
+                //             if (productos_prov[j].id_prov_interno == id_tempo_prov_eliminar) {
+                //                 count_elim++;
+                //             }
+                //         }
+                //         if (count_elim == 0) {
+                //             var push ={
+                //                 index: i,
+                //             }
+                //             data_eliminar.push(push);
+                //         }
+                //     }
+                // }
+                // //como no se puede eliminar en secuencia asendente porque cambiaria los indices obtenidos
+                // //se hace un for aparte de manera descendente, por eso se creo la data_eliminar
+                // var j= data_eliminar.length;
+                // for (var i = data_eliminar.length; i > 0; i--) {
+                //     j--;
+                //     pedido.splice(data_eliminar[j].index, 1);
+                // }
             //
             
-            var cant = $('#inpt_form_cantidad').val();
-            var cantidad = parseFloat((cant).replace(/,/g, ""));
-            if (rad_prov == 'Si') { 
-                //Obtencion de datos del proveedor
-                //Si existe imagen en el producto
-                if (file_Files != " ") {
-                    var filename = file_Files.name;
-                    var data_img = {
-                        id: i_interno_prod,
-                        nombre_original: filename,
-                        ruta: 'files/productos_cp/',
-                    }
-                    arreglo_imagenes_prov.push(data_img);
-                    frmData_prov.append('' + i_interno_prod + '', file_Files);
-                    path_temporal_prov = i_interno_prod + "_" + filename;
-                } else {
-                    path_temporal_prov = null;
-                }
-
-                //si existe invoice
-                if (file_Files_invoice != " ") {
-                    var filename = file_Files_invoice.name;
-                    var data_invoice = {
-                        id: id_prov_interno,
-                        nombre_original: filename,
-                        path: 'files/invoice_cliente/',
-                    }
-                    arreglo_invoice.push(data_invoice);
-                    frmData_inv.append('' + id_prov_interno + '', file_Files_invoice);
-                    path_temporal = id_prov_interno + "_" + filename;
-                } else {
-                    path_temporal = null;
-                }
-
-                if (bool_prov_selected == false) {
-                    data_proveedor_cliente = {
-                        tipo_data: 'proveedor_cliente',
-                        id_prov_interno: id_prov_interno,
-                        proveedor: $('#inpt_nombre_proveedor').val(),
-                        email: $('#inpt_email_proveedor').val(),
-                        contacto: $('#inpt_contacto_proveedor').val(),
-                        id_lada: $('#sel_ladaProv').val(),
-                        telefono: $('#inpt_telefono_proveedor').val(),
-                        direccion: $('#inpt_direccion_proveedor').val(),
-                        productos: productos_prov,
-                        invoice_path: path_temporal,
-                    }
-                    pedido.push(data_proveedor_cliente);
-
-                    var data = {  //data de producto con proveedor nuevo
-                        'id': i_interno_prod,
-                        id_prov_interno: id_prov_interno,
-                        'prod': $('#inpt_form_producto').val(),
-                        'cant': cantidad,
-                        'unidades': $('#selUnidades_prod_sp').val(),
-                        'especificaciones': $('#inpt_form_especificaciones').val(),
-                        'color_oem': $('#inpt_form_colores').val(),
-                        'img_path': path_temporal_prov,
-                    };
-                    productos_prov.push(data);
-                    id_prov_interno++;
-                } else {
-                    var data = {  //data de producto con proveedor ya ingresado
-                        'id': i_interno_prod,
-                        id_prov_interno: id_provisional_prov_i,
-                        'prod': $('#inpt_form_producto').val(),
-                        'cant': cantidad,
-                        'unidades': $('#selUnidades_prod_sp').val(),
-                        'especificaciones': $('#inpt_form_especificaciones').val(),
-                        'color_oem': $('#inpt_form_colores').val(),
-                        'img_path': path_temporal_prov,
-                    };
-                    productos_prov.push(data);
-                }
-                i_interno_prod++;
-            } else if (rad_prov == 'No') {
-                //Si existe imagen en el producto
-                if (file_Files != " ") {
-                    var filename = file_Files.name;
-                    var data_img = {
-                        id: countimagen,
-                        nombre_original: filename,
-                        ruta: 'files/productos_sp/',
-                    }
-                    arreglo_imagenes.push(data_img);
-                    frmData.append('' + countimagen + '', file_Files);
-                    path_temporal = countimagen + "_" + filename;
-                } else {
-                    path_temporal = null;
-                }
-                var data_producto_sp_cliente = {
-                    id: countimagen,
-                    tipo_data: 'productos_sp_cliente',
-                    producto: $('#inpt_form_producto').val(),
-                    cantidad: cantidad,
-                    unidades: $('#selUnidades_prod_sp').val(),
-                    color_oem: $('#inpt_form_colores').val(),
-                    especificaciones: $('#inpt_form_especificaciones').val(),
-                    img_path: path_temporal,
-                }
-                countimagen++;
-                pedido.push(data_producto_sp_cliente);
-            }
-
-            if (file_Files_oem != " ") {
-                path_oem_temporal = file_Files_oem.name;
-            } else {
-                path_oem_temporal = null;
-            }
-
-            //Data general proyecto base
-            var data_proyecto_base = {
-                id_cliente: id_cliente,
-                colores: $('#inpt_form_colores').val(),
-                comentarios: $("#lblComentario").html(),
-                tipo_envio: tipo_enviovar,
-                destino: $('#inpt_form_destinoEntrega').val(),
-                fecha_creacion: today,
-                oemservice_path: path_oem_temporal,
-            }
-            data_pedido_final = {
-                'data_proyecto_base': data_proyecto_base,
-                'pedido': pedido,
-            }
-            var response = cargar_ajax.run_server_ajax('Clientes/agregar_proyecto_base', data_pedido_final);
-            toastr.options = {
-                "closeButton": false,
-                "debug": false,
-                "newestOnTop": false,
-                "progressBar": true,
-                "positionClass": "toast-top-right",
-                "preventDuplicates": false,
-                "onclick": null,
-                "showDuration": "300",
-                "hideDuration": "1000",
-                "timeOut": "7500",
-                "extendedTimeOut": "1000",
-                "showEasing": "swing",
-                "hideEasing": "linear",
-                "showMethod": "fadeIn",
-                "hideMethod": "fadeOut",
-            }
-
-            toastr.options.onHidden = function () {
-                // this will be executed after fadeout, i.e. 2secs after notification has been show
-                funcExito();
-            };
-
-            if (response == 'false') {
-                toastr.error("No se pudo registrar el pedido, error desconocido", "Error!");
-            } else {
-                toastr.success("Se ingreso correctamente la información", "Registro exitoso");
-
-                //Envio de imagenes productos sp
-                if (arreglo_imagenes != 0) {
-                    frmData.append('imgs', JSON.stringify(arreglo_imagenes));
-                    frmData.append('id_cliente', id_cliente);
-                    resp = cargar_ajax2.run_server_ajax2('Clientes/enviar', frmData);
-                    if (resp == undefined || resp.status == 'false') {
-                        if (resp == undefined) {
-                            toastr.error("No se pudo subir la imagen, error desconocido", "Error!");
-                        } else if (resp.info == 'carga') {
-                            toastr.error("No se pudo subir la imagen, error al subir", "Error!");
-                        } else if (resp.info == 'extension') {
-                            toastr.error("No se pudo subir la imagen, extension invalida", "Error!");
-                        }
-                    } else {
-                        toastr.success("Se actualizo correctamente la imagen", "Actualización Correcta");
-                    }
-                }
-
-                //Envio de imagenes productos sp
-                if (arreglo_imagenes_prov != 0) {
-                    frmData_prov.append('imgs', JSON.stringify(arreglo_imagenes_prov));
-                    frmData_prov.append('id_cliente', id_cliente);
-                    resp_prod_prov = cargar_ajax2.run_server_ajax2('Clientes/enviar_img_prod_prov', frmData_prov);
-                    if (resp_prod_prov == undefined || resp_prod_prov.status == 'false') {
-                        if (resp_prod_prov == undefined) {
-                            toastr.error("No se pudo subir la imagen, error desconocido", "Error!");
-                        } else if (resp_prod_prov.info == 'carga') {
-                            toastr.error("No se pudo subir la imagen, error al subir", "Error!");
-                        } else if (resp_prod_prov.info == 'extension') {
-                            toastr.error("No se pudo subir la imagen, extension invalida", "Error!");
-                        }
-                    } else {
-                        toastr.success("Se actualizo correctamente la imagen", "Actualización Correcta");
-                    }
-                }
-
-                //Envio de archivos invoice
-                if (arreglo_invoice != 0) {
-                    frmData_inv.append('archivos_invoice', JSON.stringify(arreglo_invoice));
-                    frmData_inv.append('id_cliente', id_cliente);
-                    resp_inv = cargar_ajax2.run_server_ajax2('Clientes/enviar_inv', frmData_inv);
-                    if (resp_inv == undefined || resp_inv.status == 'false') {
-                        if (resp_inv == undefined) {
-                            toastr.error("No se pudo subir la factura/invoice, error desconocido", "Error!");
-                        } else if (resp_inv.info == 'carga') {
-                            toastr.error("No se pudo subir la factura/invoice, error al subir", "Error!");
-                        } else if (resp_inv.info == 'extension') {
-                            toastr.error("No se pudo subir la factura/invoice, extension invalida", "Error!");
-                        }
-                    } else {
-                        toastr.success("Se actualizo correctamente la factura/invoice", "Actualización Correcta");
-                    }
-                }
-
-                //Envio oem
-                if (file_Files_oem != 0) {
-                    frmData_oem.append('oemservice_path', file_Files_oem);
-                    frmData_oem.append('id_cliente', id_cliente);
-                    resp_oem = cargar_ajax2.run_server_ajax2('Clientes/cargar_oem', frmData_oem);
-                    if (resp_oem == undefined || resp_oem.status == 'false') {
-                        if (resp_oem == undefined) {
-                            toastr.error("No se pudo subir la imagen oem, error desconocido", "Error!");
-                        } else if (resp_oem.info == 'carga') {
-                            toastr.error("No se pudo subir la imagen oem, error al subir", "Error!");
-                        } else if (resp_oem.info == 'extension') {
-                            toastr.error("No se pudo subir la imagen oem, extension invalida", "Error!");
-                        }
-                    } else {
-                        toastr.success("Se actualizo correctamente la imagen oem", "Actualización Correcta");
-                    }
-                }
-            }
+//             var cant = $('#inpt_form_cantidad').val();
+//             var cantidad = parseFloat((cant).replace(/,/g, ""));
+//             if (rad_prov == 'Si') { 
+//                 //Obtencion de datos del proveedor
+//                 //Si existe imagen en el producto
+//                 if (file_Files != " ") {
+//                     var filename = file_Files.name;
+//                     var data_img = {
+//                         id: i_interno_prod,
+//                         nombre_original: filename,
+//                         ruta: 'files/productos_cp/',
+//                     }
+//                     arreglo_imagenes_prov.push(data_img);
+//                     frmData_prov.append('' + i_interno_prod + '', file_Files);
+//                     path_temporal_prov = i_interno_prod + "_" + filename;
+//                 } else {
+//                     path_temporal_prov = null;
+//                 }
+// 
+//                 //si existe invoice
+//                 if (file_Files_invoice != " ") {
+//                     var filename = file_Files_invoice.name;
+//                     var data_invoice = {
+//                         id: id_prov_interno,
+//                         nombre_original: filename,
+//                         path: 'files/invoice_cliente/',
+//                     }
+//                     arreglo_invoice.push(data_invoice);
+//                     frmData_inv.append('' + id_prov_interno + '', file_Files_invoice);
+//                     path_temporal = id_prov_interno + "_" + filename;
+//                 } else {
+//                     path_temporal = null;
+//                 }
+// 
+//                 if (bool_prov_selected == false) {
+//                     data_proveedor_cliente = {
+//                         tipo_data: 'proveedor_cliente',
+//                         id_prov_interno: id_prov_interno,
+//                         proveedor: $('#inpt_nombre_proveedor').val(),
+//                         email: $('#inpt_email_proveedor').val(),
+//                         contacto: $('#inpt_contacto_proveedor').val(),
+//                         id_lada: $('#sel_ladaProv').val(),
+//                         telefono: $('#inpt_telefono_proveedor').val(),
+//                         direccion: $('#inpt_direccion_proveedor').val(),
+//                         productos: productos_prov,
+//                         invoice_path: path_temporal,
+//                     }
+//                     pedido.push(data_proveedor_cliente);
+// 
+//                     var data = {  //data de producto con proveedor nuevo
+//                         'id': i_interno_prod,
+//                         id_prov_interno: id_prov_interno,
+//                         'prod': $('#inpt_form_producto').val(),
+//                         'cant': cantidad,
+//                         'unidades': $('#selUnidades_prod_sp').val(),
+//                         'especificaciones': $('#inpt_form_especificaciones').val(),
+//                         'color_oem': $('#inpt_form_colores').val(),
+//                         'img_path': path_temporal_prov,
+//                     };
+//                     productos_prov.push(data);
+//                     id_prov_interno++;
+//                 } else {
+//                     var data = {  //data de producto con proveedor ya ingresado
+//                         'id': i_interno_prod,
+//                         id_prov_interno: id_provisional_prov_i,
+//                         'prod': $('#inpt_form_producto').val(),
+//                         'cant': cantidad,
+//                         'unidades': $('#selUnidades_prod_sp').val(),
+//                         'especificaciones': $('#inpt_form_especificaciones').val(),
+//                         'color_oem': $('#inpt_form_colores').val(),
+//                         'img_path': path_temporal_prov,
+//                     };
+//                     productos_prov.push(data);
+//                 }
+//                 i_interno_prod++;
+//             } else if (rad_prov == 'No') {
+//                 //Si existe imagen en el producto
+//                 if (file_Files != " ") {
+//                     var filename = file_Files.name;
+//                     var data_img = {
+//                         id: countimagen,
+//                         nombre_original: filename,
+//                         ruta: 'files/productos_sp/',
+//                     }
+//                     arreglo_imagenes.push(data_img);
+//                     frmData.append('' + countimagen + '', file_Files);
+//                     path_temporal = countimagen + "_" + filename;
+//                 } else {
+//                     path_temporal = null;
+//                 }
+//                 var data_producto_sp_cliente = {
+//                     id: countimagen,
+//                     tipo_data: 'productos_sp_cliente',
+//                     producto: $('#inpt_form_producto').val(),
+//                     cantidad: cantidad,
+//                     unidades: $('#selUnidades_prod_sp').val(),
+//                     color_oem: $('#inpt_form_colores').val(),
+//                     especificaciones: $('#inpt_form_especificaciones').val(),
+//                     img_path: path_temporal,
+//                 }
+//                 countimagen++;
+//                 pedido.push(data_producto_sp_cliente);
+//             }
+// 
+//             if (file_Files_oem != " ") {
+//                 path_oem_temporal = file_Files_oem.name;
+//             } else {
+//                 path_oem_temporal = null;
+//             }
+// 
+//             //Data general proyecto base
+//             var data_proyecto_base = {
+//                 id_cliente: id_cliente,
+//                 colores: $('#inpt_form_colores').val(),
+//                 comentarios: $("#lblComentario").html(),
+//                 tipo_envio: tipo_enviovar,
+//                 destino: $('#inpt_form_destinoEntrega').val(),
+//                 fecha_creacion: today,
+//                 oemservice_path: path_oem_temporal,
+//             }
+//             data_pedido_final = {
+//                 'data_proyecto_base': data_proyecto_base,
+//                 'pedido': pedido,
+//             }
+//             var response = cargar_ajax.run_server_ajax('Clientes/agregar_proyecto_base', data_pedido_final);
+//             toastr.options = {
+//                 "closeButton": false,
+//                 "debug": false,
+//                 "newestOnTop": false,
+//                 "progressBar": true,
+//                 "positionClass": "toast-top-right",
+//                 "preventDuplicates": false,
+//                 "onclick": null,
+//                 "showDuration": "300",
+//                 "hideDuration": "1000",
+//                 "timeOut": "7500",
+//                 "extendedTimeOut": "1000",
+//                 "showEasing": "swing",
+//                 "hideEasing": "linear",
+//                 "showMethod": "fadeIn",
+//                 "hideMethod": "fadeOut",
+//             }
+// 
+//             toastr.options.onHidden = function () {
+//                 // this will be executed after fadeout, i.e. 2secs after notification has been show
+//                 funcExito();
+//             };
+// 
+//             if (response == 'false') {
+//                 toastr.error("No se pudo registrar el pedido, error desconocido", "Error!");
+//             } else {
+//                 toastr.success("Se ingreso correctamente la información", "Registro exitoso");
+// 
+//                 //Envio de imagenes productos sp
+//                 if (arreglo_imagenes != 0) {
+//                     frmData.append('imgs', JSON.stringify(arreglo_imagenes));
+//                     frmData.append('id_cliente', id_cliente);
+//                     resp = cargar_ajax2.run_server_ajax2('Clientes/enviar', frmData);
+//                     if (resp == undefined || resp.status == 'false') {
+//                         if (resp == undefined) {
+//                             toastr.error("No se pudo subir la imagen, error desconocido", "Error!");
+//                         } else if (resp.info == 'carga') {
+//                             toastr.error("No se pudo subir la imagen, error al subir", "Error!");
+//                         } else if (resp.info == 'extension') {
+//                             toastr.error("No se pudo subir la imagen, extension invalida", "Error!");
+//                         }
+//                     } else {
+//                         toastr.success("Se actualizo correctamente la imagen", "Actualización Correcta");
+//                     }
+//                 }
+// 
+//                 //Envio de imagenes productos sp
+//                 if (arreglo_imagenes_prov != 0) {
+//                     frmData_prov.append('imgs', JSON.stringify(arreglo_imagenes_prov));
+//                     frmData_prov.append('id_cliente', id_cliente);
+//                     resp_prod_prov = cargar_ajax2.run_server_ajax2('Clientes/enviar_img_prod_prov', frmData_prov);
+//                     if (resp_prod_prov == undefined || resp_prod_prov.status == 'false') {
+//                         if (resp_prod_prov == undefined) {
+//                             toastr.error("No se pudo subir la imagen, error desconocido", "Error!");
+//                         } else if (resp_prod_prov.info == 'carga') {
+//                             toastr.error("No se pudo subir la imagen, error al subir", "Error!");
+//                         } else if (resp_prod_prov.info == 'extension') {
+//                             toastr.error("No se pudo subir la imagen, extension invalida", "Error!");
+//                         }
+//                     } else {
+//                         toastr.success("Se actualizo correctamente la imagen", "Actualización Correcta");
+//                     }
+//                 }
+// 
+//                 //Envio de archivos invoice
+//                 if (arreglo_invoice != 0) {
+//                     frmData_inv.append('archivos_invoice', JSON.stringify(arreglo_invoice));
+//                     frmData_inv.append('id_cliente', id_cliente);
+//                     resp_inv = cargar_ajax2.run_server_ajax2('Clientes/enviar_inv', frmData_inv);
+//                     if (resp_inv == undefined || resp_inv.status == 'false') {
+//                         if (resp_inv == undefined) {
+//                             toastr.error("No se pudo subir la factura/invoice, error desconocido", "Error!");
+//                         } else if (resp_inv.info == 'carga') {
+//                             toastr.error("No se pudo subir la factura/invoice, error al subir", "Error!");
+//                         } else if (resp_inv.info == 'extension') {
+//                             toastr.error("No se pudo subir la factura/invoice, extension invalida", "Error!");
+//                         }
+//                     } else {
+//                         toastr.success("Se actualizo correctamente la factura/invoice", "Actualización Correcta");
+//                     }
+//                 }
+// 
+//                 //Envio oem
+//                 if (file_Files_oem != 0) {
+//                     frmData_oem.append('oemservice_path', file_Files_oem);
+//                     frmData_oem.append('id_cliente', id_cliente);
+//                     resp_oem = cargar_ajax2.run_server_ajax2('Clientes/cargar_oem', frmData_oem);
+//                     if (resp_oem == undefined || resp_oem.status == 'false') {
+//                         if (resp_oem == undefined) {
+//                             toastr.error("No se pudo subir la imagen oem, error desconocido", "Error!");
+//                         } else if (resp_oem.info == 'carga') {
+//                             toastr.error("No se pudo subir la imagen oem, error al subir", "Error!");
+//                         } else if (resp_oem.info == 'extension') {
+//                             toastr.error("No se pudo subir la imagen oem, extension invalida", "Error!");
+//                         }
+//                     } else {
+//                         toastr.success("Se actualizo correctamente la imagen oem", "Actualización Correcta");
+//                     }
+//                 }
+//             }
         });
 
         // Agregar mas productos
@@ -3223,120 +3223,120 @@ var inicio = {
 
             var cant = $('#inpt_form_cantidad').val();
             var cantidad = parseFloat((cant).replace(/,/g, ""));
-            if (rad_prov == 'Si') {
-                //Obtencion de datos del proveedor
-                //Si existe imagen en el producto
-                if (file_Files != " ") {
-                    var filename = file_Files.name;
-                    var data_img = {
-                        id: i_interno_prod,
-                        nombre_original: filename,
-                        ruta: 'files/productos_cp/',
-                    }
-                    arreglo_imagenes_prov.push(data_img);
-                    frmData_prov.append('' + i_interno_prod + '', file_Files);
-                    path_temporal_prov = i_interno_prod + "_" + filename;
-                } else {
-                    path_temporal_prov = null;
-                }
-                //si existe invoice
-                if (file_Files_invoice != " ") {
-                    var filename = file_Files_invoice.name;
-
-                    var data_invoice = {
-                        id: id_prov_interno,
-                        nombre_original: filename,
-                        path: 'files/invoice_cliente/',
-                    }
-
-                    arreglo_invoice.push(data_invoice);
-                    frmData_inv.append('' + id_prov_interno + '', file_Files_invoice);
-
-                    path_temporal = id_prov_interno + "_" + filename;
-                }
-                else {
-                    path_temporal = null;
-                }
-
-                if (bool_prov_selected == false) {
-                    data_proveedor_cliente = {
-                        tipo_data: 'proveedor_cliente',
-                        id_prov_interno: id_prov_interno,
-                        proveedor: $('#inpt_nombre_proveedor').val(),
-                        email: $('#inpt_email_proveedor').val(),
-                        contacto: $('#inpt_contacto_proveedor').val(),
-                        id_lada: $('#sel_ladaProv').val(),
-                        telefono: $('#inpt_telefono_proveedor').val(),
-                        direccion: $('#inpt_direccion_proveedor').val(),
-                        productos: productos_prov,
-                        invoice_path: path_temporal,
-                    }
-                    pedido.push(data_proveedor_cliente);
-
-                    var data = {  //data de producto con proveedor nuevo
-                        'id': i_interno_prod,
-                        id_prov_interno: id_prov_interno,
-                        'prod': $('#inpt_form_producto').val(),
-                        'cant': cantidad,
-                        'unidades': $('#selUnidades_prod_sp').val(),
-                        'especificaciones': $('#inpt_form_especificaciones').val(),
-                        'color_oem': $('#inpt_form_colores').val(),
-                        'img_path': path_temporal_prov,
-                    };
-                    productos_prov.push(data);
-                    id_prov_interno++;
-                } else {
-                    var data = {  //data de producto con proveedor ya ingresado
-                        'id': i_interno_prod,
-                        id_prov_interno: id_provisional_prov_i,
-                        'prod': $('#inpt_form_producto').val(),
-                        'cant': cantidad,
-                        'unidades': $('#selUnidades_prod_sp').val(),
-                        'especificaciones': $('#inpt_form_especificaciones').val(),
-                        'color_oem': $('#inpt_form_colores').val(),
-                        'img_path': path_temporal_prov,
-                    };
-                    productos_prov.push(data);
-                }
-                i_interno_prod++;
-            } else if (rad_prov == 'No') {
-                //Si existe imagen en el producto
-                if (file_Files != " ") {
-                    var filename = file_Files.name;
-
-                    var data_img = {
-                        id: countimagen,
-                        nombre_original: filename,
-                        ruta: 'files/productos_sp/',
-                    }
-
-                    arreglo_imagenes.push(data_img);
-                    frmData.append('' + countimagen + '', file_Files);
-                    console.log(frmData.get('' + countimagen + ''));
-
-                    path_temporal = countimagen + "_" + filename;
-                }
-                else {
-                    path_temporal = null;
-                }
-
-                var data_producto_sp_cliente = {
-                    id: countimagen,
-                    tipo_data: 'productos_sp_cliente',
-                    producto: $('#inpt_form_producto').val(),
-                    cantidad: cantidad,
-                    unidades: $('#selUnidades_prod_sp').val(),
-                    color_oem: $('#inpt_form_colores').val(),
-                    especificaciones: $('#inpt_form_especificaciones').val(),
-                    img_path: path_temporal,
-                }
-                countimagen++;
-                pedido.push(data_producto_sp_cliente);
-
-            }
-            console.log(pedido);
-            reset_formulario();
-            funcSetp1();
+//             if (rad_prov == 'Si') {
+//                 //Obtencion de datos del proveedor
+//                 //Si existe imagen en el producto
+//                 if (file_Files != " ") {
+//                     var filename = file_Files.name;
+//                     var data_img = {
+//                         id: i_interno_prod,
+//                         nombre_original: filename,
+//                         ruta: 'files/productos_cp/',
+//                     }
+//                     arreglo_imagenes_prov.push(data_img);
+//                     frmData_prov.append('' + i_interno_prod + '', file_Files);
+//                     path_temporal_prov = i_interno_prod + "_" + filename;
+//                 } else {
+//                     path_temporal_prov = null;
+//                 }
+//                 //si existe invoice
+//                 if (file_Files_invoice != " ") {
+//                     var filename = file_Files_invoice.name;
+// 
+//                     var data_invoice = {
+//                         id: id_prov_interno,
+//                         nombre_original: filename,
+//                         path: 'files/invoice_cliente/',
+//                     }
+// 
+//                     arreglo_invoice.push(data_invoice);
+//                     frmData_inv.append('' + id_prov_interno + '', file_Files_invoice);
+// 
+//                     path_temporal = id_prov_interno + "_" + filename;
+//                 }
+//                 else {
+//                     path_temporal = null;
+//                 }
+// 
+//                 if (bool_prov_selected == false) {
+//                     data_proveedor_cliente = {
+//                         tipo_data: 'proveedor_cliente',
+//                         id_prov_interno: id_prov_interno,
+//                         proveedor: $('#inpt_nombre_proveedor').val(),
+//                         email: $('#inpt_email_proveedor').val(),
+//                         contacto: $('#inpt_contacto_proveedor').val(),
+//                         id_lada: $('#sel_ladaProv').val(),
+//                         telefono: $('#inpt_telefono_proveedor').val(),
+//                         direccion: $('#inpt_direccion_proveedor').val(),
+//                         productos: productos_prov,
+//                         invoice_path: path_temporal,
+//                     }
+//                     pedido.push(data_proveedor_cliente);
+// 
+//                     var data = {  //data de producto con proveedor nuevo
+//                         'id': i_interno_prod,
+//                         id_prov_interno: id_prov_interno,
+//                         'prod': $('#inpt_form_producto').val(),
+//                         'cant': cantidad,
+//                         'unidades': $('#selUnidades_prod_sp').val(),
+//                         'especificaciones': $('#inpt_form_especificaciones').val(),
+//                         'color_oem': $('#inpt_form_colores').val(),
+//                         'img_path': path_temporal_prov,
+//                     };
+//                     productos_prov.push(data);
+//                     id_prov_interno++;
+//                 } else {
+//                     var data = {  //data de producto con proveedor ya ingresado
+//                         'id': i_interno_prod,
+//                         id_prov_interno: id_provisional_prov_i,
+//                         'prod': $('#inpt_form_producto').val(),
+//                         'cant': cantidad,
+//                         'unidades': $('#selUnidades_prod_sp').val(),
+//                         'especificaciones': $('#inpt_form_especificaciones').val(),
+//                         'color_oem': $('#inpt_form_colores').val(),
+//                         'img_path': path_temporal_prov,
+//                     };
+//                     productos_prov.push(data);
+//                 }
+//                 i_interno_prod++;
+//             } else if (rad_prov == 'No') {
+//                 //Si existe imagen en el producto
+//                 if (file_Files != " ") {
+//                     var filename = file_Files.name;
+// 
+//                     var data_img = {
+//                         id: countimagen,
+//                         nombre_original: filename,
+//                         ruta: 'files/productos_sp/',
+//                     }
+// 
+//                     arreglo_imagenes.push(data_img);
+//                     frmData.append('' + countimagen + '', file_Files);
+//                     console.log(frmData.get('' + countimagen + ''));
+// 
+//                     path_temporal = countimagen + "_" + filename;
+//                 }
+//                 else {
+//                     path_temporal = null;
+//                 }
+// 
+//                 var data_producto_sp_cliente = {
+//                     id: countimagen,
+//                     tipo_data: 'productos_sp_cliente',
+//                     producto: $('#inpt_form_producto').val(),
+//                     cantidad: cantidad,
+//                     unidades: $('#selUnidades_prod_sp').val(),
+//                     color_oem: $('#inpt_form_colores').val(),
+//                     especificaciones: $('#inpt_form_especificaciones').val(),
+//                     img_path: path_temporal,
+//                 }
+//                 countimagen++;
+//                 pedido.push(data_producto_sp_cliente);
+// 
+//             }
+//             console.log(pedido);
+//             reset_formulario();
+//             funcSetp1();
         });
     },
 

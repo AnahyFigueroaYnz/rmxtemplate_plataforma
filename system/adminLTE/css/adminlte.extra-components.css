@@ -900,7 +900,7 @@
 .direct-chat-messages {
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0);
-  height: 250px;
+  height: 260px;
   overflow: auto;
   padding: 10px;
 }
@@ -1007,7 +1007,7 @@
   background-color: #343a40;
   bottom: 0;
   color: #fff;
-  height: 250px;
+  height: 260px;
   overflow: auto;
   position: absolute;
   top: 0;
