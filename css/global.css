@@ -102,23 +102,27 @@
 	width: auto !important;
 }
 
-.bnt-circle-cl {
+.btn-circle-plus {
+	color: #fff;
 	width: 90px;
 	height: 90px;
-	text-align: center;
-	padding: 7px;
-	font-size: 77px;
+	font-size: 0;
 	line-height: 0;
-	border-radius: 4rem;
-	margin-bottom: 0.6rem;
-	margin-top: 0.7rem;
+	position: relative;
+	text-align: center;
+	border-radius: 50%;
 	background: #28a745;
-	color: #fff;
+	padding: 5px 2px 5px 0px;
 }
 
-.bnt-circle-cl:hover {
+.btn-circle-plus:hover {
+	color: #1e7e34;
 	background: #fff;
-	color: #28a745;
+}
+
+.btn-circle-plus i {
+	font-size: 75px;
+	line-height: 75px;
 }
 
 .footer-image {

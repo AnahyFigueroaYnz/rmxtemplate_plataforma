@@ -971,14 +971,8 @@ var tablas = {
                 pageLength: 5,
                 order: [[5, "asc"]],
                 columnDefs: [{
-                    targets: 'levelAdmin',
-                    orderable: false,
-                    className: 'noVisible'
-                }, {
-                    targets: 'levelAsesor',
-                    orderable: false,
-                    visible: false,
-                    className: 'noVisible'
+                    targets: [4],
+                    orderable: false
                 }, {
                     targets: [5],
                     orderable: false,

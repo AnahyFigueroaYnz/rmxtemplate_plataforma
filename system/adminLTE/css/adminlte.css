@@ -33717,7 +33717,11 @@ a.close.disabled, a.disabled.mailbox-attachment-close {
   padding: 10px;
 }
 
-.small-box > a .inner {
+.small-box > a.inner{
+  padding: 30px 10px;
+}
+
+.small-box > .inner a{
   padding: 30px 10px;
 }
 
