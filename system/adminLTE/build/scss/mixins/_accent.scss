@@ -5,7 +5,6 @@
 // Accent Variant
 @mixin accent-variant($name, $color) {
   $link-color: $color;
-
   .accent-#{$name} {
     $link-hover-color: darken($color, 15%);
     $pagination-active-bg: $color;
@@ -16,7 +15,7 @@
     .nav-tabs .nav-link {
       color: $link-color;
 
-      @include hover() {
+      @include hover () {
         color: $link-hover-color;
       }
     }
@@ -77,7 +76,7 @@
         a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
           color: $sidebar-dark-color;
 
-          @include hover() {
+          @include hover () {
             color: $sidebar-dark-hover-color;
           }
         }
@@ -89,14 +88,13 @@
         a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link) {
           color: $sidebar-light-color;
 
-          @include hover() {
+          @include hover () {
             color: $sidebar-light-hover-color;
           }
         }
       }
     }
   }
-
   .dark-mode.accent-#{$name} {
     .page-item {
       .page-link {

@@ -64,11 +64,11 @@ table.dataTable.dtr-inline.collapsed>tbody>tr[role="row"]>td:first-child:before,
 	display: none;
 }
 
-.trash:hover {
+.deleteTask:hover {
 	color: rgb(197, 6, 6);
 }
 
-.trash {
+.deleteTask {
 	color: red;
 }
 
