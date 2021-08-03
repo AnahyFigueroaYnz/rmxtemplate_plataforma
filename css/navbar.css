@@ -113,8 +113,12 @@
 	cursor: pointer !important;
 }
 
+.layout-fixed .main-sidebar-custom .sidebar {
+	height: calc(100% - (10rem - 30px));
+}
+
 .layout-fixed .wrapper .sidebar {
-	height: calc(100% - (10rem - 35px)) !important;
+	height: calc(100% - (10rem - 30px));
 }
 
 .layout-fixed .main-sidebar-custom .sidebar-custom {
