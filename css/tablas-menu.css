@@ -1,0 +1,67 @@
+#tblTodosProy,
+#tblProyElimiados,
+#tblAsesores,
+#tblSearchProd,
+#tblSearchProd,
+#tblProveedores,
+#tblAgenciasAd,
+#tblAgentesCg {
+    border-collapse: separate;
+    border-spacing: 0px 20px;
+}
+
+#tblTodosProy tbody td,
+#tblProyElimiados tbody td,
+#tblAsesores tbody td,
+#tbl_clientes tbody td,
+#tblSearchProd tbody td,
+#tblProveedores tbody td,
+#tblAgenciasAd tbody td,
+#tblAgentesCg tbody td {
+    padding: 1rem 1rem;
+}
+
+
+table.dataTable.dtr-column > tbody > tr > td.dtr-control:before,
+table.dataTable.dtr-column > tbody > tr > th.dtr-control:before,
+table.dataTable.dtr-column > tbody > tr > td.control:before,
+table.dataTable.dtr-column > tbody > tr > th.control:before {
+    top: initial;
+    left: initial;
+    height: auto;
+    width: fit-content;
+    margin-top: 0em;
+    margin-left: 0em;
+    display: block;
+    position: inherit;
+    color: transparent;
+    border: 0;
+    border-radius: 50%;
+    box-shadow: none;
+    box-sizing: content-box;
+    text-align: center;
+    text-indent: 0 !important;
+    font-family: "Courier New", Courier, monospace;
+    line-height: 0;
+    content: url("/system/dataTable/details_open.png");
+    background-color: transparent;
+}
+table.dataTable.dtr-column > tbody > tr.parent td.dtr-control:before,
+table.dataTable.dtr-column > tbody > tr.parent th.dtr-control:before,
+table.dataTable.dtr-column > tbody > tr.parent td.control:before,
+table.dataTable.dtr-column > tbody > tr.parent th.control:before {
+    content: url("/system/dataTable/details_close.png");
+    background-color: transparent;
+}
+
+.td-text {
+    font-size: 14px;
+    font-weight: 500;
+}
+.badge-defin {
+    background-color: #adb5bd !important;
+}
+
+div.dataTables_wrapper div.dataTables_info {
+    padding-top: 0rem !important;
+}

@@ -787,11 +787,17 @@ var tablas = {
 
             /* Tablas Administradores y Asesores */
             /* Tabla de mis proyectos */
-            table = $("#tblMisProyectos")
-                .DataTable({
-                    dom: '<"row"<"col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-center"B><"col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 ml-auto"f>>rtip',
+            /* 
+            /* Tablas Administradores y Asesores */
+            /* Tabla de mis proyectos */
+            /* "<'row'<'col-sm-12 col-md-6'l><'col-sm-12 col-md-6'f>><'row'<'col-sm-12'tr>><'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>", */
+            /* "<'row'<'col-sm-12 col-md-7'B><'col-sm-12 col-md-5'f>>" + "<rt>" + "<'row'<'col-sm-12 col-md-5'i><'col-sm-12 col-md-7'p>>", */
+            /* Bfrtilp */
+            table = $("#tblMisProyectos").DataTable({
+                    dom: '<"row"<"col-sm-12 col-md-7 text-center"B><"col-sm-12 col-md-5 ml-auto"f>><"row"<"col-sm-12"tr>><"row"<"col-sm-12 col-md-5"i><"col-sm-12 col-md-7 ml-auto"p>>',
                     responsive: true,
                     autoWidth: true,
+                    processing: true,
                     pageLength: 3,
                     order: [[0, "desc"]],
                     columnDefs: [
@@ -898,49 +904,41 @@ var tablas = {
             $("#tblMisProyectos_filter input").attr("placeholder", "Buscar");
 
             /* Tabla todos los proyectos vista Admin */
-            table = $("#tblTodosProy")
-                .DataTable({
-                    dom:
-                        // '<"row"'+
-                        //     '<"col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-center"B>'+
-                        //     '<"col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 ml-auto"f>'+
-                        // '>rtip',
-                        '<"top"i>rt<"bottom"flp><"clear">',
-
-                    responsive: true,
-                    autoWidth: true,
-                    rowReorder: true,
-                    pageLength: 3,
-                    order: [[10, "desc"]],
-                    columnDefs: [{
-                        //     className: 'control',
-                        //     orderable: false,
-                        //     targets:   -1
-                        // },
-                        // {
+            table = $("#tblTodosProy").DataTable({
+                dom: '<"row"<"col-sm-12 col-md-4 text-center"B><"col-sm-12 col-md-4 ml-auto"f>><"row"<"col-sm-12"tr>><"row"<"col-sm-12 col-md-6"i><"col-sm-12 col-md-6 ml-auto"p>>',
+                responsive: {
+                        details: {
+                            targets: [0],
+                            type: "column",
+                            orderable: false,
+                        },
+                },
+                processing: true,
+                autoWidth: true,
+                pageLength: 3,
+                order: [[1, "desc"]],
+                columnDefs: [
+                        {
                             targets: [0],
                             orderable: false,
-                            className: 'reorder',
+                            className: "control",
                         },
                         {
                             targets: [1],
+                            visible: false,
                             orderable: false,
-                            // className: 'reorder',
-                        },
-                        {
-                            targets: [9],
-                            orderable: false,
+                            className: "noVisible",
                         },
                         {
                             targets: [10],
-                            visible: false,
                             orderable: false,
-                    }],
-                    lengthMenu: [
+                        },
+                ],
+                lengthMenu: [
                         [3, 5, 10, 25, 50, -1],
                         ["3", "5", "10", "25", "50", "Todo"],
-                    ],
-                    buttons: [
+                ],
+                buttons: [
                         {
                             extend: "pageLength",
                             className: "btn btn-outline-primary btn-sm border-buttons num-pag",
@@ -950,6 +948,7 @@ var tablas = {
                             text: '<i class="far fa-eye-slash"></i>',
                             className: "btn btn-outline-primary btn-sm border-buttons show-column",
                             columns: ":not(.noVisible)",
+                            // aiExclude: [ 0, 1 ]
                         },
                         {
                             extend: "collection",
@@ -988,8 +987,8 @@ var tablas = {
                                 },
                             ],
                         },
-                    ],
-                    language: {
+                ],
+                language: {
                         sProcessing: "Procesando...",
                         sLengthMenu: "Mostrar _MENU_ registros",
                         spageLength: "Mostrar _MENU_ registros",
@@ -1022,9 +1021,8 @@ var tablas = {
                                 "-1": "Todo",
                             },
                         },
-                    },
-                })
-                .columns.adjust();
+                },
+            }).columns.adjust();
             $("#tblTodosProy_filter input").attr("placeholder", "Buscar");
 
             /* Tabla asesores de la vista Admin */

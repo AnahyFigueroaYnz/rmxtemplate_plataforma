@@ -5378,10 +5378,10 @@ input[type="button"].btn-block {
 
 .page-link:hover {
   z-index: 2;
-  color: #0056b3;
+  color: #fff !important;
   text-decoration: none;
-  background-color: #e9ecef;
-  border-color: #dee2e6;
+  background-color: #007bff !important;
+  border-color: #0056b3 !important;
 }
 
 .page-link:focus {
