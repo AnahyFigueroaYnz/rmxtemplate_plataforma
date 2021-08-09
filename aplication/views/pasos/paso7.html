@@ -26,12 +26,12 @@
         <link rel="stylesheet" href="/css/bootstrap/buttons.bootstrap4.min.css" />
         <link rel="stylesheet" href="/css/bootstrap/bootstrap-table.min.css" />
         <link rel="stylesheet" href="/css/bootstrap/bootstrap-switch-button.css" />
+        <link rel="stylesheet" href="/css/bootstrap/responsive.bootstrap4.min.css" />
         <link rel="stylesheet" href="/css/bootstrap/bootstrap-switch-button.min.css" />
 
         <link rel="stylesheet" href="/system/dataTable/datatables.min.css" />
         <link rel="stylesheet" href="/system/dataTable/datatables/css/dataTables.bootstrap4.min.css" />
         <!-- <link rel="stylesheet" href="/system/dataTable/responsive/css/responsive.bootstrap4.min.css" /> -->
-        <link rel="stylesheet" href="/css/bootstrap/responsive.bootstrap4.min.css" />
         <!-- <link rel="stylesheet" href="/system/dataTable/buttons/css/buttons.bootstrap4.min.css" /> -->
 
         <link rel="stylesheet" href="/system/adminLTE/css/ionicons.min.css" />
@@ -68,7 +68,7 @@
         <link rel="stylesheet" href="/css/global.css" />
         <link rel="stylesheet" href="/css/navbar.css" />
 
-        <link rel="stylesheet" href="/css/tablas-menu.css" />
+        <link rel="stylesheet" href="/css/nuevo.css" />
 
         <script src="/js/popper/popper.js"></script>
         <script src="/js/sweetalert2/sweetalert2.js"></script>
@@ -124,7 +124,7 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="/aplication/proyectos-nuevo.html" class="nav-link">
+                                        <a href="/aplication/proyectos-nuevo.html" class="nav-link active">
                                             <i class="nav-icon fas fa-plus"></i>
                                             <p class="nav-titles">Nuevo</p>
                                         </a>
@@ -160,7 +160,7 @@
                                         </a>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="/aplication/proyectos-mis-concluidos.html" class="nav-link active">
+                                        <a href="/aplication/proyectos-mis-concluidos.html" class="nav-link">
                                             <i class="nav-icon fas fa-record-vinyl"></i>
                                             <p class="nav-titles">Mis proyectos concluidos</p>
                                         </a>
@@ -237,12 +237,12 @@
                     <div class="container-fluid">
                         <div class="row mb-2">
                             <div class="col-sm-6">
-                                <h1>Mis proyectos concluidos</h1>
+                                <h1>Nuevo proyecto</h1>
                             </div>
                             <div class="col-sm-6">
                                 <ol class="breadcrumb float-sm-right">
                                     <li class="breadcrumb-item"><a href="/aplication/index.html">Inicio</a></li>
-                                    <li class="breadcrumb-item active">Mis proyectos concluidos</li>
+                                    <li class="breadcrumb-item active">Nuevo proyecto</li>
                                 </ol>
                             </div>
                         </div>
@@ -250,80 +250,53 @@
                 </section>
                 <section class="content">
                     <div class="container-fluid">
-                        <div class="card shadow">
-                            <div class="card-header">
-                                <div class="card-tools">
-                                    <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                                        <i class="fas fa-minus"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                                        <i class="fas fa-times"></i>
-                                    </button>
+                        <div class="row" id="container-pedido" style="padding-bottom: 1rem;">
+                            <div class="col-12 col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                <div style="padding: 0rem 1rem;">
+                                    <form id="agregar_pedido">
+                                        <div id="step1"></div>
+                                        <div id="step2" style="display: none;"></div>
+                                        <div id="step3" style="display: none;"></div>
+                                        <div id="step4" style="display: none;"></div>
+                                        <div id="step5" style="display: none;"></div>
+                                        <div id="step6" style="padding: 6rem 0rem;display: none;"></div>
+                                    </form>
+                                    <div class="text-center" id="moveArrows" style="display: none;">
+                                        <a class="iconArrows" id="arrowBack" href="" style="display: none;"><i class="fas fa-arrow-left"></i></a>
+                                        <a class="iconArrows" id="arrowNext" href="" style="display: none;"><i class="fas fa-arrow-right"></i></a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="card-body" style="padding: 0">
-                                <div class="card m-0" style="border: 0; border-radius: 0; box-shadow: none">
-                                    <div class="card-body">
-                                        <div class="p-0">
-                                            <table id="tblTodosProy" class="table table-borderless responsive nowrap" style="width: 100%">
-                                                <thead>
-                                                    <tr>
-                                                        <th data-priority="0"></th>
-                                                        <th data-priority="10"></th>
-                                                        <th data-priority="1">#Folio</th>
-                                                        <th data-priority="2">Proyecto</th>
-                                                        <th data-priority="3">Estatus</th>
-                                                        <th data-priority="5">Cliente</th>
-                                                        <th data-priority="6">Asesor</th>
-                                                        <th data-priority="7">Fecha Salida</th>
-                                                        <th data-priority="8">Fecha Llegada</th>
-                                                        <th data-priority="9">Fecha Orden</th>
-                                                        <th data-priority="4" class="row-icons"></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr class="shadow border-row" id="tr_01" style="vertical-align: middle">
-                                                        <td style="vertical-align: middle"></td>
-                                                        <td style="vertical-align: middle; visibility: hidden">01</td>
-                                                        <td style="vertical-align: middle">
-                                                            <a href="/" style="margin-left: 0.5rem">
-                                                                <span class="td-text">2020-01</span>
-                                                            </a>
-                                                        </td>
-                                                        <td style="vertical-align: middle">
-                                                            <span class="td-text">Prueba V</span>
-                                                        </td>
-                                                        <td style="vertical-align: middle">
-                                                            <span class="badge badge-verde">Terminado</span>
-                                                        </td>
-                                                        <td style="vertical-align: middle">
-                                                            <span class="td-text">Alexey Moreno</span>
-                                                        </td>
-                                                        <td style="vertical-align: middle">
-                                                            <span class="td-text">Usuario</span>
-                                                        </td>
-                                                        <td style="vertical-align: middle">
-                                                            <span class="td-text">Por definir</span>
-                                                        </td>
-                                                        <td style="vertical-align: middle">
-                                                            <span class="td-text">Por definir</span>
-                                                        </td>
-                                                        <td style="vertical-align: middle">
-                                                            <span class="td-text">19/07/2021</span>
-                                                        </td>
-                                                        <td style="vertical-align: middle">
-                                                            <a type="button" href="#" data-id="05" class="eliminar_proyecto trashCan">
-                                                                <i class="fas fa-trash-alt"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
+                            <div class="col-12 col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 d-flex-partial cont-inicio" id="conten-productos">
+                                <div id="listaProductos" style="max-height: 120vh;overflow: auto;display: none;"></div>
+                                <div id="incioProductos" class="text-center">
+                                    <p class="icon-cardPedidos"><i class="fas fa-ship"></i></p>
+                                    <p class="text-cardPedidos">Estas listo para realizar <br> tu primera importación</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" id="container-final" style="padding: 7rem 0rem 8rem 0rem; display: none">
+                            <div class="col-12 d-flex-partial">
+                                <div class="text-center">
+                                    <div class="form-group text-center">
+                                        <p class="text-cardPedidos">
+                                            Hemos recibido la solicitud de tu pedido a la <br />
+                                            brevedad uno de nuestros asesores se estará <br />
+                                            comunicando contigo para dar seguimiento.
+                                        </p>
+                                    </div>
+                                    <div class="form-group text-center" style="margin: 1rem 0rem">
+                                        <a type="button" href="" class="btn btn-outline-success btn-sm btn-border" id="btnPedidos">Ir a mis pedidos</a>
+                                    </div>
+                                    <div class="form-group text-center" style="margin: 1rem 0rem">
+                                        <a type="button" href="" class="btn btn-outline-success btn-sm btn-border" id="btnNuevoPedido">Nuevo Pedido</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="modal fade" id="modalPedido" tabindex="-1" role="dialog" aria-hidden="true"></div>
                     </div>
                 </section>
             </div>
@@ -333,6 +306,8 @@
             <strong><a target="_blank" href="https://reachmx.com">ReachMX&#174;</a></strong>
             <div class="float-right d-none d-sm-inline-block"></div>
         </footer>
+
+        <script src="/js/nuevo.js"></script>
         <script src="/js/tablas-menu.js"></script>
         <script src="/js/mask/jquery.mask.js"></script>
         <script src="/js/popper/popper.min.js"></script>

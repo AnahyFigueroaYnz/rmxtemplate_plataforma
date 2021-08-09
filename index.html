@@ -31,6 +31,8 @@
 
         <link rel="stylesheet" href="/system/dataTable/datatables.min.css" />
         <link rel="stylesheet" href="/system/dataTable/datatables/css/dataTables.bootstrap4.min.css" />
+        <!-- <link rel="stylesheet" href="/system/dataTable/responsive/css/responsive.bootstrap4.min.css" /> -->
+        <link rel="stylesheet" href="/system/dataTable/rowreorder/css/rowReorder.dataTables.min.css" />
 
         <link rel="stylesheet" href="/system/adminLTE/css/ionicons.min.css" />
         <link rel="stylesheet" href="/system/adminLTE/css/adminlte.min.css" />
@@ -122,7 +124,7 @@
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="/" class="nav-link">
+                                        <a href="/aplication/proyectos-nuevo.html" class="nav-link">
                                             <i class="nav-icon fas fa-plus"></i>
                                             <p class="nav-titles">Nuevo</p>
                                         </a>
@@ -246,9 +248,9 @@
                             <div class="col-lg-2 col-6 dash-margins">
                                 <div class="small-box bg-white">
                                     <div class="inner" style="text-align: center">
-                                        <a href="/" class="btn btn-circle-plus"><i class="fas fa-plus-circle"></i></a>
+                                        <a href="/aplication/proyectos-nuevo.html" class="btn btn-circle-plus"><i class="fas fa-plus-circle"></i></a>
                                     </div>
-                                    <a href="/" class="small-box-footer">Nuevo proyecto</a>
+                                    <a href="/aplication/proyectos-nuevo.html" class="small-box-footer">Nuevo proyecto</a>
                                 </div>
                             </div>
                             <div class="col-lg-2 col-6 dash-margins">
@@ -379,7 +381,7 @@
                                                         <div class=""></div>
                                                     </div>
                                                 </div>
-                                                <canvas id="donutAdmin" class="chartjs-render-monitor" width="575" height="250"></canvas>
+                                                <canvas id="donutAdmin" class="chartjs-render-monitor" width="550" height="200"></canvas>
                                             </div>
                                         </div>
                                     </div>
@@ -403,53 +405,53 @@
                                                 <table id="tblSourcings" class="table table-borderless responsive" style="width: 100%">
                                                     <thead>
                                                         <tr>
-                                                            <th style="vertical-align: middle">Proyecto</th>
-                                                            <th style="vertical-align: middle">POD</th>
-                                                            <th style="vertical-align: middle">POA</th>
+                                                            <th class="align-td">Proyecto</th>
+                                                            <th class="align-td">POD</th>
+                                                            <th class="align-td">POA</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr class="shadow border-row" style="vertical-align: middle">
-                                                            <td style="vertical-align: middle">
+                                                        <tr class="shadow border-row align-td">
+                                                            <td class="align-td">
                                                                 <a href=""><span class="td-text">2021-01</span></a>
                                                             </td>
-                                                            <td style="vertical-align: middle">
+                                                            <td class="align-td">
                                                                 <span class="td-text">12/05/2021</span>
                                                             </td>
-                                                            <td style="vertical-align: middle">
+                                                            <td class="align-td">
                                                                 <span class="td-text">05/07/2021</span>
                                                             </td>
                                                         </tr>
-                                                        <tr class="shadow border-row" style="vertical-align: middle">
-                                                            <td style="vertical-align: middle">
+                                                        <tr class="shadow border-row align-td">
+                                                            <td class="align-td">
                                                                 <a href=""><span class="td-text">2021-01</span></a>
                                                             </td>
-                                                            <td style="vertical-align: middle">
+                                                            <td class="align-td">
                                                                 <span class="td-text">12/05/2021</span>
                                                             </td>
-                                                            <td style="vertical-align: middle">
+                                                            <td class="align-td">
                                                                 <span class="td-text">05/07/2021</span>
                                                             </td>
                                                         </tr>
-                                                        <tr class="shadow border-row" style="vertical-align: middle">
-                                                            <td style="vertical-align: middle">
+                                                        <tr class="shadow border-row align-td">
+                                                            <td class="align-td">
                                                                 <a href=""><span class="td-text">2021-01</span></a>
                                                             </td>
-                                                            <td style="vertical-align: middle">
+                                                            <td class="align-td">
                                                                 <span class="td-text">12/05/2021</span>
                                                             </td>
-                                                            <td style="vertical-align: middle">
+                                                            <td class="align-td">
                                                                 <span class="td-text">05/07/2021</span>
                                                             </td>
                                                         </tr>
-                                                        <tr class="shadow border-row" style="vertical-align: middle">
-                                                            <td style="vertical-align: middle">
+                                                        <tr class="shadow border-row align-td">
+                                                            <td class="align-td">
                                                                 <a href=""><span class="td-text">2021-01</span></a>
                                                             </td>
-                                                            <td style="vertical-align: middle">
+                                                            <td class="align-td">
                                                                 <span class="td-text">12/05/2021</span>
                                                             </td>
-                                                            <td style="vertical-align: middle">
+                                                            <td class="align-td">
                                                                 <span class="td-text">05/07/2021</span>
                                                             </td>
                                                         </tr>
@@ -461,7 +463,7 @@
                                     <div class="col-md-6 dash-margins">
                                         <div class="card">
                                             <div class="card-header">
-                                                <h5 class="card-title" style="margin-bottom: 0"><i class="fas fa-clipboard-list"></i> <span class="font-weight-bold letra"> Pendientes</span></h5>
+                                                <h5 class="card-title" style="margin-bottom: 0"><i class="fas fa-clipboard-list"></i> <span class="letra"> Pendientes</span></h5>
                                                 <div class="card-tools">
                                                     <button type="button" class="btn btn-tool" data-card-widget="collapse">
                                                         <i class="fas fa-minus"></i>
@@ -469,41 +471,55 @@
                                                 </div>
                                             </div>
                                             <div class="card-body" style="display: block">
-                                                <table id="tblPendientes" class="table table-borderless" style="width: 100%">
+                                                <div class="card-header border-0 text-right mb-n5 p-0">
+                                                    <a href="" class="newTask">Agregar Tarea</a>
+                                                </div>
+                                                <input id="taskCont" type="hidden" value="2" />
+                                                <table id="tblPendientes" class="table table-borderless responsive nowrap" style="width: 100%">
                                                     <thead>
                                                         <tr>
-                                                            <th></th>
-                                                            <th></th>
-                                                            <th></th>
-                                                            <th>Estatus</th>
-                                                            <th></th>
+                                                            <th data-priority="0"></th>
+                                                            <th data-priority="4" class="noVisible"></th>
+                                                            <th data-priority="1"></th>
+                                                            <th data-priority="2"></th>
+                                                            <th data-priority="3" class="row-icons"></th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr class="shadow border-row" id="tr_01" style="vertical-align: middle">
-                                                            <td>
-                                                                <i class="fas fa-ellipsis-v"></i>
-                                                                <i class="fas fa-ellipsis-v"></i>
+                                                        <tr class="shadow border-row align-td">
+                                                            <td class="align-td"></td>
+                                                            <td class="visible-td">01</td>
+                                                            <td class="align-td">
+                                                                <a id="btnCheck_01" class="btn btn-light btn-check btn-bf" data-id="01">&nbsp;&nbsp;</a>
                                                             </td>
-                                                            <td id="idTask" style="visibility: hidden">01</td>
-                                                            <td style="vertical-align: middle">
-                                                                <a id="btnCheck_01" class="btn btn-light btn-nuevo btn-check-bf" data-id="01"></a>
-                                                            </td>
-                                                            <td style="vertical-align: middle">
+                                                            <td class="align-td">
                                                                 <span id="task_01" class="badget-task">Actualizar perfil </span>
                                                                 <small id="limiteDate_01" class="badge badge-info badge-task"> 23/07/2021 </small>
                                                                 <small id="checkDate_01" class="badge badge-success badge-task hide-button"></small>
                                                             </td>
-                                                            <td style="vertical-align: middle">
-                                                                <a href="" type="button" class="editTask" data-id="01" data-toggle="modal" data-target="#modalTask"><i class="fas fa-edit"></i></a>
-                                                                <a href="" type="button" class="deleteTask" data-id="01"><i class="far fa-trash-alt"></i></a>
+                                                            <td class="align-td">
+                                                                <a href="" type="button" class="editTask" data-id="01"><i class="fas fa-edit"></i></a>
+                                                                <a href="" type="button" class="trashCan" data-id="01"><i class="far fa-trash-alt"></i></a>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="shadow border-row align-td">
+                                                            <td class="align-td"></td>
+                                                            <td class="visible-td">02</td>
+                                                            <td class="align-td">
+                                                                <a id="btnCheck_02" class="btn btn-light btn-check btn-bf" data-id="02">&nbsp;&nbsp;</a>
+                                                            </td>
+                                                            <td class="align-td">
+                                                                <span id="task_02" class="badget-task">Actualizar proyectos </span>
+                                                                <small id="limiteDate_02" class="badge badge-info badge-task"> 23/07/2021 </small>
+                                                                <small id="checkDate_02" class="badge badge-success badge-task hide-button"></small>
+                                                            </td>
+                                                            <td class="align-td">
+                                                                <a href="" type="button" class="editTask" data-id="02"><i class="fas fa-edit"></i></a>
+                                                                <a href="" type="button" class="trashCan" data-id="02"><i class="far fa-trash-alt"></i></a>
                                                             </td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
-                                            </div>
-                                            <div class="card-footer clearfix">
-                                                <a href="" id="btnAddTask" class="btn btn-sm btn-outline-primary btn-nuevo float-right" data-toggle="modal" data-target="#modalTask">Agregar Tarea</a>
                                             </div>
                                         </div>
                                     </div>
@@ -511,35 +527,32 @@
                             </div>
                         </div>
 
-                        <div class="modal fade" id="modalTask" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="taskModalLabel">
+                        <div class="modal fade" id="modalTask" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="taskModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 id="titleModal" class="modal-title text-uppercase title-color">Nuevo pendiente</h5>
-                                        <button type="button" class="close closeTask" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
+                                        <h5 id="titleModal" class="modal-title title-color">Nuevo pendiente</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                     </div>
                                     <form class="form-horizontal" id="agregarPendiente">
-                                        <div class="modal-body" style="padding: 0rem">
-                                            <div class="card-body cards-productos" style="padding-bottom: 0rem">
-                                                <div class="form-group row">
-                                                    <div class="col-md-8">
-                                                        <label class="detalle-base-lable">Pendiente</label>
-                                                        <input required id="txtTask" type="text" class="form-control form-control-sm borders" />
-                                                        <div id="val_txtTask" style="display: none; color: red">Debe ingresar el pendiente</div>
-                                                    </div>
-                                                    <div class="col-md-4">
-                                                        <label class="detalle-base-lable">Fecha Limite</label>
-                                                        <input required id="txtfechaLimite" type="date" max="3000-12-31" min="1950-01-01" class="form-control form-control-sm borders" />
-                                                        <div id="val_txtfechaLimite" style="display: none; color: red">Debe ingresar una fecha limite</div>
-                                                    </div>
+                                      <input type="hidden" id="idTask" value="0">
+                                        <div class="modal-body p-0">
+                                            <div class="card-body cards-productos pb-0">
+                                                <div class="form-group">
+                                                    <label class="font-weight-normal">Pendiente</label>
+                                                    <input required id="txtTask" type="text" class="form-control form-control-sm borders" />
+                                                    <div id="val_txtTask" class="valid-inputs" style="display: none;">Debe ingresar el pendiente</div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="font-weight-normal">Fecha Limite</label>
+                                                    <input required id="txtDate" type="date" max="3000-12-31" min="1950-01-01" class="form-control form-control-sm borders" />
+                                                    <div id="val_txtDate" class="valid-inputs" style="display: none;">Debe ingresar una fecha limite</div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="modal-footer d-flex justify-content-between">
-                                            <button type="button" class="btn btn-outline-secondary btn-sm btn-nuevo closeTask" data-dismiss="modal">Cancelar</button>
-                                            <button id="btnAgregar" type="submit" class="btn btn-outline-success btn-sm btn-nuevo">Agregar <i class="fas fa-check"></i></button>
+                                            <button type="button" class="btn btn-outline-secondary btn-sm btn-nuevo" data-dismiss="modal">Cancelar</button>
+                                            <button type="submit" class="btn btn-outline-success btn-sm btn-nuevo addTask" id="btn-task">Agregar</button>
                                         </div>
                                     </form>
                                 </div>
@@ -555,20 +568,19 @@
             <div class="float-right d-none d-sm-inline-block"></div>
         </footer>
 
-
         <!-- <script src="/js/tablas.js"></script> -->
         <script src="/js/dashboard.js"></script>
-        
+
         <!-- <script src="/js/tablas-menu.js"></script> -->
         <script src="/js/mask/jquery.mask.js"></script>
         <script src="/js/popper/popper.min.js"></script>
         <script src="/js/toastr/toastr.min.js"></script>
         <script src="/js/mask/jquery.mask.min.js"></script>
 
-        <script src="/js/chartJS/Chart.bundle.js"></script>
-        <script src="/js/chartJs/Chart.bundle.min.js"></script>
         <script src="/js/chartJs/Chart.js"></script>
         <script src="/js/chartJs/Chart.min.js"></script>
+        <script src="/js/chartJS/Chart.bundle.js"></script>
+        <script src="/js/chartJs/Chart.bundle.min.js"></script>
 
         <script src="/js/bootstrap/bootstrap-table.js"></script>
         <script src="/js/bootstrap/bootstrap-table.min.js"></script>
@@ -583,6 +595,7 @@
         <script src="/system/dataTable/responsive/js/dataTables.responsive.min.js"></script>
         <script src="/system/dataTable/datatables/js/dataTables.bootstrap4.min.js"></script>
         <script src="/system/dataTable/responsive/js/responsive.bootstrap4.min.js"></script>
+        <script src="/system/dataTable/rowreorder/js/dataTables.rowReorder.min.js"></script>
         <script src="/system/dataTable/jsZip/jszip.min.js"></script>
         <script src="/system/dataTable/pdfmake/vfs_fonts.js"></script>
         <script src="/system/dataTable/pdfmake/pdfmake.min.js"></script>
@@ -616,24 +629,23 @@
         <script src="/system/adminLTE/plugins/jquery/js/maps/jquery.vmap.world.js"></script>
         <script src="/system/adminLTE/plugins/jquery/js/jquery.overlayScrollbars.min.js"></script>
 
-		
         <script>
-			$(document).ready(function() { 
-            	$(window).on("resize", function () {
-            	    var winWidth = $(window).width();
-            	    if (winWidth < 576) {
-            	        console.log("Window Width: " + winWidth + "class used: col");
-            	    } else if (winWidth < 768) {
-            	        console.log("Window Width: " + winWidth + "class used: col-sm");
-            	    } else if (winWidth < 992) {
-            	        console.log("Window Width: " + winWidth + "class used: col-md");
-            	    } else if (winWidth < 1200) {
-            	        console.log("Window Width: " + winWidth + "class used: col-lg");
-            	    } else {
-            	        console.log("Window Width: " + winWidth + "class used: col-xl");
-            	    }
-            	});
-			});
+            $(document).ready(function () {
+                $(window).on("resize", function () {
+                    var winWidth = $(window).width();
+                    if (winWidth < 576) {
+                        console.log("Window Width: " + winWidth + "class used: col");
+                    } else if (winWidth < 768) {
+                        console.log("Window Width: " + winWidth + "class used: col-sm");
+                    } else if (winWidth < 992) {
+                        console.log("Window Width: " + winWidth + "class used: col-md");
+                    } else if (winWidth < 1200) {
+                        console.log("Window Width: " + winWidth + "class used: col-lg");
+                    } else {
+                        console.log("Window Width: " + winWidth + "class used: col-xl");
+                    }
+                });
+            });
         </script>
     </body>
 </html>

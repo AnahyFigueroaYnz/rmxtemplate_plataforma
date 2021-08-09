@@ -108,7 +108,7 @@ $(document).ready(function () {
                 sLengthMenu: "Mostrar _MENU_ registros",
                 spageLength: "Mostrar _MENU_ registros",
                 sZeroRecords: "No se encontraron resultados",
-                sEmptyTable: "Ningún dato disponible en esta tabla =(",
+                sEmptyTable: "Ningún proyecto disponible en esta seccion",
                 sInfo: "Registros del _START_ al _END_ de _TOTAL_ registros",
                 sInfoEmpty: "Registros del 0 al 0 de un total de 0 registros",
                 sInfoFiltered: "(filtrado de un total de _MAX_ registros)",
@@ -156,7 +156,7 @@ $(document).ready(function () {
             })
             .then((result) => {
                 if (result.isConfirmed) {
-                    //   swalWithBootstrapButtons.fire("Deleted!", "Your file has been deleted.", "success");
+                    
                     table.row($(this).parents("tr")).remove().draw();
                     Toast.fire({
                         icon: "success",
@@ -254,7 +254,7 @@ $(document).ready(function () {
                 sLengthMenu: "Mostrar _MENU_ registros",
                 spageLength: "Mostrar _MENU_ registros",
                 sZeroRecords: "No se encontraron resultados",
-                sEmptyTable: "Ningún dato disponible en esta tabla =(",
+                sEmptyTable: "Ningún proyecto disponible en esta seccion",
                 sInfo: "Registros del _START_ al _END_ de _TOTAL_ registros",
                 sInfoEmpty: "Registros del 0 al 0 de un total de 0 registros",
                 sInfoFiltered: "(filtrado de un total de _MAX_ registros)",
@@ -301,7 +301,7 @@ $(document).ready(function () {
             })
             .then((result) => {
                 if (result.isConfirmed) {
-                    //   swalWithBootstrapButtons.fire("Deleted!", "Your file has been deleted.", "success");
+                    
                     table.row($(this).parents("tr")).remove().draw();
                     Toast.fire({
                         icon: "success",
@@ -392,7 +392,7 @@ $(document).ready(function () {
                 sLengthMenu: "Mostrar _MENU_ registros",
                 spageLength: "Mostrar _MENU_ registros",
                 sZeroRecords: "No se encontraron resultados",
-                sEmptyTable: "Ningún dato disponible en esta tabla =(",
+                sEmptyTable: "Ningún asesor disponible al momento",
                 sInfo: "Registros del _START_ al _END_ de _TOTAL_ registros",
                 sInfoEmpty: "Registros del 0 al 0 de un total de 0 registros",
                 sInfoFiltered: "(filtrado de un total de _MAX_ registros)",
@@ -504,7 +504,7 @@ $(document).ready(function () {
                 sLengthMenu: "Mostrar _MENU_ registros",
                 spageLength: "Mostrar _MENU_ registros",
                 sZeroRecords: "No se encontraron resultados",
-                sEmptyTable: "Ningún dato disponible en esta tabla =(",
+                sEmptyTable: "Ningún cliente disponible al momento",
                 sInfo: "Registros del _START_ al _END_ de _TOTAL_ registros",
                 sInfoEmpty: "Registros del 0 al 0 de un total de 0 registros",
                 sInfoFiltered: "(filtrado de un total de _MAX_ registros)",
@@ -620,7 +620,7 @@ $(document).ready(function () {
                 sLengthMenu: "Mostrar _MENU_ registros",
                 spageLength: "Mostrar _MENU_ registros",
                 sZeroRecords: "No se encontraron resultados",
-                sEmptyTable: "Ningún dato disponible en esta tabla =(",
+                sEmptyTable: "Ningún proveedor disponible al momento",
                 sInfo: "Registros del _START_ al _END_ de _TOTAL_ registros",
                 sInfoEmpty: "Registros del 0 al 0 de un total de 0 registros",
                 sInfoFiltered: "(filtrado de un total de _MAX_ registros)",
@@ -652,6 +652,33 @@ $(document).ready(function () {
         })
         .columns.adjust();
     $("#tblProveedores input").attr("placeholder", "Buscar");
+
+    $("#tblProveedores").on("click", "a.eliminar_proveedor", function (e) {
+        e.preventDefault();
+
+        swalWithBootstrapButtons
+            .fire({
+                title: "¿Seguro que deseas eliminar este proveedor?",
+                text: "¡No podrás revertir esto!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: "Si",
+                cancelButtonText: "Cancelar.",
+                reverseButtons: false,
+            })
+            .then((result) => {
+                if (result.isConfirmed) {
+                    
+                    table.row($(this).parents("tr")).remove().draw();
+                    Toast.fire({
+                        icon: "success",
+                        title: "Proveedor y productos eliminados correctamente",
+                    });
+                } else if (result.dismiss === Swal.DismissReason.cancel) {
+                    Swal.DismissReason.cancel;
+                }
+            });
+    });
 
     table = $("#tblSearchProd")
         .DataTable({
@@ -732,7 +759,7 @@ $(document).ready(function () {
                 sLengthMenu: "Mostrar _MENU_ registros",
                 spageLength: "Mostrar _MENU_ registros",
                 sZeroRecords: "No se encontraron resultados",
-                sEmptyTable: "Ningún dato disponible en esta tabla =(",
+                sEmptyTable: "Ningún producto disponible al momento",
                 sInfo: "Registros del _START_ al _END_ de _TOTAL_ registros",
                 sInfoEmpty: "Registros del 0 al 0 de un total de 0 registros",
                 sInfoFiltered: "(filtrado de un total de _MAX_ registros)",
@@ -764,33 +791,6 @@ $(document).ready(function () {
         })
         .columns.adjust();
     $("#tblSearchProd input").attr("placeholder", "Buscar");
-
-    $("#tblProveedores").on("click", "a.eliminar_proveedor", function (e) {
-        e.preventDefault();
-
-        swalWithBootstrapButtons
-            .fire({
-                title: "¿Seguro que deseas eliminar este proveedor?",
-                text: "¡No podrás revertir esto!",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonText: "Si",
-                cancelButtonText: "Cancelar.",
-                reverseButtons: false,
-            })
-            .then((result) => {
-                if (result.isConfirmed) {
-                    //   swalWithBootstrapButtons.fire("Deleted!", "Your file has been deleted.", "success");
-                    table.row($(this).parents("tr")).remove().draw();
-                    Toast.fire({
-                        icon: "success",
-                        title: "Proveedor eliminado correctamente",
-                    });
-                } else if (result.dismiss === Swal.DismissReason.cancel) {
-                    Swal.DismissReason.cancel;
-                }
-            });
-    });
 
     table = $("#tblAgentesCg")
         .DataTable({
@@ -875,7 +875,7 @@ $(document).ready(function () {
                 sLengthMenu: "Mostrar _MENU_ registros",
                 spageLength: "Mostrar _MENU_ registros",
                 sZeroRecords: "No se encontraron resultados",
-                sEmptyTable: "Ningún dato disponible en esta tabla =(",
+                sEmptyTable: "Ningún agente disponible al momento",
                 sInfo: "Registros del _START_ al _END_ de _TOTAL_ registros",
                 sInfoEmpty: "Registros del 0 al 0 de un total de 0 registros",
                 sInfoFiltered: "(filtrado de un total de _MAX_ registros)",
@@ -907,7 +907,7 @@ $(document).ready(function () {
         })
         .columns.adjust();
     $("#tblAgentesCg input").attr("placeholder", "Buscar");
-    $("#tblAgentesCg").on("click", "a.eliminar_proyecto", function (e) {
+    $("#tblAgentesCg").on("click", "a.eliminar_agente", function (e) {
         e.preventDefault();
 
         swalWithBootstrapButtons
@@ -922,7 +922,7 @@ $(document).ready(function () {
             })
             .then((result) => {
                 if (result.isConfirmed) {
-                    //   swalWithBootstrapButtons.fire("Deleted!", "Your file has been deleted.", "success");
+                    
                     table.row($(this).parents("tr")).remove().draw();
                     Toast.fire({
                         icon: "success",
@@ -1017,7 +1017,7 @@ $(document).ready(function () {
                 sLengthMenu: "Mostrar _MENU_ registros",
                 spageLength: "Mostrar _MENU_ registros",
                 sZeroRecords: "No se encontraron resultados",
-                sEmptyTable: "Ningún dato disponible en esta tabla =(",
+                sEmptyTable: "Ningúna agencia disponible al momento",
                 sInfo: "Registros del _START_ al _END_ de _TOTAL_ registros",
                 sInfoEmpty: "Registros del 0 al 0 de un total de 0 registros",
                 sInfoFiltered: "(filtrado de un total de _MAX_ registros)",
@@ -1049,7 +1049,7 @@ $(document).ready(function () {
         })
         .columns.adjust();
     $("#tblAgenciasAd input").attr("placeholder", "Buscar");
-    $("#tblAgenciasAd").on("click", "a.eliminar_proyecto", function (e) {
+    $("#tblAgenciasAd").on("click", "a.eliminar_agencia", function (e) {
         e.preventDefault();
 
         swalWithBootstrapButtons
@@ -1064,7 +1064,7 @@ $(document).ready(function () {
             })
             .then((result) => {
                 if (result.isConfirmed) {
-                    //   swalWithBootstrapButtons.fire("Deleted!", "Your file has been deleted.", "success");
+                    
                     table.row($(this).parents("tr")).remove().draw();
                     Toast.fire({
                         icon: "success",
