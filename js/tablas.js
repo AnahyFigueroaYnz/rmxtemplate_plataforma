@@ -1287,7 +1287,7 @@ var tablas = {
             $("#tblProyectoEliminado_filter input").attr("placeholder", "Buscar");
 
             /* Tabla de clientes de la vista Admin */
-            table = $("#tbl_clientes")
+            table = $("#tblClientes")
                 .DataTable({
                     dom: '<"row"<"col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-center"B><"col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 ml-auto"f>>rtip',
                     responsive: true,
@@ -1391,7 +1391,7 @@ var tablas = {
                     },
                 })
                 .columns.adjust();
-            $("#tbl_clientes_filter input").attr("placeholder", "Buscar");
+            $("#tblClientes_filter input").attr("placeholder", "Buscar");
 
             /* Tabla de los proyectos correspondientes al cliente */
             table = $("#tblProyCleinte")

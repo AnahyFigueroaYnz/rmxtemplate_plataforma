@@ -407,7 +407,7 @@ $(document).ready(function () {
         .columns.adjust();
     $("#tblAsesores_filter input").attr("placeholder", "Buscar");
 
-    table = $("#tbl_clientes")
+    table = $("#tblClientes")
         .DataTable({
             dom: '<"row"<"col-sm-12 col-md-4 text-center align-self-center"B><"col-sm-12 col-md-4 ml-auto align-self-center"f>><"row"<"col-sm-12"tr>><"row mt-3"<"col-sm-12 col-md-6 align-self-center"i><"col-sm-12 col-md-6 ml-auto align-self-center"p>>',
             responsive: {
@@ -517,7 +517,7 @@ $(document).ready(function () {
             },
         })
         .columns.adjust();
-    $("#tbl_clientes_filter input").attr("placeholder", "Buscar");
+    $("#tblClientes_filter input").attr("placeholder", "Buscar");
 
     table = $("#tblProveedores")
         .DataTable({

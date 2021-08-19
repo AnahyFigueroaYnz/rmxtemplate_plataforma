@@ -755,7 +755,7 @@ $(document).ready(function () {
             txtProveedor = $("#txtProveedor").val();
 
             const tr = $(
-                '<tr class="shadow border-row" id="tr_05" style="vertical-align: middle">' +
+                '<tr class="shadow border-row align-td" id="tr_05">' +
                     '<td class="align-td"></td>' +
                     '<td class="align-td">' +
                         '<a href="/href="/aplication/proveedores-detalle.html"" style="margin-left: 0.5rem">' +
