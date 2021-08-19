@@ -1,56 +1,58 @@
 var table;
-var valAgenteC = false;
-var valAgente = false;
-var valCarga = false;
-var countAg = $("#txtCountAg").val();
-var countAgente = $("#txtCountAgente").val();
-var countCarga = $("#txtCountCarga").val();
+var valProvs = false;
+var valProv = false;
+var valContacto = false;
+var valProductos = false;
+var countProveedor = $("#txtCountProveedor").val();
+var countContacto = $("#txtCountContacto").val();
+var countProducto = $("#txtCountProducto").val();
 
 // funcion para convertir un numero en formato string a numero con comas y decimales
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(?:\d{3})+(?!\d))/g, ",");
 }
 
-function validarAgenteC() {
-    valEmpresa = $("#txtEmpresa").val();
-    valAgLCL = $("#txtAgLCL").val();
-    valAg20FCL = $("#txtAg20FCL").val();
-    valAg40FCL = $("#txtAg40FCL").val();
-
-    if (valEmpresa == "") {
-        $("#val_txtAgLCL").css("display", "");
-    } else if (valEmpresa != "") {
-        $("#val_txtAgLCL").css("display", "none");
+function validarProveedores() {
+    valProveedor = $("#txtProveedores").val();
+    valDireccion = $("#txtDireccion").val();
+    valProdProv = $("#txtProdProv").val();
+    valFracAran = $("#txtFracAran").val();
+    
+    if (valProveedor == "") {
+        $("#val_txtProveedores").css("display", "");
+    } else if (valProveedor != "") {
+        $("#val_txtProveedores").css("display", "none");
+    }
+    
+    if (valDireccion == "") {
+        $("#val_txtDireccion").css("display", "");
+    } else if (valDireccion != "") {
+        $("#val_txtDireccion").css("display", "none");
     }
 
-    if (valAgLCL == "") {
-        $("#val_txtAgLCL").css("display", "");
-    } else if (valAgLCL != "") {
-        $("#val_txtAgLCL").css("display", "none");
+    if (valProdProv == "") {
+        $("#val_txtProdProv").css("display", "");
+    } else if (valProdProv != "") {
+        $("#val_txtProdProv").css("display", "none");
     }
 
-    if (valAg20FCL == "") {
-        $("#val_txtAg20FCL").css("display", "");
-    } else if (valAg20FCL != "") {
-        $("#val_txtAg20FCL").css("display", "none");
+    if (valFracAran == "") {
+        $("#val_txtFracAran").css("display", "");
+    } else if (valFracAran != "") {
+        $("#val_txtFracAran").css("display", "none");
     }
 
-    if (valAg40FCL == "") {
-        $("#val_txtAg40FCL").css("display", "");
-    } else if (valAg40FCL != "") {
-        $("#val_txtAg40FCL").css("display", "none");
-    }
 
-    if (valEmpresa != "" && valAgLCL != "" && valAg20FCL != ""  && valAg40FCL != "") {
-        valAgenteC = true;
+    if (valProveedor != ""  && valDireccion != "" && valProdProv != ""  && valFracAran != "") {
+        valProvs = true;
     } else {
-        valAgenteC = false;
+        valProvs = false;
     }
 }
 
-function validarAgente() {
+function validarContacto() {
     valLada = $("#selLada").val();
-    valAgente = $("#txtAgente").val();
+    valContacto = $("#txtContacto").val();
     valCorreo = $("#txtCorreo").val();
     valTelefono = $("#txtTelefono").val();
 
@@ -60,10 +62,10 @@ function validarAgente() {
         $("#val_selLada").css("display", "none");
     }
 
-    if (valAgente == "") {
-        $("#val_txtAgente").css("display", "");
-    } else if (valAgente != "") {
-        $("#val_txtAgente").css("display", "none");
+    if (valContacto == "") {
+        $("#val_txtContacto").css("display", "");
+    } else if (valContacto != "") {
+        $("#val_txtContacto").css("display", "none");
     }
 
     if (valCorreo == "") {
@@ -78,40 +80,56 @@ function validarAgente() {
         $("#val_txtTelefono").css("display", "none");
     }
 
-    if (valLada != null && valAgente != "" && valCorreo != "" && valTelefono != "") {
-        valAgente = true;
+    if (valLada != null && valContacto != "" && valCorreo != "" && valTelefono != "") {
+        valContacto = true;
     } else {
-        valAgente = false;
+        valContacto = false;
     }
 }
 
-function validarCarga() {
-    val20FCL = $("#txt20FCL").val();
-    val40FCL = $("#txt40FCL").val();
-    valLCL = $("#txtLCL").val();
-
-    if (val20FCL == "") {
-        $("#val_txt20FCL").css("display", "");
-    } else if (val20FCL != "") {
-        $("#val_txt20FCL").css("display", "none");
+function validarProveedor() {
+    valProveedor = $("#txtProveedor").val();
+    valProvDirec = $("#txtProvDirec").val();
+    
+    if (valProvd == "") {
+        $("#val_txtProveedor").css("display", "");
+    } else if (valProveedor != "") {
+        $("#val_txtProveedor").css("display", "none");
+    }
+    
+    if (valProvDirec == "") {
+        $("#val_txtProvDirec").css("display", "");
+    } else if (valProvDirec != "") {
+        $("#val_txtProvDirec").css("display", "none");
     }
 
-    if (val40FCL == "") {
-        $("#val_txt40FCL").css("display", "");
-    } else if (val40FCL != "") {
-        $("#val_txt40FCL").css("display", "none");
-    }
-
-    if (valLCL == "") {
-        $("#val_txtLCL").css("display", "");
-    } else if (valLCL != "") {
-        $("#val_txtLCL").css("display", "none");
-    }
-
-    if (val20FCL != "" && val40FCL != "" && valLCL != "") {
-        valCarga = true;
+    if (valProveedor != "" && valProvDirec != "") {
+        valProv = true;
     } else {
-        valCarga = false;
+        valProv = false;
+    }
+}
+
+function validarProducto() {
+    valProducto = $("#txtProducto").val();
+    valFraccion = $("#txtFraccion").val();
+
+    if (valProducto == "") {
+        $("#val_txtProducto").css("display", "");
+    } else if (valProducto != "") {
+        $("#val_txtProducto").css("display", "none");
+    }
+
+    if (valFraccion == "") {
+        $("#val_txtFraccion").css("display", "");
+    } else if (valFraccion != "") {
+        $("#val_txtFraccion").css("display", "none");
+    }
+
+    if (valProducto != "" && valFraccion != "") {
+        valProv = true;
+    } else {
+        valProv = false;
     }
 }
 
@@ -120,21 +138,21 @@ $(document).ready(function () {
 
     var dataLada = $("#dataLada").html();
     var dataStatus = $("#dataStatus").val();
-    var dataAgente = $("#dataAgente").html();
+    var dataContacto = $("#dataContacto").html();
     var dataCorreo = $("#dataCorreo").html();
     var dataTelefono = $("#dataTelefono").html();
 
     var selLada = $("#selLada").val();
     var selEstatus = $("#selEstatus").val();
-    var txtAgente = $("#txtAgente").val();
+    var txtContacto = $("#txtContacto").val();
     var txtCorreo = $("#txtCorreo").val();
     var txtTelefono = $("#txtTelefono").val();
     
-    $("#txt20FCL").inputmask({alias: "currency", prefix: '', rightAlign: false, allowMinus:false});
-    $("#txt40FCL").inputmask({alias: "currency", prefix: '', rightAlign: false, allowMinus:false});
-    $("#txtLCL").inputmask({alias: "currency", prefix: '', rightAlign: false, allowMinus:false});
+    
+    $("#txtFracAran").inputmask("99999999",{ rightAlign: false, allowMinus:false, placeholder: "00000000" });
+    $("#txtFraccion").inputmask("99999999",{ rightAlign: false, allowMinus:false, placeholder: "00000000" });
 
-    table = $("#tblAgentesCarga")
+    table = $("#tblContacto")
         .DataTable({
             dom: '<tr><"mt-3 ml-auto"p>',
             responsive: {
@@ -202,12 +220,12 @@ $(document).ready(function () {
             },
         })
         .columns.adjust();
-    $("#tblAgentesCarga").on("click", "a.trashCan", function (e) {
+    $("#tblContacto").on("click", "a.trashCan", function (e) {
         e.preventDefault();
 
         swalWithBootstrapButtons
             .fire({
-                title: "¿Seguro que deseas eliminar este agente?",
+                title: "¿Seguro que deseas eliminar este contacto?",
                 text: "¡No podrás revertir esto!",
                 icon: "warning",
                 showCancelButton: true,
@@ -220,7 +238,7 @@ $(document).ready(function () {
                     table.row($(this).parents("tr")).remove().draw();
                     Toast.fire({
                         icon: "success",
-                        title: "Agente eliminado correctamente",
+                        title: "Contacto eliminado correctamente",
                     });
                 } else if (result.dismiss === Swal.DismissReason.cancel) {
                     Swal.DismissReason.cancel;
@@ -228,7 +246,7 @@ $(document).ready(function () {
             });
     });
 
-    table = $("#tblCarga")
+    table = $("#tblProdProv")
         .DataTable({
             dom: '<tr><"mt-3 ml-auto"p>',
             responsive: {
@@ -249,7 +267,7 @@ $(document).ready(function () {
                     className: "control",
                 },
                 {
-                    targets: [4],
+                    targets: [3],
                     orderable: false,
                 },
             ],
@@ -297,12 +315,12 @@ $(document).ready(function () {
         })
         .columns.adjust();
 
-    $("#tblCarga").on("click", "a.trashCan", function (e) {
+    $("#tblProdProv").on("click", "a.trashCan", function (e) {
         e.preventDefault();
 
         swalWithBootstrapButtons
             .fire({
-                title: "¿Seguro que deseas eliminar esta carga?",
+                title: "¿Seguro que deseas eliminar este producto?",
                 text: "¡No podrás revertir esto!",
                 icon: "warning",
                 showCancelButton: true,
@@ -315,7 +333,7 @@ $(document).ready(function () {
                     table.row($(this).parents("tr")).remove().draw();
                     Toast.fire({
                         icon: "success",
-                        title: "Carga eliminado correctamente",
+                        title: "Producto eliminado correctamente",
                     });
                 } else if (result.dismiss === Swal.DismissReason.cancel) {
                     Swal.DismissReason.cancel;
@@ -339,31 +357,31 @@ $(document).ready(function () {
         }
     });
 
-    $(document).on("click", "#tabsCargas", function (event) {
+    $(document).on("click", "#tabsProductos", function (event) {
         event.preventDefault();
 
-        $("#tabCargas").removeClass("hidden");
-        $("#tabAgentes").addClass("hidden");
+        $("#tabProductos").removeClass("hidden");
+        $("#tabContactos").addClass("hidden");
         $($.fn.dataTable.tables(true)).DataTable().responsive.recalc();
     });
 
-    $(document).on("click", "#tabsAgentes", function (event) {
+    $(document).on("click", "#tabsContactos", function (event) {
         event.preventDefault();
 
-        $("#tabAgentes").removeClass("hidden");
-        $("#tabCargas").addClass("hidden");
+        $("#tabContactos").removeClass("hidden");
+        $("#tabProductos").addClass("hidden");
         $($.fn.dataTable.tables(true)).DataTable().responsive.recalc();
     });
 
-    $(document).on("click", ".editAgente", function (event) {
+    $(document).on("click", ".editContacto", function (event) {
         event.preventDefault();
         var id = $(this).data("id");
 
-        $("#modalAgente").modal();
-        $("#titleModalA").html("Editar agente");
-        $("#btn-agente").html("Guardar");
-        $("#btn-agente").addClass("saveAgente");
-        $("#btn-agente").removeClass("addAgente");
+        $("#modalContacto").modal();
+        $("#titleModalA").html("Editar Contacto");
+        $("#btn-contacto").html("Guardar");
+        $("#btn-contacto").addClass("saveContacto");
+        $("#btn-contacto").removeClass("addContacto");
 
         if (dataLada == "(+ 1)" || dataLada == "(+ 52)" || dataLada == "(+ 66)" || dataLada == "(+ 84)" || dataLada == "(+ 91)") {
             $("#txtTelefono").removeAttr("disabled");
@@ -373,16 +391,16 @@ $(document).ready(function () {
             $("#txtTelefono").inputmask({ mask: "(999) 9999-9999" });
         }
 
-        if (countAgente == 1) {
-            $(".fmAgente").removeClass("col-9");
-            $(".fmAgente").addClass("col-12");
+        if (countContacto == 1) {
+            $(".fmContacto").removeClass("col-9");
+            $(".fmContacto").addClass("col-12");
             $(".fmStatus").addClass("hidden");
 
             $("#selEstatus").attr("disabled", "true");
             $("#selEstatus option[value='1']").attr("selected", true);
         } else {
-            $(".fmAgente").removeClass("col-12");
-            $(".fmAgente").addClass("col-9");
+            $(".fmContacto").removeClass("col-12");
+            $(".fmContacto").addClass("col-9");
             $(".fmStatus").removeClass("hidden");
 
             $("#selEstatus").removeAttr("disabled");
@@ -393,42 +411,42 @@ $(document).ready(function () {
             }
         }
 
-        $("#idAgente").val(id);
-        $("#txtAgente").val(dataAgente);
+        $("#idContacto").val(id);
+        $("#txtContacto").val(dataContacto);
         $("#txtCorreo").val(dataCorreo);
         $("#txtTelefono").val(dataTelefono);
         $("#selLada option[value='" + dataLada + "']").attr("selected", true);
     });
 
-    $(document).on("click", ".newAgente", function (event) {
+    $(document).on("click", ".newContacto", function (event) {
         event.preventDefault();
 
-        $("#modalAgente").modal();
-        $("#titleModalA").html("Nuevo agente");
-        $("#btn-agente").html("Agregar");
-        $("#btn-agente").addClass("addAgente");
-        $("#btn-agente").removeClass("saveAgente");
+        $("#modalContacto").modal();
+        $("#titleModalA").html("Nuevo Contacto");
+        $("#btn-contacto").html("Agregar");
+        $("#btn-contacto").addClass("addContacto");
+        $("#btn-contacto").removeClass("saveContacto");
     });
 
-    $(document).on("click", ".saveAgente", function (event) {
+    $(document).on("click", ".saveContacto", function (event) {
         event.preventDefault();
-        validarAgente();
+        validarContacto();
 
-        id = $("#idAgente").val();
+        id = $("#idContacto").val();
         selLada = $("#selLada").val();
-        txtAgente = $("#txtAgente").val();
+        txtContacto = $("#txtContacto").val();
         txtCorreo = $("#txtCorreo").val();
         selEstatus = $("#selEstatus").val();
         txtTelefono = $("#txtTelefono").val();
 
-        if (valAgente == true) {
+        if (valContacto == true) {
             if (selEstatus == 1) {
                 $("#dataLada").html(selLada);
                 $("#dataStatus").val(selEstatus);
-                $("#dataAgente").html(txtAgente);
+                $("#dataContacto").html(txtContacto);
                 $("#dataCorreo").html(txtCorreo);
                 $("#dataTelefono").html(txtTelefono);
-                $("#dataIdAgente").attr("data-id", id);
+                $("#dataIdContacto").attr("data-id", id);
 
                 $(".dataStatus_" + id + "").html("Definido");
             } else {
@@ -436,35 +454,35 @@ $(document).ready(function () {
             }
 
             $(".dataLada_" + id + "").html(selLada);
-            $(".dataAgente_" + id + "").html(txtAgente);
+            $(".dataContacto_" + id + "").html(txtContacto);
             $(".dataCorreo_" + id + "").html(txtCorreo);
             $(".dataTelefono_" + id + "").html(txtTelefono);
 
             Toast.fire({
                 icon: "success",
-                title: "Agente actualizado correctamente",
+                title: "Contacto actualizado correctamente",
             });
 
-            $("#modalAgente").modal("hide");
+            $("#modalContacto").modal("hide");
             $("#selLada").val();
-            $("#idAgente").val();
-            $("#txtAgente").val();
+            $("#idContacto").val();
+            $("#txtContacto").val();
             $("#txtCorreo").val();
             $("#selEstatus").val();
             $("#txtTelefono").val();
         }
     });
 
-    $(document).on("click", ".addAgente", function (event) {
+    $(document).on("click", ".addContacto", function (event) {
         event.preventDefault();
-        validarAgente();
+        validarContacto();
 
-        if (valAgente == true) {
-            countAgente++;
+        if (valContacto == true) {
+            countContacto++;
 
-            id = "0" + countAgente;
+            id = "0" + countContacto;
             selLada = $("#selLada").val();
-            txtAgente = $("#txtAgente").val();
+            txtContacto = $("#txtContacto").val();
             txtCorreo = $("#txtCorreo").val();
             selEstatus = $("#selEstatus").val();
             txtTelefono = $("#txtTelefono").val();
@@ -474,19 +492,19 @@ $(document).ready(function () {
 
                 $("#dataLada").html(selLada);
                 $("#dataStatus").val(selEstatus);
-                $("#dataAgente").html(txtAgente);
+                $("#dataContacto").html(txtContacto);
                 $("#dataCorreo").html(txtCorreo);
                 $("#dataTelefono").html(txtTelefono);
-                $("#dataIdAgente").attr("data-id", id);
+                $("#dataIdContacto").attr("data-id", id);
 
                 const tr = $(
                     '<tr class="shadow border-row align-td">' +
                         '<td class="align-td"></td>' +
                         '<td class="align-td">' +
-                        '<span class="dataAgente_' +
+                        '<span class="dataContacto_' +
                         id +
                         ' td-text">' +
-                        txtAgente +
+                        txtContacto +
                         "</span>" +
                         "</td>" +
                         '<td class="align-td">' +
@@ -514,7 +532,7 @@ $(document).ready(function () {
                         ' td-text tdStatus selected">Definido</span>' +
                         "</td>" +
                         '<td class="icons-td">' +
-                        '<a href="" type="button" class="editAgente" data-id="' +
+                        '<a href="" type="button" class="editContacto" data-id="' +
                         id +
                         '"><i class="fas fa-edit"></i></a>' +
                         '<a href="" type="button" class="trashCan" data-id="' +
@@ -524,17 +542,17 @@ $(document).ready(function () {
                         "</tr>",
                 );
 
-                $("#txtCountAgente").val(countAgente);
-                $("#tblAgentesCarga").DataTable().row.add(tr[0]).draw(false);
+                $("#txtCountContacto").val(countContacto);
+                $("#tblContacto").DataTable().row.add(tr[0]).draw(false);
             } else {
                 const tr = $(
                     '<tr class="shadow border-row align-td">' +
                         '<td class="align-td"></td>' +
                         '<td class="align-td">' +
-                        '<span class="dataAgente_' +
+                        '<span class="dataContacto_' +
                         id +
                         ' td-text">' +
-                        txtAgente +
+                        txtContacto +
                         "</span>" +
                         "</td>" +
                         '<td class="align-td">' +
@@ -562,7 +580,7 @@ $(document).ready(function () {
                         ' td-text tdStatus"></span>' +
                         "</td>" +
                         '<td class="icons-td">' +
-                        '<a href="" type="button" class="editAgente" data-id="' +
+                        '<a href="" type="button" class="editContacto" data-id="' +
                         id +
                         '"><i class="fas fa-edit"></i></a>' +
                         '<a href="" type="button" class="trashCan" data-id="' +
@@ -572,153 +590,176 @@ $(document).ready(function () {
                         "</tr>",
                 );
 
-                $("#txtCountAgente").val(countAgente);
-                $("#tblAgentesCarga").DataTable().row.add(tr[0]).draw(false);
+                $("#txtCountContacto").val(countContacto);
+                $("#tblContacto").DataTable().row.add(tr[0]).draw(false);
             }
 
             Toast.fire({
                 icon: "success",
-                title: "Agente actualizado correctamente",
+                title: "Contacto actualizado correctamente",
             });
 
-            $("#modalAgente").modal("hide");
+            $("#modalContacto").modal("hide");
             $("#selLada").val();
-            $("#idAgente").val();
-            $("#txtAgente").val();
+            $("#idContacto").val();
+            $("#txtContacto").val();
             $("#txtCorreo").val();
             $("#selEstatus").val();
             $("#txtTelefono").val();
         }
     });
 
-    $(document).on("click", ".editCarga", function (event) {
+    $(document).on("click", ".editProducto", function (event) {
         event.preventDefault();
         var id = $(this).data("id");
 
-        $("#modalCarga").modal();
-        $("#titleModalC").html("Editar carga");
-        $("#btn-carga").html("Guardar");
-        $("#btn-carga").addClass("saveCarga");
-        $("#btn-carga").removeClass("addCarga");
+        $("#modalProducto").modal();
+        $("#titleModalPd").html("Editar Producto");
+        $("#btn-Producto").html("Guardar");
+        $("#btn-producto").addClass("saveProducto");
+        $("#btn-producto").removeClass("addProducto");
 
-        var data20FCL = $(".data20FCL_" + id + "").html();
-        var data40FCL = $(".data40FCL_" + id + "").html();
-        var dataLCL = $(".dataLCL_" + id + "").html();
+        var dataProducto = $(".dataProducto_" + id + "").html();
+        var dataFraccion = $(".dataFraccion_" + id + "").html();
 
-        $("#idCarga").val(id);
-        $("#txt20FCL").val(data20FCL);
-        $("#txt40FCL").val(data40FCL);
-        $("#txtLCL").val(dataLCL);
+        $("#idProducto").val(id);
+        $("#txtProducto").val();
+        $("#txtFraccion").val();
     });
 
-    $(document).on("click", ".newCarga", function (event) {
+    $(document).on("click", ".newProducto", function (event) {
         event.preventDefault();
 
-        $("#modalCarga").modal();
-        $("#titleModalC").html("Nueva carga");
-        $("#btn-carga").html("Agregar");
-        $("#btn-carga").addClass("addCarga");
-        $("#btn-carga").removeClass("saveCarga");
+        $("#modalProducto").modal();
+        $("#titleModalPd").html("Nueva Producto");
+        $("#btn-producto").html("Agregar");
+        $("#btn-producto").addClass("addProducto");
+        $("#btn-producto").removeClass("saveProducto");
     });
 
-    $(document).on("click", ".saveCarga", function (event) {
+    $(document).on("click", ".saveProducto", function (event) {
         event.preventDefault();
-        validarCarga();
+        validarProducto();
 
-        id = $("#idCarga").val();
-        txt20FCL = $("#txt20FCL").val();
-        txt40FCL = $("#txt40FCL").val();
-        txtLCL = $("#txtLCL").val();
+        id = $("#idProducto").val();
+        txtProducto = $("#txtProducto").val();
+        txtFraccion = $("#txtFraccion").val();
 
-        if (valCarga == true) {
-            $(".data20FCL_" + id + "").html(txt20FCL);
-            $(".data40FCL_" + id + "").html(txt40FCL);
-            $(".dataLCL_" + id + "").html(txtLCL);
+        if (valProductos == true) {
+            $(".dataProducto_" + id + "").html(txtProducto);
+            $(".dataFraccion_" + id + "").html(txtFraccion);
 
             Toast.fire({
                 icon: "success",
-                title: "Carga actualizada correctamente",
+                title: "Producto actualizada correctamente",
             });
 
-            $("#modalCarga").modal("hide");
-            $("#txt20FCL").val();
-            $("#txt40FCL").val();
-            $("#txtLCL").val();
+            $("#modalProducto").modal("hide");
+            $("#txtProducto").val();
+            $("#txtFraccion").val();
         }
     });
 
-    $(document).on("click", ".addCarga", function (event) {
+    $(document).on("click", ".addProducto", function (event) {
         event.preventDefault();
-        validarCarga();
+        validarProducto();
 
-        if (valCarga == true) {
-            countCarga++;
+        if (valProv == true) {
+            countProducto++;
 
-            id = "0" + countCarga;
-            txt20FCL = $("#txt20FCL").val();
-            txt40FCL = $("#txt40FCL").val();
-            txtLCL = $("#txtLCL").val();
+            id = "0" + countProducto;
+            txtProducto = $("#txtProducto").val();
+            txtFraccion = $("#txtFraccion").val();
 
             const tr = $(
                 '<tr class="shadow border-row align-td">' +
                     '<td class="align-td"></td>' +
                     '<td class="align-td">' +
-                    '<span class="dataPuerto_' + id + ' td-text">' + txt20FCL +
-                    "</span>" +
-                    "</td>" +
+                        '<span class="dataProducto_' + id + ' td-text">' + txtProducto + '</span>' +
+                    '</td>' +
                     '<td class="align-td">' +
-                    '<span class="dataCodigo_' + id + ' td-text">' + txt40FCL +
-                    "</span>" +
-                    "</td>" +
-                    '<td class="align-td">' +
-                    '<span class="dataCodigo_' + id + ' td-text">' + txtLCL +
-                    "</span>" +
-                    "</td>" +
+                        '<span class="dataFraccion_' + id + ' td-text">' + txtFraccion + '</span>' +
+                    '</td>' +
                     '<td class="icons-td">' +
-                    '<a href="" type="button" class="editPuerto" data-id="' + id + '"><i class="fas fa-edit"></i></a>' +
-                    '<a href="" type="button" class="trashCan" data-id="' + id + '"><i class="far fa-trash-alt"></i></a>' +
-                    "</td>" +
-                    "</tr>",
+                        '<a href="" type="button" class="editProducto" data-id="' + id + '"><i class="fas fa-edit"></i></a>' +
+                        '<a href="" type="button" class="trashCan" data-id="' + id + '"><i class="far fa-trash-alt"></i></a>' +
+                    '</td>' +
+                '</tr>'
             );
 
-            $("#countCarga").val(countRows);
-            $("#tblCarga").DataTable().row.add(tr[0]).draw(false);
+            $("#txtCountProducto").val(countProducto);
+            $("#tblProdProv").DataTable().row.add(tr[0]).draw(false);
 
             Toast.fire({
                 icon: "success",
-                title: "Carga agregada correctamente",
+                title: "Producto agregada correctamente",
             });
 
-            $("#modalCarga").modal("hide");
-            $("#idCarga").val(0);
-            $("#txt20FCL").val();
-            $("#txt40FCL").val();
-            $("#txtLCL").val();
+            $("#modalProducto").modal("hide");
+            $("#idProducto").val(0);
+            $("#txtProducto").val();
+            $("#txtFraccion").val();
         }
     });
 
-    $(document).on("click", ".newAgenteC", function (event) {
-        event.preventDefault();
 
-        $("#modalAgenteC").modal();
+    $(document).on("click", ".editProveedor", function (event) {
+        event.preventDefault();
+        var id = $(this).data("id");
+
+        $("#modalProv").modal();
+
+        var dataProveedor = $("#dataProveedor").html();
+        var dataDireccion = $("#dataDireccion").html();
+
+        $("#txtProveedor").val(dataProveedor);
+        $("#txtProvDirec").val(dataDireccion);
     });
 
-    $(document).on("click", ".addAgenteC", function (event) {
+    $(document).on("click", ".saveProveedor", function (event) {
         event.preventDefault();
-        validarAgenteC();
+        validarProveedor();
 
-        if (valAgenteC == true) {
-            countAg++;
+        txtProveedor = $("#txtProveedor").val();
+        txtProvDirec = $("#txtProvDirec").val();
 
-            id = "0" + countAg;
-            txtEmpresa = $("#txtEmpresa").val();
+        if (valProv == true) {            
+            $("#dataProveedor").html(txtProveedor);
+            $("#dataDireccion").val(txtProvDirec);
+
+            Toast.fire({
+                icon: "success",
+                title: "Proveedor actualizado correctamente",
+            });
+
+            $("#modalProveedor").modal("hide");
+            $("#txtProveedor").val();
+            $("#txtProvDirec").val();
+        }
+    });
+
+    $(document).on("click", ".newProveedor", function (event) {
+        event.preventDefault();
+
+        $("#modalProveedor").modal();
+    });
+
+    $(document).on("click", ".addProveedor", function (event) {
+        event.preventDefault();
+        validarProveedores();
+
+        if (valProvs == true) {
+            countProveedor++;
+
+            id = "0" + countProveedor;
+            txtProveedor = $("#txtProveedor").val();
 
             const tr = $(
-                '<tr class="shadow border-row" id="tr_' + id + '" style="vertical-align: middle">' +
+                '<tr class="shadow border-row" id="tr_05" style="vertical-align: middle">' +
                     '<td class="align-td"></td>' +
                     '<td class="align-td">' +
-                        '<a href="/aplication/agentes-carga-detalle.html" style="margin-left: 0.5rem">' +
-                            '<span class="td-text">' + txtEmpresa + '</span>' +
+                        '<a href="/href="/aplication/proveedores-detalle.html"" style="margin-left: 0.5rem">' +
+                            '<span class="td-text">' + txtProveedor + '</span>' +
                         '</a>' +
                     '</td>' +
                     '<td class="align-td">' +
@@ -731,26 +772,26 @@ $(document).ready(function () {
                         '<span class="td-text">Por definir</span>' +
                     '</td>' +
                     '<td class="icons-td">' +
-                        '<a type="button" href="#" data-id="' + id + '" class="eliminar_agencia trashCan" data-toggle="modal">' +
+                        '<a type="button" href="#" data-id="05" class="trashCan" data-toggle="tooltip" data-placement="top" title="Eliminar Proveedor">' +
                             '<i class="fas fa-trash-alt"></i>' +
                         '</a>' +
                     '</td>' +
                 '</tr>'
             );
 
-            $("#txtCountAg").val(countAg);
-            $("#tblAgenciasAd").DataTable().row.add(tr[0]).draw(false);
+            $("#countProveedor").val(countProveedor);
+            $("#tblProveedores").DataTable().row.add(tr[0]).draw(false);
 
             Toast.fire({
                 icon: "success",
-                title: "Agencia agregada correctamente",
+                title: "Proveedor agregado correctamente",
             });
 
-            $("#modalAgenteC").modal("hide");
-            $("#txtEmpresa").val();
-            $("#txtAg20FCL").val();
-            $("#txtAg40FCL").val();
-            $("#txtAgLCL").val();
+            $("#modalProveedor").modal("hide");
+            $("#txtProveedor").val();
+            $("#txtDireccion").val();
+            $("#txtProdProv").val();
+            $("#txtFracAran").val();
         }
     });
 });

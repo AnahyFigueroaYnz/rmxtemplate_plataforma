@@ -2458,25 +2458,25 @@ var tablas = {
                         {
                             data: "destino",
                             render: function (data, type, row) {
-                                return '<td style="vertical-align: middle"><span class="td-text">' + row.destino + "</span></td>";
+                                return '<td class="align-td"><span class="td-text">' + row.destino + "</span></td>";
                             },
                         },
                         {
                             data: "tipo",
                             render: function (data, type, row) {
                                 if (row.tipo == 1) {
-                                    return '<td style="vertical-align: middle"><span class="td-text">Origen</span></td>';
+                                    return '<td class="align-td"><span class="td-text">Origen</span></td>';
                                 } else if (row.tipo == 2) {
-                                    return '<td style="vertical-align: middle"><span class="td-text">Destino</span></td>';
+                                    return '<td class="align-td"><span class="td-text">Destino</span></td>';
                                 } else if (row.tipo == 3) {
-                                    return '<td style="vertical-align: middle"><span class="td-text">Origen y Destino</span></td>';
+                                    return '<td class="align-td"><span class="td-text">Origen y Destino</span></td>';
                                 }
                             },
                         },
                         {
                             data: "id_destino",
                             render: function (data, type, row) {
-                                return '<td style="vertical-align: middle"><a type="button" href="" data-id="' + row.id_destino + '" class="eliminar_destino" style="color: #dc3545;"><i class="far fa-trash-alt" data-id="' + row.id_destino + '" title="Eliminar destino"></i></a></td>';
+                                return '<td class="align-td"><a type="button" href="" data-id="' + row.id_destino + '" class="eliminar_destino" style="color: #dc3545;"><i class="far fa-trash-alt" data-id="' + row.id_destino + '" title="Eliminar destino"></i></a></td>';
                             },
                         },
                     ],
@@ -2561,13 +2561,13 @@ var tablas = {
                         {
                             data: "origen",
                             render: function (data, type, row) {
-                                return '<td style="vertical-align: middle"><span class="td-text">' + row.origen + "</span></td>";
+                                return '<td class="align-td"><span class="td-text">' + row.origen + "</span></td>";
                             },
                         },
                         {
                             data: "destino",
                             render: function (data, type, row) {
-                                return '<td style="vertical-align: middle"><span class="td-text">' + row.destino + "</span></td>";
+                                return '<td class="align-td"><span class="td-text">' + row.destino + "</span></td>";
                             },
                         },
                         {
@@ -2578,7 +2578,7 @@ var tablas = {
                                 } else {
                                     var tipo = "Mar";
                                 }
-                                return '<td style="vertical-align: middle"><span class="td-text">' + tipo + "</span></td>";
+                                return '<td class="align-td"><span class="td-text">' + tipo + "</span></td>";
                             },
                         },
                         {
@@ -2589,43 +2589,43 @@ var tablas = {
                                 } else {
                                     var movimiento = "Export";
                                 }
-                                return '<td style="vertical-align: middle"><span class="td-text">' + movimiento + "</span></td>";
+                                return '<td class="align-td"><span class="td-text">' + movimiento + "</span></td>";
                             },
                         },
                         {
                             data: "tarifa_aerea",
                             render: function (data, type, row) {
-                                return '<td style="vertical-align: middle"><span class="td-text">' + row.tarifa_aerea + "</span></td>";
+                                return '<td class="align-td"><span class="td-text">' + row.tarifa_aerea + "</span></td>";
                             },
                         },
                         {
                             data: "lcl_cbm",
                             render: function (data, type, row) {
-                                return '<td style="vertical-align: middle"><span class="td-text">' + row.lcl_cbm + "</span></td>";
+                                return '<td class="align-td"><span class="td-text">' + row.lcl_cbm + "</span></td>";
                             },
                         },
                         {
                             data: "ft20",
                             render: function (data, type, row) {
-                                return '<td style="vertical-align: middle"><span class="td-text">' + row.ft20 + "</span></td>";
+                                return '<td class="align-td"><span class="td-text">' + row.ft20 + "</span></td>";
                             },
                         },
                         {
                             data: "ft40",
                             render: function (data, type, row) {
-                                return '<td style="vertical-align: middle"><span class="td-text">' + row.ft40 + "</span></td>";
+                                return '<td class="align-td"><span class="td-text">' + row.ft40 + "</span></td>";
                             },
                         },
                         {
                             data: "hq40",
                             render: function (data, type, row) {
-                                return '<td style="vertical-align: middle"><span class="td-text">' + row.hq40 + "</span></td>";
+                                return '<td class="align-td"><span class="td-text">' + row.hq40 + "</span></td>";
                             },
                         },
                         {
                             data: "id_catalogo",
                             render: function (data, type, row) {
-                                return '<td style="vertical-align: middle"><a type="button" href="" data-id="' + row.id_catalogo + '" class="eliminar_tarifa" style="color: #dc3545;"><i class="far fa-trash-alt" data-id="' + row.id_destino + '" title="Eliminar destino"></i></a></td>';
+                                return '<td class="align-td"><a type="button" href="" data-id="' + row.id_catalogo + '" class="eliminar_tarifa" style="color: #dc3545;"><i class="far fa-trash-alt" data-id="' + row.id_destino + '" title="Eliminar destino"></i></a></td>';
                             },
                         },
                     ],

@@ -203,7 +203,7 @@ $(document).ready(function () {
 
         swalWithBootstrapButtons
             .fire({
-                title: "¿Seguro que deseas eliminar este pendiente?",
+                title: "¿Seguro que deseas eliminar este agente?",
                 text: "¡No podrás revertir esto!",
                 icon: "warning",
                 showCancelButton: true,
@@ -216,7 +216,7 @@ $(document).ready(function () {
                     table.row($(this).parents("tr")).remove().draw();
                     Toast.fire({
                         icon: "success",
-                        title: "Pendiente eliminado correctamente",
+                        title: "Agente eliminado correctamente",
                     });
                 } else if (result.dismiss === Swal.DismissReason.cancel) {
                     Swal.DismissReason.cancel;
@@ -298,7 +298,7 @@ $(document).ready(function () {
 
         swalWithBootstrapButtons
             .fire({
-                title: "¿Seguro que deseas eliminar este pendiente?",
+                title: "¿Seguro que deseas eliminar este puerto?",
                 text: "¡No podrás revertir esto!",
                 icon: "warning",
                 showCancelButton: true,
@@ -311,7 +311,7 @@ $(document).ready(function () {
                     table.row($(this).parents("tr")).remove().draw();
                     Toast.fire({
                         icon: "success",
-                        title: "Pendiente eliminado correctamente",
+                        title: "Puerto eliminado correctamente",
                     });
                 } else if (result.dismiss === Swal.DismissReason.cancel) {
                     Swal.DismissReason.cancel;
@@ -770,22 +770,22 @@ $(document).ready(function () {
 
             const tr = $(
                 '<tr class="shadow border-row" id="tr_' + id + '" style="vertical-align: middle">' +
-                    '<td style="vertical-align: middle"></td>' +
-                    '<td style="vertical-align: middle">' +
+                    '<td class="align-td"></td>' +
+                    '<td class="align-td">' +
                         '<a href="/aplication/agencias-aduanales-detalle.html" style="margin-left: 0.5rem">' +
                             '<span class="td-text">' + txtAgencia + '</span>' +
                         '</a>' +
                     '</td>' +
-                    '<td style="vertical-align: middle">' +
-                        '<span class="td-text"></span>' +
+                    '<td class="align-td">' +
+                        '<span class="td-text">Por definir</span>' +
                     '</td>' +
-                    '<td style="vertical-align: middle">' +
-                        '<span class="td-text"></span>' +
+                    '<td class="align-td">' +
+                        '<span class="td-text">Por definir</span>' +
                     '</td>' +
-                    '<td style="vertical-align: middle">' +
-                        '<span class="td-text"></span>' +
+                    '<td class="align-td">' +
+                        '<span class="td-text">Por definir</span>' +
                     '</td>' +
-                    '<td style="vertical-align: middle">' +
+                    '<td class="icons-td">' +
                         '<a type="button" href="#" data-id="' + id + '" class="eliminar_agencia trashCan" data-toggle="modal">' +
                             '<i class="fas fa-trash-alt"></i>' +
                         '</a>' +
