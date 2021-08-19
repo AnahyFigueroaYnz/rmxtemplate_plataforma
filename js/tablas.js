@@ -1568,7 +1568,7 @@ var tablas = {
             $("#tblAgenciasAduanales_filter input").addClass("shadow");
 
             /* tabla de los puertos de la agencia */
-            table = $("#tblPuertosAgencia")
+            table = $("#tblPuertosAg")
                 .DataTable({
                     dom: '<"row"<"col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 text-center"B><"col-12 col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 ml-auto"f>>rtip',
                     responsive: true,
@@ -1625,8 +1625,8 @@ var tablas = {
                     },
                 })
                 .columns.adjust();
-            $("#tblPuertosAgencia_filter input").attr("placeholder", "Buscar");
-            $("#tblPuertosAgencia_filter input").addClass("shadow");
+            $("#tblPuertosAg_filter input").attr("placeholder", "Buscar");
+            $("#tblPuertosAg_filter input").addClass("shadow");
 
             /* tabla de los asesores correspondientes de la agencia */
             table = $("#tblAgentes")

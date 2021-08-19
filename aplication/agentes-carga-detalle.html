@@ -1,58 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
-    <title>Template Plataforma</title>
+    <title>Plataforma | Agente Carga Detalle</title>
 
-    <meta name="keywords" content="Template ReachMx">
-    <meta name="keywords" content="Plantilla ReachMx">
-    <meta name="description" content="Plantilla de plataforma ReachMx">
-    <meta name="control" content="no-cache" http-equiv="Cache-Control">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="Template ReachMx" />
+    <meta name="keywords" content="Plantilla ReachMx" />
 
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Template Plataforma" />
+    <meta name="description" content="Plantilla de plataforma ReachMx" />
 
-    <link rel="stylesheet" href="/css/toastr.min.css">
-    <link rel="stylesheet" href="/css/chartJs/Chart.css">
-    <link rel="stylesheet" href="/css/chartJs/Chart.min.css">
-    <link rel="stylesheet" href="/css/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/datatables/datatables.min.css">
-    <link rel="stylesheet" href="/css/bootstrap/bootstrap-table.min.css">
-    <link rel="stylesheet" href="/css/datatables/buttons.bootstrap4.min.css">
-    <link rel="stylesheet" href="/css/bootstrap/bootstrap-switch-button.css">
-    <link rel="stylesheet" href="/css/datatables/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="/css/datatables/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" href="/css/bootstrap/bootstrap-switch-button.min.css">
+    <meta name="responsive" content="no-cache" http-equiv="Cache-Control" />
+    <meta name="responsive" content="charset=UTF-8" http-equiv="Content-Type" />
 
-    <link rel="stylesheet" href="/system/adminLTE/css/ionicons.min.css">
-    <link rel="stylesheet" href="/system/adminLTE/css/adminlte.min.css">
+    <meta name="viewport" content="maximum-scale=1, user-scalable=no, width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="/system/adminLTE/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/bootstrap/css/bootstrap-tempusdominus.min.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/bootstrap/css/bootstrap-colorpicker.min.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/bootstrap/css/bootstrap-sweetalert2.min.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/daterangepicker/css/daterangepicker.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/select2/css/select2-bootstrap4.min.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/bootstrap/css/bootstrap-icheck.min.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/summernote/css/summernote-lite.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/summernote/css/summernote-bs4.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/select2/css/select2.min.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/jquery/css/jqvmap.min.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/chart/css/Chart.min.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/chart/css/Chart.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
 
-    <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="/css/navbar.css">
-    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/toastr.min.css" />
+    <link rel="stylesheet" href="/css/chartJS/Chart.css" />
+    <link rel="stylesheet" href="/css/chartJs/Chart.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap/buttons.bootstrap4.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap-table.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap-switch-button.css" />
+    <link rel="stylesheet" href="/css/bootstrap/responsive.bootstrap4.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap-switch-button.min.css" />
+
+    <link rel="stylesheet" href="/system/dataTable/datatables.min.css" />
+    <link rel="stylesheet" href="/system/dataTable/datatables/css/dataTables.bootstrap4.min.css" />
+
+    <link rel="stylesheet" href="/system/adminLTE/css/ionicons.min.css" />
+    <link rel="stylesheet" href="/system/adminLTE/css/adminlte.min.css" />
+
+    <link rel="stylesheet" href="/system/adminLTE/plugins/jquery/css/jqvmap.min.css" />
+    <link rel="stylesheet" href="/system/adminLTE/plugins/jquery/css/jsgrid.min.css" />
+    <link rel="stylesheet" href="/system/adminLTE/plugins/jquery/css/jquery-ui.min.css" />
+    <link rel="stylesheet" href="/system/adminLTE/plugins/jquery/css/jquery-ui.theme.min.css" />
+
+    <link rel="stylesheet" href="/system/adminLTE/plugins/bootstrap/css/bootstrap-duallistbox.min.css" />
+    <link rel="stylesheet" href="/system/adminLTE/plugins/bootstrap/css/bootstrap-colorpicker.min.css" />
+
+    <link rel="stylesheet" href="/system/adminLTE/plugins/chart/css/Chart.css" />
+    <link rel="stylesheet" href="/system/adminLTE/plugins/pdfmake/pdfmake.min.js" />
+    <link rel="stylesheet" href="/system/adminLTE/plugins/toastr/css/toastr.min.css" />
+    <link rel="stylesheet" href="/system/adminLTE/plugins/fullcalendar/css/main.css" />
+    <link rel="stylesheet" href="/system/adminLTE/plugins/select2/css/select2.min.css" />
+    <link rel="stylesheet" href="/system/adminLTE/plugins/dropzone/css/dropzone.min.css" />
+    <link rel="stylesheet" href="/system/adminLTE/plugins/fontawesome-free/css/all.min.css" />
+    <link rel="stylesheet" href="/system/adminLTE/plugins/summernote/css/summernote.min.css" />
+    <link rel="stylesheet" href="/system/adminLTE/plugins/bs-stepper/css/bs-stepper.min.css" />
+    <link rel="stylesheet" href="/system/adminLTE/plugins/flag-icon-css/css/flag-icon.min.css" />
+    <link rel="stylesheet" href="/system/adminLTE/plugins/ekko-lightbox/css/ekko-lightbox.css" />
+    <link rel="stylesheet" href="/system/adminLTE/plugins/sweetalert2/css/sweetalert2.min.css" />
+    <link rel="stylesheet" href="/system/adminLTE/plugins/summernote/css/summernote-bs4.min.css" />
+    <link rel="stylesheet" href="/system/adminLTE/plugins/select2/css/select2-bootstrap4.min.css" />
+    <link rel="stylesheet" href="/system/adminLTE/plugins/daterangepicker/css/daterangepicker.css" />
+    <link rel="stylesheet" href="/system/adminLTE/plugins/icheck-bootstrap/icheck-bootstrap.min.css" />
+    <link rel="stylesheet" href="/system/adminLTE/plugins/ion-rangeslider/css/ion.rangeSlider.min.css" />
+    <link rel="stylesheet" href="/system/adminLTE/plugins/overlayScrollbars/css/OverlayScrollbars.min.css" />
+    <link rel="stylesheet" href="/system/adminLTE/plugins/tempusdominus/css/tempusdominus-bootstrap-4.min.css" />
+
+    <link rel="stylesheet" href="/css/global.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+
+    <link rel="stylesheet" href="/css/tablas-menu.css" />
 
     <script src="/js/popper/popper.js"></script>
     <script src="/js/sweetalert2/sweetalert2.js"></script>
     <script src="/js/jquery/jquery-3.3.1.min.js"></script>
 </head>
 
-<body class="sidebar-mini control-sidebar-slide-open layout-fixed">
+<body class="sidebar-mini-xs layout-fixed control-sidebar-slide-open">
     <div class="wrapper">
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
             <ul class="navbar-nav">
@@ -63,12 +85,12 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown user-menu">
                     <a href="" class="nav-link dropdown-toggle nav-drop-img" data-toggle="dropdown">
-                        <img src="/resources/img/usuario.jpg" class="user-image img-circle elevation-2" alt="Imagen Usuario">
+                        <img src="/resources/img/usuario.jpg" class="user-image img-circle elevation-2" alt="Imagen Usuario" />
                         <span class="d-none d-md-inline">Usuario</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px">
                         <li class="user-header bg-primary">
-                            <img src="/resources/img/usuario.jpg" class="user-image img-circle elevation-2" alt="Imagen Usuario Dropdown">
+                            <img src="/resources/img/usuario.jpg" class="user-image img-circle elevation-2" alt="Imagen Usuario Dropdown" />
                             <p class="text-capitalize">Usuario <small>Administrador</small></p>
                         </li>
                         <li class="user-footer d-flex justify-content-between">
@@ -82,16 +104,14 @@
 
         <aside class="main-sidebar main-sidebar-custom sidebar-dark-primary elevation-4">
             <a href="https://www.reachmx.com/" class="brand-link">
-                <img src="/resources/svg/tu_logo_icon.svg" class="brand-image" alt="Logo Empresa">
-                <span class="brand-text font-weight-light">
-                    <img src="/resources/svg/tu_logo.svg" class="brand-imagen img-fluid img-sm" alt="Nombre Empresa">&nbsp;
-                </span>
+                <img src="/resources/svg/tu_logo_icon.svg" class="brand-image" alt="Logo Empresa" />
+                <span class="brand-text font-weight-light"> <img src="/resources/svg/tu_logo.svg" class="brand-imagen img-fluid img-sm" alt="Nombre Empresa" />&nbsp; </span>
             </a>
             <div class="sidebar">
                 <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-compact nav-flat" data-widget="treeview" role="menu" data-accordion="false">
+                    <ul class="nav nav-pills nav-sidebar flex-column nav-flat nav-compact nav-collapse-hide-child" data-widget="treeview" role="menu" data-accordion="false">
                         <li class="nav-item">
-                            <a href="/aplication/aplication/index.html" class="nav-link">
+                            <a href="/index.html" class="nav-link">
                                 <i class="nav-icon fas fa-home"></i>
                                 <p class="nav-titles">Dashboard</p>
                             </a>
@@ -177,16 +197,24 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="/aplication/agentes-carga.html" class="nav-link active">
+                            <a href="/aplication/agentes-carga.html" class="nav-link">
                                 <i class="nav-icon fas fa-dolly-flatbed"></i>
                                 <p class="nav-titles">Agentes carga</p>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a href="/aplication/agencias-aduanales.html" class="nav-link">
+                        <li class="nav-item menu-open">
+                            <a href="/aplication/agencias-aduanales.html" class="nav-link active">
                                 <i class="nav-icon fas fa-route"></i>
-                                <p class="nav-titles">Agencias aduanas</p>
+                                <p class="nav-titles">Agenicas aduanales<i class="fas fa-angle-left right"></i></p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="/aplication/agencias-aduanales-detalle.html" class="nav-link active">
+                                        <i class="nav-icon fas fa-record-vinyl"></i>
+                                        <p class="nav-titles">Detalle</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </nav>
@@ -212,272 +240,269 @@
         </aside>
 
         <div class="content-wrapper">
-            <link rel="stylesheet" href="/css/plataforma/agencias.css">
-            <section class="content-header shadow-title">
+            <section class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0 letra text-uppercase">Detalles Agencia</h1>
+                            <h1 class="m-0 letra text-uppercase">Detalles</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item">
-                                    <a href="/aplication/index.html"><i class="nav-icon fas fa-home"></i>
-                                        Home</a>
+                                    <a href="/index.html"><i class="nav-icon fas fa-home"></i> Home</a>
                                 </li>
                                 <li class="breadcrumb-item">
                                     <a href="/aplication/agencias-aduanales.html">Agencias Aduanales</a>
                                 </li>
-                                <li class="breadcrumb-item active">Detalles Agencia</li>
+                                <li class="breadcrumb-item active">Detalles</li>
                             </ol>
                         </div>
                     </div>
                 </div>
             </section>
-            <br>
-
-            <div class="col-12 ml-auto text-right" style="margin-top: 3.2px;">
-                <button type="button" id="btnNuevoPuerto" class="btn btn-sm btn-outline-primary btn-nuevo add_puerto">
-                    Nuevo Puerto <span><i class="fas fa-plus"></i></span>
-                </button>
-                <button type="button" id="btnNuevoAgente" class="btn btn-sm btn-outline-primary btn-nuevo">
-                    Nuevo Agente <span><i class="fas fa-plus"></i></span>
-                </button>
-            </div>
-            <br>
             <section class="content">
                 <div class="container-fluid">
-                    <div>
-                        <div class="col-12" style="margin-bottom: 1rem">
-                            <div class="card shadow-lg tarjeta">
-                                <div class="card-body" style="padding-bottom: 0rem;">
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <p style=" font-size: 14px;" class="font-weight-bold text-uppercase">
-
-                                            </p>
-                                        </div>
-                                        <div class="col-2 ml-auto text-right margin-edit">
-                                            <a href="" class="editAgencia" type="button"><i class="far fa-edit"></i></a>
-                                        </div>
+                    <div class="card card-primary card-outline">
+                        <div class="card-header">
+                            <h5 class="card-title"><i class="fas fa-book mr-1"></i> Contacto</h5>
+                            <div class="card-tools">
+                                <a type="button" class="btn btn-tool" data-card-widget="collapse">
+                                    <i class="fas fa-minus"></i>
+                                </a>
+                                <div class="btn-group">
+                                    <a type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <i class="fas fa-wrench"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                        <a href="" class="dropdown-item" id="btnEditCn">Editar</a>
+                                        <a href="" class="dropdown-item" id="btnSeleccionar">Seleccionar</a>
                                     </div>
-                                    <form class="margin-details">
-                                        <div class="form-row">
-                                            <div class="col-md-4">
-                                                <label for="ShipmentName" style="margin-bottom: 0rem;"
-                                                    class="font-weight-bold">
-                                                    Correo
-                                                </label>
-                                                <p for="ShipmentName" style="font-size: 14px;"
-                                                    class="font-weight-light">
-
-                                                </p>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="ShipmentName" style="margin-bottom: 0rem;"
-                                                    class="font-weight-bold">
-                                                    Contacto
-                                                </label>
-                                                <p for="ShipmentName" style="font-size: 14px;"
-                                                    class="font-weight-light">
-
-                                                </p>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="ShipmentName" style="margin-bottom: 0rem;"
-                                                    class="font-weight-bold">
-                                                    Teléfono
-                                                </label>
-                                                <p for="ShipmentName" style="font-size: 14px;"
-                                                    class="font-weight-light">
-
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="col-md-4">
-                                                <label for="ShipmentName" style="margin-bottom: 0rem;"
-                                                    class="font-weight-bold">
-                                                    Honorarios
-                                                </label>
-                                                <p for="ShipmentName" style="font-size: 14px;"
-                                                    class="font-weight-light">
-
-                                                </p>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="ShipmentName" style="margin-bottom: 0rem;"
-                                                    class="font-weight-bold">
-                                                    Revaldación
-                                                </label>
-                                                <p for="ShipmentName" style="font-size: 14px;"
-                                                    class="font-weight-light">
-
-                                                </p>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="ShipmentName" style="margin-bottom: 0rem;"
-                                                    class="font-weight-bold">
-                                                    Complementarios
-                                                </label>
-                                                <p for="ShipmentName" style="font-size: 14px;"
-                                                    class="font-weight-light">
-
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="col-md-4">
-                                                <label for="ShipmentName" style="margin-bottom: 0rem;"
-                                                    class="font-weight-bold">
-                                                    Previo
-                                                </label>
-                                                <p for="ShipmentName" style="font-size: 14px;"
-                                                    class="font-weight-light">
-
-                                                </p>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="ShipmentName" style="margin-bottom: 0rem;"
-                                                    class="font-weight-bold">
-                                                    Maniobras puerto
-                                                </label>
-                                                <p for="ShipmentName" style="font-size: 14px;"
-                                                    class="font-weight-light">
-
-                                                </p>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="ShipmentName" style="margin-bottom: 0rem;"
-                                                    class="font-weight-bold">
-                                                    Desconsolidación
-                                                </label>
-                                                <p for="ShipmentName" style="font-size: 14px;"
-                                                    class="font-weight-light">
-
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </form>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12" style="margin-bottom: 1rem">
-                            <div class="card shadow-lg tarjeta">
-                                <div class="card-body">
-                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+                        <div class="card-body" style="display: block">
+                            <div class="row">
+                                <div class="col-12">
+                                    <strong>Agente</strong>
+                                    <p class="mb-0">Edna Ruy</p>
+                                </div>
+
+                                <div class="col-xm-12 col-sm-6">
+                                    <strong>Correo</strong>
+                                    <p class="mb-0">edna@agente2.com</p>
+                                </div>
+                                <div class="col-xm-12 col-sm-6">
+                                    <strong>Teléfono</strong>
+                                    <p class="mb-0">(+ 52) (000) 000-0000</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xm-12 col-sm-4">
+                            <div class="card card-primary card-outline">
+                                <div class="card-body box-profile pb-0">
+                                    <h3 class="text-center" id="dataNombre" style="font-size: 20px; margin: 0px"><i class="nav-icon fas fa-route"></i> Twill</h3>
+                                </div>
+                                <hr />
+                                <div class="row mx-0 mb-4">
+                                    <div class="col-xm-6 col-sm-12 p-0">
+                                        <div class="post">
+                                            <dl class="text-mute mb-0">
+                                                <div class="post-dl mb-1">
+                                                    <strong style="font-size: 14px">Honorarios</strong>
+                                                    <p class="text-muted mb-0">0.00</p>
+                                                </div>
+                                                <div class="post-dl mb-1">
+                                                    <strong style="font-size: 14px">Revalidación</strong>
+                                                    <p class="text-muted mb-0">0.00</p>
+                                                </div>
+                                                <div class="post-dl mb-0">
+                                                    <strong style="font-size: 14px">Complementarios</strong>
+                                                    <p class="text-muted mb-0">0.00</p>
+                                                </div>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                    <div class="col-xm-6 col-sm-12 p-0">
+                                        <div class="post">
+                                            <dl class="text-mute mb-0">
+                                                <div class="post-dl mb-1">
+                                                    <strong style="font-size: 14px">Previo</strong>
+                                                    <p class="text-muted mb-0">0.00</p>
+                                                </div>
+                                                <div class="post-dl mb-1">
+                                                    <strong style="font-size: 14px">Maniobras Puertos</strong>
+                                                    <p class="text-muted mb-0">0.00</p>
+                                                </div>
+
+                                                <div class="post-dl mb-0">
+                                                    <strong style="font-size: 14px">Desconsolidación</strong>
+                                                    <p class="text-muted mb-0">0.00</p>
+                                                </div>
+                                            </dl>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xm-12 col-sm-8">
+                            <div class="card card-primary card-outline card-outline-tabs">
+                                <div class="card-header p-0 border-bottom">
+                                    <ul class="nav nav-tabs nav-fill ml-auto" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
-                                                role="tab" aria-controls="home" aria-selected="true">Puertos</a>
+                                            <a class="nav-link active" id="tabsPuertos" data-toggle="pill" href="#tabPuertos" role="tab" aria-controls="tabPuertos" aria-selected="true">Puertos</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile"
-                                                role="tab" aria-controls="profile" aria-selected="false">Agentes</a>
+                                            <a class="nav-link" id="tabsAgentes" data-toggle="pill" href="#tabAgentes" role="tab" aria-controls="tabAgentes" aria-selected="false">Agentes</a>
                                         </li>
                                     </ul>
-                                    <div class="tab-content" id="myTabContent">
-                                        <div class="tab-pane fade show active" id="home" role="tabpanel"
-                                            aria-labelledby="home-tab">
-                                            <br>
-                                            <table id="tblPuertosAgencia"
-                                                class="table table-borderless responsive nowrap" style="width: 100%">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Puerto</th>
-                                                        <th>Clave</th>
-                                                        <th></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr class="shadow border-row" id="">
-                                                        <td style="vertical-align: middle"></td>
-                                                        <td style="vertical-align: middle"></td>
-                                                        <td style="vertical-align: middle; text-align: center">
-                                                            <a type="button" href="" data-id="" class="edit_puerto"
-                                                                title="Modificar puerto" data-toggle="tooltip"
-                                                                data-placement="top">
-                                                                <i class="far fa-edit"></i>
-                                                            </a>
-                                                            <a type="button" href="" data-id="" class="eliminar_puerto"
-                                                                style="color: #dc3545;" title="Eliminar puerto"
-                                                                data-toggle="tooltip" data-placement="top">
-                                                                <i class="far fa-trash-alt"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                </div>
+                                <div class="card-body">
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade active show" id="tabPuertos" role="tabpanel" aria-labelledby="tabsPuertos">
+                                            <div class="p-0 m-0">
+                                                <div class="card-header border-0 text-right">
+                                                    <a href="" class="add_puerto" type="button" id="btnNuevoPuerto">Nuevo Puerto</a>
+                                                </div>
+                                                <div class="card-body p-2">
+                                                    <table id="tblPuertosAg" class="table table-borderless responsive nowrap" style="width: 100%">
+                                                        <thead>
+                                                            <tr role="row">
+                                                                <th data-priority="0"></th>
+                                                                <th data-priority="1">Puerto</th>
+                                                                <th data-priority="3">Codgio</th>
+                                                                <th data-priority="2" class="row-icons"></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr class="shadow border-row" id="Ptr_01">
+                                                                <td class="align-td"></td>
+                                                                <td class="align-td">
+                                                                    <span>Ensenada</span>
+                                                                </td>
+                                                                <td class="align-td">
+                                                                    <span>MX-ENS</span>
+                                                                </td>
+                                                                <td class="icons-td">
+                                                                    <a href="" type="button" class="editPuerto" data-id="01"><i class="fas fa-edit"></i></a>
+                                                                    <a href="" type="button" class="trashCan" data-id="01"><i class="far fa-trash-alt"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="shadow border-row" id="Ptr_02">
+                                                                <td class="align-td"></td>
+                                                                <td class="align-td">
+                                                                    <span>Manzanillo</span>
+                                                                </td>
+                                                                <td class="align-td">
+                                                                    <span>MX-MZO</span>
+                                                                </td>
+                                                                <td class="icons-td">
+                                                                    <a href="" type="button" class="editPuerto" data-id="02"><i class="fas fa-edit"></i></a>
+                                                                    <a href="" type="button" class="trashCan" data-id="02"><i class="far fa-trash-alt"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="shadow border-row" id="Ptr_03">
+                                                                <td class="align-td"></td>
+                                                                <td class="align-td">
+                                                                    <span>Veracruz</span>
+                                                                </td>
+                                                                <td class="align-td">
+                                                                    <span>MX-VER</span>
+                                                                </td>
+                                                                <td class="icons-td">
+                                                                    <a href="" type="button" class="editPuerto" data-id="03"><i class="fas fa-edit"></i></a>
+                                                                    <a href="" type="button" class="trashCan" data-id="03"><i class="far fa-trash-alt"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="tab-pane fade" id="profile" role="tabpanel"
-                                            aria-labelledby="profile-tab">
-                                            <br>
-                                            <table id="tblAgentes" class="table table-borderless responsive nowrap"
-                                                style="width: 100%">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Nombre</th>
-                                                        <th>Correo</th>
-                                                        <th>Telefono</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr class="shadow border-row" id="">
-                                                        <td style="vertical-align: middle"></td>
-
-                                                        <td style="vertical-align: middle"></td>
-                                                        <td style="vertical-align: middle"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                                        <div class="tab-pane fade" id="tabAgentes" role="tabpanel" aria-labelledby="tabsAgentes">
+                                            <div class="p-0 m-0">
+                                                <div class="card-header border-0 text-right">
+                                                    <a href="" class="add_puerto" type="button" id="btnNuevoAgente">Nuevo Agente</a>
+                                                </div>
+                                                <div class="card-body p-2">
+                                                    <table id="tblAgentes" class="table table-borderless responsive nowrap" style="width: 100%">
+                                                        <thead>
+                                                            <tr role="row">
+                                                                <th data-priority="0"></th>
+                                                                <th data-priority="1">Agente</th>
+                                                                <th data-priority="3">Correo</th>
+                                                                <th data-priority="3">Telefono</th>
+                                                                <th data-priority="3">Estatus</th>
+                                                                <th data-priority="2" class="row-icons"></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr class="shadow border-row" id="Atr_01">
+                                                                <td class="align-td"></td>
+                                                                <td class="align-td">
+                                                                    <span>Ensenada</span>
+                                                                </td>
+                                                                <td class="align-td">
+                                                                    <span>MX-ENS</span>
+                                                                </td>
+                                                                <td class="icons-td">
+                                                                    <a href="" type="button" class="editPuerto" data-id="01"><i class="fas fa-edit"></i></a>
+                                                                    <a href="" type="button" class="trashCan" data-id="01"><i class="far fa-trash-alt"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="shadow border-row" id="Atr_02">
+                                                                <td class="align-td"></td>
+                                                                <td class="align-td">
+                                                                    <span>Manzanillo</span>
+                                                                </td>
+                                                                <td class="align-td">
+                                                                    <span>MX-MZO</span>
+                                                                </td>
+                                                                <td class="icons-td">
+                                                                    <a href="" type="button" class="editPuerto" data-id="02"><i class="fas fa-edit"></i></a>
+                                                                    <a href="" type="button" class="trashCan" data-id="02"><i class="far fa-trash-alt"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr class="shadow border-row" id="Atr_03">
+                                                                <td class="align-td"></td>
+                                                                <td class="align-td">
+                                                                    <span>Veracruz</span>
+                                                                </td>
+                                                                <td class="align-td">
+                                                                    <span>MX-VER</span>
+                                                                </td>
+                                                                <td class="icons-td">
+                                                                    <a href="" type="button" class="editPuerto" data-id="03"><i class="fas fa-edit"></i></a>
+                                                                    <a href="" type="button" class="trashCan" data-id="03"><i class="far fa-trash-alt"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12" style="margin-bottom: 1rem">
-                        </div>
                     </div>
-
-                    <!--Editar agencia-->
-                    <div class="modal fade" id="modal_add_editAgencia" tabindex="-1" role="dialog"
-                        aria-labelledby="modal_add_editAgenciaLabel" aria-hidden="true">
-
-                    </div>
-                    <!--Fin modal editar-->
-
-                    <!-- Modal para editar puerto -->
-                    <div class="modal fade" id="modal_puerto" tabindex="-1" role="dialog"
-                        aria-labelledby="modal_puertoLabel" aria-hidden="true">
-
-                    </div>
-                    <!--Fin modal editar-->
-
-                    <!--Crear agente-->
-                    <div class="modal fade" id="modal_add_agente" tabindex="-1" role="dialog"
-                        aria-labelledby="modal_add_agenteLabel" aria-hidden="true">
-
-                    </div>
-                    <!--Fin modal crear-->
-
                 </div>
             </section>
         </div>
-        <footer class="main-footer">
-            <strong><a target="_blank" href="https://reachmx.com">ReachMX&#174;</a></strong>
-            <div class="float-right d-none d-sm-inline-block"></div>
-        </footer>
     </div>
 
-    <script src="/js/tablas.js"></script>
+    <footer class="main-footer">
+        <strong><a target="_blank" href="https://reachmx.com">ReachMX&#174;</a></strong>
+        <div class="float-right d-none d-sm-inline-block"></div>
+    </footer>
 
-    <script src="/js/dashboard.js"></script>
-
-    <script src="/js/popper/popper.min.js"></script>
-
-    <script src="/js/toastr/toastr.min.js"></script>
-
-    <script src="/js/mascaras.js"></script>
+    <script src="/js/tablas-menu.js"></script>
+    <script src="/js/global.js"></script>
     <script src="/js/mask/jquery.mask.js"></script>
+    <script src="/js/popper/popper.min.js"></script>
+    <script src="/js/toastr/toastr.min.js"></script>
     <script src="/js/mask/jquery.mask.min.js"></script>
 
     <script src="/js/chartJs/Chart.js"></script>
@@ -495,40 +520,38 @@
 
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
-    <script src="/js/datatables/dataTables.bootstrap4.min.js"></script>
-    <script src="/js/datatables/dataTables.responsive.min.js"></script>
-    <script src="/js/datatables/responsive.bootstrap4.min.js"></script>
-    <script src="/js/datatables/jszip.min.js"></script>
-    <script src="/js/datatables/vfs_fonts.js"></script>
-    <script src="/js/datatables/pdfmake.min.js"></script>
-    <script src="/js/datatables/buttons.print.min.js"></script>
-    <script src="/js/datatables/buttons.html5.min.js"></script>
-    <script src="/js/datatables/buttons.colVis.min.js"></script>
-    <script src="/js/datatables/buttons.bootstrap4.min.js"></script>
-
+    <script src="/system/dataTable/responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/system/dataTable/datatables/js/dataTables.bootstrap4.min.js"></script>
+    <script src="/system/dataTable/responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="/system/dataTable/jsZip/jszip.min.js"></script>
+    <script src="/system/dataTable/pdfmake/vfs_fonts.js"></script>
+    <script src="/system/dataTable/pdfmake/pdfmake.min.js"></script>
+    <script src="/system/dataTable/buttons/js/buttons.print.min.js"></script>
+    <script src="/system/dataTable/buttons/js/buttons.html5.min.js"></script>
+    <script src="/system/dataTable/buttons/js/buttons.colVis.min.js"></script>
+    <script src="/system/dataTable/buttons/js/buttons.bootstrap4.min.js"></script>
 
     <script src="/system/adminLTE/js/adminlte.min.js"></script>
-
-    <script src="/system/adminLTE/js/demo.js"></script>
-
     <script src="/system/adminLTE/plugins/chart/js/Chart.min.js"></script>
-
     <script src="/system/adminLTE/plugins/sparklines/sparkline.js"></script>
-
     <script src="/system/adminLTE/plugins/toastr/js/toastr.min.js"></script>
-
     <script src="/system/adminLTE/plugins/moment/js/moment.min.js"></script>
-
+    <script src="/system/adminLTE/plugins/dropzone/js/dropzone.min.js"></script>
     <script src="/system/adminLTE/plugins/select2/js/select2.full.min.js"></script>
-
+    <script src="/system/adminLTE/plugins/bs-stepper/js/bs-stepper.min.js"></script>
+    <script src="/system/adminLTE/plugins/inputmask/jquery.inputmask.min.js"></script>
+    <script src="/system/adminLTE/plugins/inputmask/jquery.inputmask.bundle.js"></script>
     <script src="/system/adminLTE/plugins/daterangepicker/js/daterangepicker.js"></script>
+    <script src="/system/adminLTE/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 
     <script src="/system/adminLTE/plugins/sweetalert2/js/sweetalert2.min.js"></script>
     <script src="/system/adminLTE/plugins/sweetalert2/js/sweetalert2.all.min.js"></script>
 
+    <script src="/system/adminLTE/plugins/bootstrap/js/bootstrap-switch.min.js"></script>
     <script src="/system/adminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/system/adminLTE/plugins/bootstrap/js/bootstrap-colorpicker.min.js"></script>
     <script src="/system/adminLTE/plugins/bootstrap/js/bootstrap-tempusdominus.min.js"></script>
+    <script src="/system/adminLTE/plugins/bootstrap/js/jquery.bootstrap-duallistbox.min.js"></script>
 
     <script src="/system/adminLTE/plugins/summernote/js/summernote.min.js"></script>
     <script src="/system/adminLTE/plugins/summernote/js/summernote-bs4.min.js"></script>
@@ -540,6 +563,25 @@
     <script src="/system/adminLTE/plugins/jquery/js/jquery.vmap.min.js"></script>
     <script src="/system/adminLTE/plugins/jquery/js/maps/jquery.vmap.world.js"></script>
     <script src="/system/adminLTE/plugins/jquery/js/jquery.overlayScrollbars.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $(window).on("resize", function() {
+                var winWidth = $(window).width();
+                if (winWidth < 576) {
+                    console.log("Window Width: " + winWidth + "class used: col");
+                } else if (winWidth < 768) {
+                    console.log("Window Width: " + winWidth + "class used: col-sm");
+                } else if (winWidth < 992) {
+                    console.log("Window Width: " + winWidth + "class used: col-md");
+                } else if (winWidth < 1200) {
+                    console.log("Window Width: " + winWidth + "class used: col-lg");
+                } else {
+                    console.log("Window Width: " + winWidth + "class used: col-xl");
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -14,10 +14,10 @@
     padding: 0.5rem 0.75rem;
 }
 
-table.dataTable.dtr-column > tbody > tr > td.dtr-control:before,
-table.dataTable.dtr-column > tbody > tr > th.dtr-control:before,
-table.dataTable.dtr-column > tbody > tr > td.control:before,
-table.dataTable.dtr-column > tbody > tr > th.control:before {
+table.dataTable.dtr-column>tbody>tr>td.dtr-control:before,
+table.dataTable.dtr-column>tbody>tr>th.dtr-control:before,
+table.dataTable.dtr-column>tbody>tr>td.control:before,
+table.dataTable.dtr-column>tbody>tr>th.control:before {
     top: initial;
     left: initial;
     height: auto;
@@ -38,10 +38,11 @@ table.dataTable.dtr-column > tbody > tr > th.control:before {
     content: url("/system/dataTable/details_open.png");
     background-color: transparent;
 }
-table.dataTable.dtr-column > tbody > tr.parent td.dtr-control:before,
-table.dataTable.dtr-column > tbody > tr.parent th.dtr-control:before,
-table.dataTable.dtr-column > tbody > tr.parent td.control:before,
-table.dataTable.dtr-column > tbody > tr.parent th.control:before {
+
+table.dataTable.dtr-column>tbody>tr.parent td.dtr-control:before,
+table.dataTable.dtr-column>tbody>tr.parent th.dtr-control:before,
+table.dataTable.dtr-column>tbody>tr.parent td.control:before,
+table.dataTable.dtr-column>tbody>tr.parent th.control:before {
     content: url("/system/dataTable/details_close.png");
     background-color: transparent;
 }
@@ -50,6 +51,7 @@ table.dataTable.dtr-column > tbody > tr.parent th.control:before {
     font-size: 14px;
     font-weight: 500;
 }
+
 .badge-defin {
     background-color: #adb5bd !important;
 }
@@ -121,15 +123,6 @@ div.dataTables_wrapper div.dataTables_info {
     max-width: 100%;
     display: block;
     width: 575px;
-}
-
-.align-td {
-	vertical-align: middle !important;
-}
-
-.visible-td {
-	visibility: hidden !important;
-	vertical-align: middle !important;
 }
 
 @media (min-width: 992px) {

@@ -1,18 +1,3 @@
-// const swalWithBootstrapButtons = Swal.mixin({
-//     customClass: {
-//         cancelButton: "btn btn-outline-danger btn-nuevo padding-buttons",
-//         confirmButton: "btn btn-outline-success btn-nuevo margin-buttons",
-//     },
-//     buttonsStyling: false,
-// });
-
-var Toast = Swal.mixin({
-    toast: true,
-    position: "top-end",
-    showConfirmButton: false,
-    timer: 2000,
-});
-
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -29,6 +14,13 @@ $(document).ready(function () {
     $("#lblImg").on("click", function () {
         $("#fileImgUsuario").click(function () {});
     });
+
+    var mask = $("#selLada").val();
+    if (mask == "(+ 66)" || mask == "(+ 84)" || mask == "(+ 1)" || mask == "(+ 52)" || mask == "(+ 91)") {
+        $("#txtTelefono").inputmask({ mask: "(999) 999-9999" });
+    } else if (mask == "(+ 81)" || mask == "(+ 82)" || mask == "(+ 86)") {
+        $("#txtTelefono").inputmask({ mask: "(999) 9999-9999" });
+    }
 
     $("#selLada").on("change", function () {
         if (this.value == "(+ 66)" || this.value == "(+ 84)" || this.value == "(+ 1)" || this.value == "(+ 52)" || this.value == "(+ 91)") {
@@ -92,8 +84,6 @@ $(document).ready(function () {
     $("#txtPais").val(dataPais);
     $("#txtNotas").val(dataNotas);
 
-    
-
     if (dataLada == "(+ 66)") {
         $("#selLada option[value='" + dataLada + "']").attr("selected", true);
         $("#txtTelefono").inputmask({ mask: "(999) 999-9999" });
@@ -156,27 +146,13 @@ $(document).ready(function () {
         $("#dataPais").html(txtPais);
         $("#dataNotas").html(txtNotas);
 
-        $("#imgNavUser").attr("src", ""+ src + "");
-        $("#imgDropUser").attr("src", ""+ src + "");
-        $("#imgPerfil").attr("src", ""+ src + "");
+        $("#imgNavUser").attr("src", "" + src + "");
+        $("#imgDropUser").attr("src", "" + src + "");
+        $("#imgPerfil").attr("src", "" + src + "");
+
         Toast.fire({
             icon: "success",
             title: "Perfil actualizado correctamente",
         });
     });
-
-    // $("#selLada")
-    //     .select2({
-    //         placeholder: "Ladas",
-    //         allowClear: true,
-    //     })
-    //     .on("select2:unselecting", function () {
-    //         $(this).data("unselecting", true);
-    //     })
-    //     .on("select2:opening", function (e) {
-    //         if ($(this).data("unselecting")) {
-    //             $(this).removeData("unselecting");
-    //             e.preventDefault();
-    //         }
-    //     });
 });

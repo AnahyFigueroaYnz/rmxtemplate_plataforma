@@ -1,0 +1,145 @@
+.popValidacion {
+    cursor: help;
+    color: #dc3545 !important;
+}
+
+.popValidacion:hover {
+    color: #c83333 !important;
+}
+
+.invalid-msj {
+    width: 100%;
+    display: none;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #dc3545;
+    margin-bottom: 0px;
+}
+
+/* .btn-tool {
+    background: 0 0 !important;
+    font-size: 15px !important;
+    margin: -5px 0 !important;
+    padding: 2px 5px !important;
+} */
+
+.btn-clean {
+    height: calc(2rem) !important;
+    border-bottom: 1px solid #ced4da !important;
+}
+
+.sel-disabled {
+    opacity: 1 !important;
+    color: #939ba2 !important;
+}
+
+.stepper-proyecto .form-group label {
+    color: #5b6670 !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    margin-bottom: 0px !important;
+    margin-left: 0px !important;
+
+    line-height: 2.5 !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    height: calc(2rem) !important;
+    padding: 0px 0px 0px 5px !important;
+}
+
+.stepper-proyecto .form-control {
+    line-height: 0 !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    height: calc(2rem) !important;
+    padding: 0px 10px 0px 5px !important;
+}
+
+.stepper-proyecto .form-control::placeholder {
+    font-size: 14px !important;
+}
+
+.stepper-proyecto .custom-file-label::after {
+    display: none !important;
+}
+
+.stepper-proyecto .custom-file-input-border {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    box-shadow: inherit;
+}
+
+.stepper-proyecto .custom-file-label-border {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    box-shadow: inherit;
+}
+
+.user-block {
+    width: 50%;
+}
+
+.user-block .username {
+    margin-top: 0px !important;
+    font-size: 30px !important;
+    font-weight: 400 !important;
+    color: #535853 !important;
+    line-height: 30px !important;
+    margin-left: 30px !important;
+}
+
+.user-block .icon {
+    font-size: 30px !important;
+    color: #000080 !important;
+}
+
+.user-block .description {
+    color: #6c757d !important;
+    margin-top: 5px !important;
+    font-size: 12px !important;
+    margin-left: 0px !important;
+}
+
+.user-block .icon i {
+    float: left !important;
+    width: 35px !important;
+    height: 35px !important;
+}
+
+.card-tools {
+    width: 20%;
+    text-align: right;
+}
+
+.card-tools .info {
+    margin: 0px;
+    font-size: 12px;
+    color: #808080;
+}
+
+.card-tools .progress {
+    margin-top: 4px;
+    border-radius: 1rem !important;
+}
+
+.card-tools .progress-bar-striped {
+    border-radius: 1rem !important;
+}
+
+
+.icon-cardPedidos {
+	font-size: 2rem;
+	color: #000080;
+	margin-bottom: 1rem;
+}
+
+.text-cardPedidos {
+	color: #808080;
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+

@@ -1,20 +1,4 @@
-const swalWithBootstrapButtons = Swal.mixin({
-    customClass: {
-        cancelButton: "btn btn-outline-danger btn-nuevo padding-buttons",
-        confirmButton: "btn btn-outline-success btn-nuevo margin-buttons",
-    },
-    buttonsStyling: false,
-});
-
-var Toast = Swal.mixin({
-    toast: true,
-    position: "top-end",
-    showConfirmButton: false,
-    timer: 2000,
-});
-
 var table;
-
 $(document).ready(function () {
     jQuery.noConflict();
 
@@ -139,7 +123,7 @@ $(document).ready(function () {
             },
         })
         .columns.adjust();
-    $("#tblTodosProy_filter input").attr("placeholder", "Buscar");
+    $("#tblTodosProy_filter_filter input").attr("placeholder", "Buscar");
 
     $("#tblTodosProy").on("click", "a.eliminar_proyecto", function (e) {
         e.preventDefault();
@@ -156,7 +140,6 @@ $(document).ready(function () {
             })
             .then((result) => {
                 if (result.isConfirmed) {
-                    
                     table.row($(this).parents("tr")).remove().draw();
                     Toast.fire({
                         icon: "success",
@@ -285,7 +268,7 @@ $(document).ready(function () {
             },
         })
         .columns.adjust();
-    $("#tblProyElimiados input").attr("placeholder", "Buscar");
+    $("#tblProyElimiados_filter input").attr("placeholder", "Buscar");
     $("#tblProyElimiados").on("click", "a.eliminar_proyecto", function (e) {
         e.preventDefault();
 
@@ -301,7 +284,6 @@ $(document).ready(function () {
             })
             .then((result) => {
                 if (result.isConfirmed) {
-                    
                     table.row($(this).parents("tr")).remove().draw();
                     Toast.fire({
                         icon: "success",
@@ -423,7 +405,7 @@ $(document).ready(function () {
             },
         })
         .columns.adjust();
-    $("#tblAsesores input").attr("placeholder", "Buscar");
+    $("#tblAsesores_filter input").attr("placeholder", "Buscar");
 
     table = $("#tbl_clientes")
         .DataTable({
@@ -535,7 +517,7 @@ $(document).ready(function () {
             },
         })
         .columns.adjust();
-    $("#tbl_clientes input").attr("placeholder", "Buscar");
+    $("#tbl_clientes_filter input").attr("placeholder", "Buscar");
 
     table = $("#tblProveedores")
         .DataTable({
@@ -651,7 +633,7 @@ $(document).ready(function () {
             },
         })
         .columns.adjust();
-    $("#tblProveedores input").attr("placeholder", "Buscar");
+    $("#tblProveedores_filter input").attr("placeholder", "Buscar");
 
     $("#tblProveedores").on("click", "a.eliminar_proveedor", function (e) {
         e.preventDefault();
@@ -668,7 +650,6 @@ $(document).ready(function () {
             })
             .then((result) => {
                 if (result.isConfirmed) {
-                    
                     table.row($(this).parents("tr")).remove().draw();
                     Toast.fire({
                         icon: "success",
@@ -790,7 +771,7 @@ $(document).ready(function () {
             },
         })
         .columns.adjust();
-    $("#tblSearchProd input").attr("placeholder", "Buscar");
+    $("#tblSearchProd_filter input").attr("placeholder", "Buscar");
 
     table = $("#tblAgentesCg")
         .DataTable({
@@ -906,7 +887,7 @@ $(document).ready(function () {
             },
         })
         .columns.adjust();
-    $("#tblAgentesCg input").attr("placeholder", "Buscar");
+    $("#tblAgentesCg_filter input").attr("placeholder", "Buscar");
     $("#tblAgentesCg").on("click", "a.eliminar_agente", function (e) {
         e.preventDefault();
 
@@ -922,7 +903,6 @@ $(document).ready(function () {
             })
             .then((result) => {
                 if (result.isConfirmed) {
-                    
                     table.row($(this).parents("tr")).remove().draw();
                     Toast.fire({
                         icon: "success",
@@ -947,7 +927,7 @@ $(document).ready(function () {
             processing: true,
             autoWidth: true,
             pageLength: 3,
-            order: [[1, "desc"]],
+            order: [[1, "asc"]],
             columnDefs: [
                 {
                     targets: [0],
@@ -1048,7 +1028,7 @@ $(document).ready(function () {
             },
         })
         .columns.adjust();
-    $("#tblAgenciasAd input").attr("placeholder", "Buscar");
+    $("#tblAgenciasAd_filter input").attr("placeholder", "Buscar");
     $("#tblAgenciasAd").on("click", "a.eliminar_agencia", function (e) {
         e.preventDefault();
 
@@ -1064,7 +1044,6 @@ $(document).ready(function () {
             })
             .then((result) => {
                 if (result.isConfirmed) {
-                    
                     table.row($(this).parents("tr")).remove().draw();
                     Toast.fire({
                         icon: "success",
@@ -1082,5 +1061,3 @@ $(document).ready(function () {
         column.visible(!column.visible());
     });
 });
-
-// tblAgenciasAd

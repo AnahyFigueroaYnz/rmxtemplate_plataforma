@@ -1,4 +1,4 @@
-// variable global
+var table;
 var dd;
 var mm;
 var yyyy;
@@ -15,21 +15,6 @@ var todayPrint;
 var valPendiente;
 var id_task_dash;
 var valTask = false;
-
-const swalWithBootstrapButtons = Swal.mixin({
-    customClass: {
-        cancelButton: "btn btn-outline-danger btn-nuevo padding-buttons",
-        confirmButton: "btn btn-outline-success btn-nuevo margin-buttons",
-    },
-    buttonsStyling: false,
-});
-
-var Toast = Swal.mixin({
-    toast: true,
-    position: "top-end",
-    showConfirmButton: false,
-    timer: 2000,
-});
 
 // variables globales para la fecha actual
 function fechaLive() {
@@ -63,11 +48,10 @@ function validarPendiente() {
     }
 }
 
-$(document).ready(function () {
+$(document).ready(function() {
     jQuery.noConflict();
     fechaLive();
 
-    
     Chart.defaults.global.defaultFontSize = 18;
 
     var donutAdmin = $("#donutAdmin");
@@ -76,12 +60,10 @@ $(document).ready(function () {
             type: "doughnut",
             data: {
                 labels: ["Producción", "Logística internacional", "En proceso", "Despacho aduanal", "Entrega última milla", "Proyecto concluido"],
-                datasets: [
-                    {
-                        data: [10, 04, 15, 05, 05, 10],
-                        backgroundColor: ["#d2d6de", "#23bb52", "#007bff", "#6c757d", "#7800b6", "#008f39"],
-                    },
-                ],
+                datasets: [{
+                    data: [10, 04, 15, 05, 05, 10],
+                    backgroundColor: ["#d2d6de", "#23bb52", "#007bff", "#6c757d", "#7800b6", "#008f39"],
+                }, ],
             },
             options: {
                 title: false,
@@ -97,7 +79,8 @@ $(document).ready(function () {
         });
     }
 
-    table = $("#tblPendientes").DataTable({
+    table = $("#tblPendientes")
+        .DataTable({
             dom: '<tr><"mt-3 ml-auto"p>',
             responsive: {
                 details: {
@@ -108,30 +91,20 @@ $(document).ready(function () {
             },
             autoWidth: true,
             pageLength: 5,
-            order: [[1, "asc"]],
-            columnDefs: [
-                {
-                    targets: "_all",
-                    orderable: false,
-                    className: "align-td",
-                },
-                {
-                    targets: [1],
-                    className: "visible-td",
-                },
-                {
+            order: [
+                [1, "asc"]
+            ],
+            columnDefs: [{
                     targets: [0],
-                    orderable: false,
                     className: "control",
                 },
                 {
                     targets: [1],
                     visible: false,
-                    orderable: false,
                     className: "noVisible",
                 },
                 {
-                    targets: [2, 4],
+                    targets: "_all",
                     orderable: false,
                 },
             ],
@@ -139,12 +112,10 @@ $(document).ready(function () {
                 [3, 5, 10, 25, 50, -1],
                 ["3", "5", "10", "25", "50", "Todo"],
             ],
-            buttons: [
-                {
-                    extend: "pageLength",
-                    className: "btn btn-outline-primary btn-sm border-buttons num-pag-only",
-                },
-            ],
+            buttons: [{
+                extend: "pageLength",
+                className: "btn btn-outline-primary btn-sm border-buttons num-pag-only",
+            }, ],
             language: {
                 sProcessing: "Procesando...",
                 sLengthMenu: "Mostrar _MENU_ registros",
@@ -180,10 +151,11 @@ $(document).ready(function () {
                     },
                 },
             },
-    }).columns.adjust();
+        })
+        .columns.adjust();
     $("#tblPendientes_filter input").attr("placeholder", "Buscar");
 
-    $("#tblPendientes").on("click", "a.trashCan", function (e) {
+    $("#tblPendientes").on("click", "a.trashCan", function(e) {
         e.preventDefault();
 
         swalWithBootstrapButtons
@@ -210,7 +182,7 @@ $(document).ready(function () {
     });
 
     // pendientes
-    $(document).on("click", ".btn-bf", function (event) {
+    $(document).on("click", ".btn-bf", function(event) {
         event.preventDefault();
         id_task_dash = $(this).data("id");
 
@@ -228,7 +200,7 @@ $(document).ready(function () {
         $("#task_" + id_task_dash + "").css("text-decoration", "line-through");
     });
 
-    $(document).on("click", ".btn-af", function (event) {
+    $(document).on("click", ".btn-af", function(event) {
         event.preventDefault();
         id_task_dash = $(this).data("id");
 
@@ -246,7 +218,7 @@ $(document).ready(function () {
         $("#task_" + id_task_dash + "").css("text-decoration", "none");
     });
 
-    $(document).on("click", ".newTask", function (event) {
+    $(document).on("click", ".newTask", function(event) {
         event.preventDefault();
 
         $("#modalTask").modal();
@@ -256,7 +228,7 @@ $(document).ready(function () {
         $("#btn-task").removeClass("saveTask");
     });
 
-    $(document).on("click", ".editTask", function (event) {
+    $(document).on("click", ".editTask", function(event) {
         event.preventDefault();
         id_task_dash = $(this).data("id");
 
@@ -279,7 +251,7 @@ $(document).ready(function () {
         $("#idTask").val(id_task_dash);
     });
 
-    $(document).on("click", ".saveTask", function (event) {
+    $(document).on("click", ".saveTask", function(event) {
         event.preventDefault();
         validarPendiente();
 
@@ -307,7 +279,7 @@ $(document).ready(function () {
         }
     });
 
-    $(document).on("click", ".addTask", function (event) {
+    $(document).on("click", ".addTask", function(event) {
         event.preventDefault();
         validarPendiente();
 
@@ -320,19 +292,42 @@ $(document).ready(function () {
 
         if (valTask == true) {
             count++;
-            id_task = "0" + count + "";
 
-            table.row
-                .add([
-                    "",
-                    "" + id_task + "",
-                    '<a id="btnCheck_' + count + '" class="btn btn-light btn-check btn-bf" data-id="' + count + '">&nbsp;&nbsp;</a>',
-                    '<span id="task_' + count + '" class="badget-task">Actualizar proyectos </span>' + '<small id="limiteDate_' + count + '" class="badge badge-info badge-task"> 23/07/2' + count + "1 </small>" + '<small id="checkDate_' + count + '" class="badge badge-success badge-task hide-button"></small>',
-                    '<a href="" type="button" class="editTask" data-id="' + count + '" data-toggle="modal" data-target="#modalTask"><i class="fas fa-edit"></i></a>' + '<a href="" type="button" class="trashCan" data-id="' + count + '"><i class="far fa-trash-alt"></i></a>',
-                ])
-                .draw(false);
-
-            $("#tblPendientes tbody tr").addClass("shadow border-row align-td");
+            const tr = $(
+                '<tr class="shadow border-row align-td">' +
+                '<td class="align-td"></td>' +
+                '<td class="visible-td">0' +
+                count +
+                "</td>" +
+                '<td class="align-td">' +
+                '<a id="btnCheck_0' +
+                count +
+                '" class="btn btn-light btn-check btn-bf" data-id="0' +
+                count +
+                '">&nbsp;&nbsp;</a>' +
+                "</td>" +
+                '<td class="align-td">' +
+                '<span id="task_0' +
+                count +
+                '" class="badget-task">Actualizar perfil </span>' +
+                '<small id="limiteDate_0' +
+                count +
+                '" class="badge badge-info badge-task"> 23/07/2021 </small>' +
+                '<small id="checkDate_0' +
+                count +
+                '" class="badge badge-success badge-task hide-button"></small>' +
+                "</td>" +
+                '<td class="align-td">' +
+                '<a href="" type="button" class="editTask" data-id="0' +
+                count +
+                '"><i class="fas fa-edit"></i></a>' +
+                '<a href="" type="button" class="trashCan" data-id="0' +
+                count +
+                '"><i class="far fa-trash-alt"></i></a>' +
+                "</td>" +
+                "</tr>",
+            );
+            table.row.add(tr[0]).draw(false);
 
             Toast.fire({
                 icon: "success",
