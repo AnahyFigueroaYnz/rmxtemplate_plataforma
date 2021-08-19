@@ -1,43 +1,50 @@
 var table;
-var valAgencia = false;
+var valAgenteC = false;
 var valAgente = false;
-var valPuerto = false;
-var countA = $("#txtCount").val();
-var count = $("#txtContP").val();
-var countRows = $("#txtContA").val();
+var valCarga = false;
+var countAg = $("#txtCountAg").val();
+var countAgente = $("#txtCountAgente").val();
+var countCarga = $("#txtCountCarga").val();
 
 // funcion para convertir un numero en formato string a numero con comas y decimales
 function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(?:\d{3})+(?!\d))/g, ",");
 }
 
-function validarAgencia() {
-    valAgencia = $("#txtAgencia").val();
-    valAgPuerto = $("#txtAgPuerto").val();
-    valAgCodigo = $("#txtAgCodigo").val();
+function validarAgenteC() {
+    valEmpresa = $("#txtEmpresa").val();
+    valAgLCL = $("#txtAgLCL").val();
+    valAg20FCL = $("#txtAg20FCL").val();
+    valAg40FCL = $("#txtAg40FCL").val();
 
-    if (valAgencia == "") {
-        $("#val_txtAgencia").css("display", "");
-    } else if (valAgencia != "") {
-        $("#val_txtAgencia").css("display", "none");
+    if (valEmpresa == "") {
+        $("#val_txtAgLCL").css("display", "");
+    } else if (valEmpresa != "") {
+        $("#val_txtAgLCL").css("display", "none");
     }
 
-    if (valAgPuerto == "") {
-        $("#val_txtAgPuerto").css("display", "");
-    } else if (valAgPuerto != "") {
-        $("#val_txtAgPuerto").css("display", "none");
+    if (valAgLCL == "") {
+        $("#val_txtAgLCL").css("display", "");
+    } else if (valAgLCL != "") {
+        $("#val_txtAgLCL").css("display", "none");
     }
 
-    if (valAgCodigo == "") {
-        $("#val_txtAgCodigo").css("display", "");
-    } else if (valAgCodigo != "") {
-        $("#val_txtAgCodigo").css("display", "none");
+    if (valAg20FCL == "") {
+        $("#val_txtAg20FCL").css("display", "");
+    } else if (valAg20FCL != "") {
+        $("#val_txtAg20FCL").css("display", "none");
     }
 
-    if (valAgencia != "" && valAgPuerto != "" && valAgCodigo != "") {
-        valAgencia = true;
+    if (valAg40FCL == "") {
+        $("#val_txtAg40FCL").css("display", "");
+    } else if (valAg40FCL != "") {
+        $("#val_txtAg40FCL").css("display", "none");
+    }
+
+    if (valEmpresa != "" && valAgLCL != "" && valAg20FCL != ""  && valAg40FCL != "") {
+        valAgenteC = true;
     } else {
-        valAgencia = false;
+        valAgenteC = false;
     }
 }
 
@@ -78,26 +85,33 @@ function validarAgente() {
     }
 }
 
-function validarPuerto() {
-    valPuerto = $("#txtPuerto").val();
-    valCodigo = $("#txtCodigo").val();
+function validarCarga() {
+    val20FCL = $("#txt20FCL").val();
+    val40FCL = $("#txt40FCL").val();
+    valLCL = $("#txtLCL").val();
 
-    if (valPuerto == "") {
-        $("#val_txtPuerto").css("display", "");
-    } else if (valPuerto != "") {
-        $("#val_txtPuerto").css("display", "none");
+    if (val20FCL == "") {
+        $("#val_txt20FCL").css("display", "");
+    } else if (val20FCL != "") {
+        $("#val_txt20FCL").css("display", "none");
     }
 
-    if (valCodigo == "") {
-        $("#val_txtCodigo").css("display", "");
-    } else if (valCodigo != "") {
-        $("#val_txtCodigo").css("display", "none");
+    if (val40FCL == "") {
+        $("#val_txt40FCL").css("display", "");
+    } else if (val40FCL != "") {
+        $("#val_txt40FCL").css("display", "none");
     }
 
-    if (valPuerto != "" && valCodigo != "") {
-        valPuerto = true;
+    if (valLCL == "") {
+        $("#val_txtLCL").css("display", "");
+    } else if (valLCL != "") {
+        $("#val_txtLCL").css("display", "none");
+    }
+
+    if (val20FCL != "" && val40FCL != "" && valLCL != "") {
+        valCarga = true;
     } else {
-        valPuerto = false;
+        valCarga = false;
     }
 }
 
@@ -115,22 +129,12 @@ $(document).ready(function () {
     var txtAgente = $("#txtAgente").val();
     var txtCorreo = $("#txtCorreo").val();
     var txtTelefono = $("#txtTelefono").val();
-
-    var dataAgencia = $("#dataAgencia").html();
-    var dataHonorarios = $("#dataHonorarios").html();
-    var dataRevalidación = $("#dataRevalidación").html();
-    var dataComplementarios = $("#dataComplementarios").html();
-    var dataPrevio = $("#dataPrevio").html();
-    var dataManiobras = $("#dataManiobras").html();
-    var dataDesconsolidación = $("#dataDesconsolidación").html();
     
-    $("#txtRevalidación").inputmask({alias: "currency", prefix: '$ ', rightAlign: false, allowMinus:false});
-    $("#txtComplementarios").inputmask({alias: "currency", prefix: '$ ', rightAlign: false, allowMinus:false});
-    $("#txtPrevio").inputmask({alias: "currency", prefix: '$ ', rightAlign: false, allowMinus:false});
-    $("#txtManiobras").inputmask({alias: "currency", prefix: '$ ', rightAlign: false, allowMinus:false});
-    $("#txtDesconsolidación").inputmask({alias: "currency", prefix: '$ ', rightAlign: false, allowMinus:false});
+    $("#txt20FCL").inputmask({alias: "currency", prefix: '', rightAlign: false, allowMinus:false});
+    $("#txt40FCL").inputmask({alias: "currency", prefix: '', rightAlign: false, allowMinus:false});
+    $("#txtLCL").inputmask({alias: "currency", prefix: '', rightAlign: false, allowMinus:false});
 
-    table = $("#tblAgentesAd")
+    table = $("#tblAgentesCarga")
         .DataTable({
             dom: '<tr><"mt-3 ml-auto"p>',
             responsive: {
@@ -198,7 +202,7 @@ $(document).ready(function () {
             },
         })
         .columns.adjust();
-    $("#tblAgentesAd").on("click", "a.trashCan", function (e) {
+    $("#tblAgentesCarga").on("click", "a.trashCan", function (e) {
         e.preventDefault();
 
         swalWithBootstrapButtons
@@ -224,7 +228,7 @@ $(document).ready(function () {
             });
     });
 
-    table = $("#tblPuertosAd")
+    table = $("#tblCarga")
         .DataTable({
             dom: '<tr><"mt-3 ml-auto"p>',
             responsive: {
@@ -245,7 +249,7 @@ $(document).ready(function () {
                     className: "control",
                 },
                 {
-                    targets: [3],
+                    targets: [4],
                     orderable: false,
                 },
             ],
@@ -293,7 +297,7 @@ $(document).ready(function () {
         })
         .columns.adjust();
 
-    $("#tblPuertosAd").on("click", "a.trashCan", function (e) {
+    $("#tblCarga").on("click", "a.trashCan", function (e) {
         e.preventDefault();
 
         swalWithBootstrapButtons
@@ -335,10 +339,10 @@ $(document).ready(function () {
         }
     });
 
-    $(document).on("click", "#tabsPuertos", function (event) {
+    $(document).on("click", "#tabsCargas", function (event) {
         event.preventDefault();
 
-        $("#tabPuertos").removeClass("hidden");
+        $("#tabCargas").removeClass("hidden");
         $("#tabAgentes").addClass("hidden");
         $($.fn.dataTable.tables(true)).DataTable().responsive.recalc();
     });
@@ -347,7 +351,7 @@ $(document).ready(function () {
         event.preventDefault();
 
         $("#tabAgentes").removeClass("hidden");
-        $("#tabPuertos").addClass("hidden");
+        $("#tabCargas").addClass("hidden");
         $($.fn.dataTable.tables(true)).DataTable().responsive.recalc();
     });
 
@@ -369,7 +373,7 @@ $(document).ready(function () {
             $("#txtTelefono").inputmask({ mask: "(999) 9999-9999" });
         }
 
-        if (countRows == 1) {
+        if (countAgente == 1) {
             $(".fmAgente").removeClass("col-9");
             $(".fmAgente").addClass("col-12");
             $(".fmStatus").addClass("hidden");
@@ -456,9 +460,9 @@ $(document).ready(function () {
         validarAgente();
 
         if (valAgente == true) {
-            countRows++;
+            countAgente++;
 
-            id = "0" + countRows;
+            id = "0" + countAgente;
             selLada = $("#selLada").val();
             txtAgente = $("#txtAgente").val();
             txtCorreo = $("#txtCorreo").val();
@@ -520,8 +524,8 @@ $(document).ready(function () {
                         "</tr>",
                 );
 
-                $("#txtContA").val(countRows);
-                $("#tblAgentesAd").DataTable().row.add(tr[0]).draw(false);
+                $("#txtCountAgente").val(countAgente);
+                $("#tblAgentesCarga").DataTable().row.add(tr[0]).draw(false);
             } else {
                 const tr = $(
                     '<tr class="shadow border-row align-td">' +
@@ -568,8 +572,8 @@ $(document).ready(function () {
                         "</tr>",
                 );
 
-                $("#txtContA").val(countRows);
-                $("#tblAgentesAd").DataTable().row.add(tr[0]).draw(false);
+                $("#txtCountAgente").val(countAgente);
+                $("#tblAgentesCarga").DataTable().row.add(tr[0]).draw(false);
             }
 
             Toast.fire({
@@ -587,193 +591,134 @@ $(document).ready(function () {
         }
     });
 
-    $(document).on("click", ".editPuerto", function (event) {
+    $(document).on("click", ".editCarga", function (event) {
         event.preventDefault();
         var id = $(this).data("id");
 
-        $("#modalPuerto").modal();
-        $("#titleModalP").html("Editar puerto");
-        $("#btn-puerto").html("Guardar");
-        $("#btn-puerto").addClass("savePuerto");
-        $("#btn-puerto").removeClass("addPuerto");
+        $("#modalCarga").modal();
+        $("#titleModalC").html("Editar carga");
+        $("#btn-carga").html("Guardar");
+        $("#btn-carga").addClass("saveCarga");
+        $("#btn-carga").removeClass("addCarga");
 
-        var dataPuerto = $(".dataPuerto_" + id + "").html();
-        var dataCodigo = $(".dataCodigo_" + id + "").html();
+        var data20FCL = $(".data20FCL_" + id + "").html();
+        var data40FCL = $(".data40FCL_" + id + "").html();
+        var dataLCL = $(".dataLCL_" + id + "").html();
 
-        $("#idPuerto").val(id);
-        $("#txtPuerto").val(dataPuerto);
-        $("#txtCodigo").val(dataCodigo);
+        $("#idCarga").val(id);
+        $("#txt20FCL").val(data20FCL);
+        $("#txt40FCL").val(data40FCL);
+        $("#txtLCL").val(dataLCL);
     });
 
-    $(document).on("click", ".newPuerto", function (event) {
+    $(document).on("click", ".newCarga", function (event) {
         event.preventDefault();
 
-        $("#modalPuerto").modal();
-        $("#titleModalP").html("Nuevo puerto");
-        $("#btn-puerto").html("Agregar");
-        $("#btn-puerto").addClass("addPuerto");
-        $("#btn-puerto").removeClass("savePuerto");
+        $("#modalCarga").modal();
+        $("#titleModalC").html("Nueva carga");
+        $("#btn-carga").html("Agregar");
+        $("#btn-carga").addClass("addCarga");
+        $("#btn-carga").removeClass("saveCarga");
     });
 
-    $(document).on("click", ".savePuerto", function (event) {
+    $(document).on("click", ".saveCarga", function (event) {
         event.preventDefault();
-        validarPuerto();
+        validarCarga();
 
-        id = $("#idPuerto").val();
-        txtPuerto = $("#txtPuerto").val();
-        txtCodigo = $("#txtCodigo").val();
+        id = $("#idCarga").val();
+        txt20FCL = $("#txt20FCL").val();
+        txt40FCL = $("#txt40FCL").val();
+        txtLCL = $("#txtLCL").val();
 
-        if (valPuerto == true) {
-            $(".dataPuerto_" + id + "").html(txtPuerto);
-            $(".dataCodigo_" + id + "").html(txtCodigo);
+        if (valCarga == true) {
+            $(".data20FCL_" + id + "").html(txt20FCL);
+            $(".data40FCL_" + id + "").html(txt40FCL);
+            $(".dataLCL_" + id + "").html(txtLCL);
 
             Toast.fire({
                 icon: "success",
-                title: "Puerto actualizado correctamente",
+                title: "Carga actualizada correctamente",
             });
 
-            $("#modalPuerto").modal("hide");
-            $("#idPuerto").val(0);
-            $("#txtPuerto").val();
-            $("#txtCodigo").val();
+            $("#modalCarga").modal("hide");
+            $("#txt20FCL").val();
+            $("#txt40FCL").val();
+            $("#txtLCL").val();
         }
     });
 
-    $(document).on("click", ".addPuerto", function (event) {
+    $(document).on("click", ".addCarga", function (event) {
         event.preventDefault();
-        validarPuerto();
+        validarCarga();
 
-        if (valPuerto == true) {
-            count++;
+        if (valCarga == true) {
+            countCarga++;
 
-            id = "0" + count;
-            txtPuerto = $("#txtPuerto").val();
-            txtCodigo = $("#txtCodigo").val();
+            id = "0" + countCarga;
+            txt20FCL = $("#txt20FCL").val();
+            txt40FCL = $("#txt40FCL").val();
+            txtLCL = $("#txtLCL").val();
 
             const tr = $(
                 '<tr class="shadow border-row align-td">' +
                     '<td class="align-td"></td>' +
                     '<td class="align-td">' +
-                    '<span class="dataPuerto_' +
-                    id +
-                    ' td-text">' +
-                    txtPuerto +
+                    '<span class="dataPuerto_' + id + ' td-text">' + txt20FCL +
                     "</span>" +
                     "</td>" +
                     '<td class="align-td">' +
-                    '<span class="dataCodigo_' +
-                    id +
-                    ' td-text">' +
-                    txtCodigo +
+                    '<span class="dataCodigo_' + id + ' td-text">' + txt40FCL +
+                    "</span>" +
+                    "</td>" +
+                    '<td class="align-td">' +
+                    '<span class="dataCodigo_' + id + ' td-text">' + txtLCL +
                     "</span>" +
                     "</td>" +
                     '<td class="icons-td">' +
-                    '<a href="" type="button" class="editPuerto" data-id="' +
-                    id +
-                    '"><i class="fas fa-edit"></i></a>' +
-                    '<a href="" type="button" class="trashCan" data-id="' +
-                    id +
-                    '"><i class="far fa-trash-alt"></i></a>' +
+                    '<a href="" type="button" class="editPuerto" data-id="' + id + '"><i class="fas fa-edit"></i></a>' +
+                    '<a href="" type="button" class="trashCan" data-id="' + id + '"><i class="far fa-trash-alt"></i></a>' +
                     "</td>" +
                     "</tr>",
             );
 
-            $("#txtContP").val(countRows);
-            $("#tblPuertosAd").DataTable().row.add(tr[0]).draw(false);
+            $("#countCarga").val(countRows);
+            $("#tblCarga").DataTable().row.add(tr[0]).draw(false);
 
             Toast.fire({
                 icon: "success",
-                title: "Puerto agregado correctamente",
+                title: "Carga agregada correctamente",
             });
 
-            $("#modalPuerto").modal("hide");
-            $("#idPuerto").val(0);
-            $("#txtPuerto").val();
-            $("#txtCodigo").val();
+            $("#modalCarga").modal("hide");
+            $("#idCarga").val(0);
+            $("#txt20FCL").val();
+            $("#txt40FCL").val();
+            $("#txtLCL").val();
         }
     });
 
-    $(document).on("click", ".editAgencia", function (event) {
+    $(document).on("click", ".newAgenteC", function (event) {
         event.preventDefault();
-        $("#modalAgencia").modal();
 
-        var dataRevalidación = $("#dataRevalidación").html();
-        var dataComplementarios = $("#dataComplementarios").html();
-        var dataPrevio = $("#dataPrevio").html();
-        var dataManiobras = $("#dataManiobras").html();
-        var dataDesconsolidación = $("#dataDesconsolidación").html();
-
-        $("#txtRevalidación").val(dataRevalidación);
-        $("#txtComplementarios").val(dataComplementarios);
-        $("#txtPrevio").val(dataPrevio);
-        $("#txtManiobras").val(dataManiobras);
-        $("#txtDesconsolidación").val(dataDesconsolidación);
+        $("#modalAgenteC").modal();
     });
 
-    $(document).on("click", ".saveAgencia", function (event) {
+    $(document).on("click", ".addAgenteC", function (event) {
         event.preventDefault();
+        validarAgenteC();
 
-        txtRevalidación = parseFloat(($("#txtRevalidación").val()).replace(/[$,]/g,""));
-        var fixRevalidación = (txtRevalidación).toFixed(2);
-        var stgRevalidación = String(fixRevalidación);
-        var comRevalidación = numberWithCommas(stgRevalidación);
+        if (valAgenteC == true) {
+            countAg++;
 
-        txtComplementarios = parseFloat(($("#txtComplementarios").val()).replace(/[$,]/g,""));
-        var fixComplementarios = (txtComplementarios).toFixed(2);
-        var stgComplementarios = String(fixComplementarios);
-        var comComplementarios = numberWithCommas(stgComplementarios);
-
-        txtPrevio = parseFloat(($("#txtPrevio").val()).replace(/[$,]/g,""));
-        var fixPrevio = (txtPrevio).toFixed(2);
-        var stgPrevio = String(fixPrevio);
-        var comPrevio = numberWithCommas(stgPrevio);
-
-        txtManiobras = parseFloat(($("#txtManiobras").val()).replace(/[$,]/g,""));
-        var fixManiobras = (txtManiobras).toFixed(2);
-        var stgManiobras = String(fixManiobras);
-        var comManiobras = numberWithCommas(stgManiobras);
-
-        txtDesconsolidación = parseFloat(($("#txtDesconsolidación").val()).replace(/[$,]/g,""));
-        var fixDesconsolidación = (txtDesconsolidación).toFixed(2);
-        var stgDesconsolidación = String(fixDesconsolidación);
-        var comDesconsolidación = numberWithCommas(stgDesconsolidación);
-
-        $("#dataRevalidación").html(comRevalidación);
-        $("#dataComplementarios").html(comComplementarios);
-        $("#dataPrevio").html(comPrevio);
-        $("#dataManiobras").html(comManiobras);
-        $("#dataDesconsolidación").html(comDesconsolidación);
-
-        $("#modalAgencia").modal("hide");
-        $("#txtRevalidación").val();
-        $("#txtComplementarios").val();
-        $("#txtPrevio").val();
-        $("#txtManiobras").val();
-        $("#txtDesconsolidación").val();
-    });
-
-    $(document).on("click", ".newAgencia", function (event) {
-        event.preventDefault();
-
-        $("#modalAgencias").modal();
-    });
-
-    $(document).on("click", ".addAgencia", function (event) {
-        event.preventDefault();
-        validarAgencia();
-
-        if (valAgencia == true) {
-            countA++;
-
-            id = "0" + count;
-            txtAgencia = $("#txtAgencia").val();
+            id = "0" + countAg;
+            txtEmpresa = $("#txtEmpresa").val();
 
             const tr = $(
                 '<tr class="shadow border-row" id="tr_' + id + '" style="vertical-align: middle">' +
                     '<td style="vertical-align: middle"></td>' +
                     '<td style="vertical-align: middle">' +
-                        '<a href="/aplication/agencias-aduanales-detalle.html" style="margin-left: 0.5rem">' +
-                            '<span class="td-text">' + txtAgencia + '</span>' +
+                        '<a href="/aplication/agentes-carga-detalle.html" style="margin-left: 0.5rem">' +
+                            '<span class="td-text">' + txtEmpresa + '</span>' +
                         '</a>' +
                     '</td>' +
                     '<td style="vertical-align: middle">' +
@@ -793,7 +738,7 @@ $(document).ready(function () {
                 '</tr>'
             );
 
-            $("#txtCount").val(countA);
+            $("#txtCountAg").val(countAg);
             $("#tblAgenciasAd").DataTable().row.add(tr[0]).draw(false);
 
             Toast.fire({
@@ -801,10 +746,11 @@ $(document).ready(function () {
                 title: "Agencia agregada correctamente",
             });
 
-            $("#modalAgencias").modal("hide");
-            $("#txtAgencia").val();
-            $("#txtAgPuerto").val();
-            $("#txtAgCodigo").val();
+            $("#modalAgenteC").modal("hide");
+            $("#txtEmpresa").val();
+            $("#txtAg20FCL").val();
+            $("#txtAg40FCL").val();
+            $("#txtAgLCL").val();
         }
     });
 });
