@@ -1,545 +1,1256 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+    <head>
+        <title>Plataforma | Detalle Proyecto</title>
 
-<head>
-    <title>Template Plataforma</title>
+        <meta name="keywords" content="Template ReachMx" />
+        <meta name="keywords" content="Plantilla ReachMx" />
 
-    <meta name="keywords" content="Template ReachMx">
-    <meta name="keywords" content="Plantilla ReachMx">
-    <meta name="description" content="Plantilla de plataforma ReachMx">
-    <meta name="control" content="no-cache" http-equiv="Cache-Control">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="description" content="Template Plataforma" />
+        <meta name="description" content="Plantilla de plataforma ReachMx" />
 
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <meta name="responsive" content="no-cache" http-equiv="Cache-Control" />
+        <meta name="responsive" content="charset=UTF-8" http-equiv="Content-Type" />
 
-    <link rel="stylesheet" href="/css/toastr.min.css">
-    <link rel="stylesheet" href="/css/chartJs/Chart.css">
-    <link rel="stylesheet" href="/css/chartJs/Chart.min.css">
-    <link rel="stylesheet" href="/css/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/datatables/datatables.min.css">
-    <link rel="stylesheet" href="/css/bootstrap/bootstrap-table.min.css">
-    <link rel="stylesheet" href="/css/datatables/buttons.bootstrap4.min.css">
-    <link rel="stylesheet" href="/css/bootstrap/bootstrap-switch-button.css">
-    <link rel="stylesheet" href="/css/datatables/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="/css/datatables/responsive.bootstrap4.min.css">
-    <link rel="stylesheet" href="/css/bootstrap/bootstrap-switch-button.min.css">
+        <meta name="viewport" content="maximum-scale=1, user-scalable=no, width=device-width, initial-scale=1" />
 
-    <link rel="stylesheet" href="/system/adminLTE/css/ionicons.min.css">
-    <link rel="stylesheet" href="/system/adminLTE/css/adminlte.min.css">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
 
-    <link rel="stylesheet" href="/system/adminLTE/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/bootstrap/css/bootstrap-tempusdominus.min.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/bootstrap/css/bootstrap-colorpicker.min.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/bootstrap/css/bootstrap-sweetalert2.min.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/daterangepicker/css/daterangepicker.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/select2/css/select2-bootstrap4.min.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/bootstrap/css/bootstrap-icheck.min.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/summernote/css/summernote-lite.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/summernote/css/summernote-bs4.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/select2/css/select2.min.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/jquery/css/jqvmap.min.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/chart/css/Chart.min.css">
-    <link rel="stylesheet" href="/system/adminLTE/plugins/chart/css/Chart.css">
+        <link rel="stylesheet" href="/css/toastr.min.css" />
+        <link rel="stylesheet" href="/css/chartJS/Chart.css" />
+        <link rel="stylesheet" href="/css/chartJs/Chart.min.css" />
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap.css" />
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css" />
+        <link rel="stylesheet" href="/css/bootstrap/buttons.bootstrap4.min.css" />
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap-table.min.css" />
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap-switch-button.css" />
+        <link rel="stylesheet" href="/css/bootstrap/responsive.bootstrap4.min.css" />
+        <link rel="stylesheet" href="/css/bootstrap/bootstrap-switch-button.min.css" />
 
-    <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="/css/navbar.css">
-    <link rel="stylesheet" href="/css/dashboard.css">
+        <link rel="stylesheet" href="/system/dataTable/datatables.min.css" />
+        <link rel="stylesheet" href="/system/dataTable/datatables/css/dataTables.bootstrap4.min.css" />
 
-    <script src="/js/popper/popper.js"></script>
-    <script src="/js/sweetalert2/sweetalert2.js"></script>
-    <script src="/js/jquery/jquery-3.3.1.min.js"></script>
-</head>
+        <link rel="stylesheet" href="/system/adminLTE/css/ionicons.min.css" />
+        <link rel="stylesheet" href="/system/adminLTE/css/adminlte.min.css" />
 
-<body class="sidebar-mini control-sidebar-slide-open layout-fixed">
-    <div class="wrapper">
-        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link navbar-icon-menu" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown user-menu">
-                    <a href="" class="nav-link dropdown-toggle nav-drop-img" data-toggle="dropdown">
-                        <img src="/resources/img/usuario.jpg" class="user-image img-circle elevation-2" alt="Imagen Usuario">
-                        <span class="d-none d-md-inline">Usuario</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px">
-                        <li class="user-header bg-primary">
-                            <img src="/resources/img/usuario.jpg" class="user-image img-circle elevation-2" alt="Imagen Usuario Dropdown">
-                            <p class="text-capitalize">Usuario <small>Administrador</small></p>
-                        </li>
-                        <li class="user-footer d-flex justify-content-between">
-                            <a href="/aplication/perfil.html" class="btn btn-default">Perfil</a>
-                            <a href="https://www.reachmx.com/" class="btn btn-default ml-auto">Cerrar Session</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+        <link rel="stylesheet" href="/system/adminLTE/plugins/jquery/css/jqvmap.min.css" />
+        <link rel="stylesheet" href="/system/adminLTE/plugins/jquery/css/jsgrid.min.css" />
+        <link rel="stylesheet" href="/system/adminLTE/plugins/jquery/css/jquery-ui.min.css" />
+        <link rel="stylesheet" href="/system/adminLTE/plugins/jquery/css/jquery-ui.theme.min.css" />
 
-        <aside class="main-sidebar main-sidebar-custom sidebar-dark-primary elevation-4">
-            <a href="https://www.reachmx.com/" class="brand-link">
-                <img src="/resources/svg/tu_logo_icon.svg" class="brand-image" alt="Logo Empresa">
-                <span class="brand-text font-weight-light">
-                    <img src="/resources/svg/tu_logo.svg" class="brand-imagen img-fluid img-sm" alt="Nombre Empresa">&nbsp;
-                </span>
-            </a>
-            <div class="sidebar">
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-compact nav-flat" data-widget="treeview" role="menu" data-accordion="false">
-                        <li class="nav-item">
-                            <a href="/aplication/aplication/index.html" class="nav-link">
-                                <i class="nav-icon fas fa-home"></i>
-                                <p class="nav-titles">Dashboard</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-archive"></i>
-                                <p class="nav-titles">Proyectos<i class="fas fa-angle-left right"></i></p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="/aplication/proyectos-nuevo.html" class="nav-link">
-                                        <i class="nav-icon fas fa-plus"></i>
-                                        <p class="nav-titles">Nuevo</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/aplication/proyectos-todos.html" class="nav-link">
-                                        <i class="nav-icon fas fa-record-vinyl"></i>
-                                        <p class="nav-titles">Todos</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/aplication/proyectos-activos.html" class="nav-link">
-                                        <i class="nav-icon fas fa-record-vinyl"></i>
-                                        <p class="nav-titles">Activos</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/aplication/proyectos-concluidos.html" class="nav-link">
-                                        <i class="nav-icon fas fa-record-vinyl"></i>
-                                        <p class="nav-titles">Concluidos</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/aplication/proyectos-eliminados.html" class="nav-link">
-                                        <i class="nav-icon fas fa-record-vinyl"></i>
-                                        <p class="nav-titles">Eliminados</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/aplication/proyectos-mis-asignados.html" class="nav-link">
-                                        <i class="nav-icon fas fa-record-vinyl"></i>
-                                        <p class="nav-titles">Mis proyectos asignados</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="/aplication/proyectos-mis-concluidos.html" class="nav-link">
-                                        <i class="nav-icon fas fa-record-vinyl"></i>
-                                        <p class="nav-titles">Mis proyectos concluidos</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/aplication/asesores.html" class="nav-link">
-                                <i class="nav-icon fas fa-id-card-alt"></i>
-                                <p class="nav-titles">Asesores</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/aplication/clientes.html" class="nav-link">
-                                <i class="nav-icon fas fa-users"></i>
-                                <p class="nav-titles">Clientes</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/aplication/productos.html" class="nav-link">
-                                <i class="nav-icon fas fa-boxes"></i>
-                                <p class="nav-titles">Productos</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/aplication/proveedores.html" class="nav-link">
-                                <i class="nav-icon fas fa-city"></i>
-                                <p class="nav-titles">Proveedores</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/aplication/cotizaciones.html" class="nav-link">
-                                <i class="nav-icon fas fa-file-invoice-dollar"></i>
-                                <p class="nav-titles">Cotizaciones</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/aplication/agentes-carga.html" class="nav-link active">
-                                <i class="nav-icon fas fa-dolly-flatbed"></i>
-                                <p class="nav-titles">Agentes carga</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/aplication/agencias-aduanales.html" class="nav-link">
-                                <i class="nav-icon fas fa-route"></i>
-                                <p class="nav-titles">Agencias aduanas</p>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="sidebar-custom">
-                <nav>
-                    <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-compact nav-flat" role="menu">
-                        <li class="nav-item">
-                            <a href="/aplication/views/terminos_condiciones.html" class="nav-link">
-                                <i class="nav-icon fas fa-file-signature"></i>
-                                <p class="nav-titles">Términos y condiciones</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/aplication/views/aviso_privacidad.html" class="nav-link">
-                                <i class="nav-icon fas fa-file-archive"></i>
-                                <p class="nav-titles">Aviso de privacidad</p>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </aside>
+        <link rel="stylesheet" href="/system/adminLTE/plugins/bootstrap/css/bootstrap-duallistbox.min.css" />
+        <link rel="stylesheet" href="/system/adminLTE/plugins/bootstrap/css/bootstrap-colorpicker.min.css" />
 
-        <div class="content-wrapper">
-            <link rel="stylesheet" href="/css/plataforma/agencias.css">
-            <section class="content-header shadow-title">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0 letra text-uppercase">Detalles Agencia</h1>
-                        </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item">
-                                    <a href="/aplication/index.html"><i class="nav-icon fas fa-home"></i>
-                                        Home</a>
-                                </li>
-                                <li class="breadcrumb-item">
-                                    <a href="/aplication/agencias-aduanales.html">Agencias Aduanales</a>
-                                </li>
-                                <li class="breadcrumb-item active">Detalles Agencia</li>
-                            </ol>
+        <link rel="stylesheet" href="/system/adminLTE/plugins/chart/css/Chart.css" />
+        <link rel="stylesheet" href="/system/adminLTE/plugins/pdfmake/pdfmake.min.js" />
+        <link rel="stylesheet" href="/system/adminLTE/plugins/toastr/css/toastr.min.css" />
+        <link rel="stylesheet" href="/system/adminLTE/plugins/fullcalendar/css/main.css" />
+        <link rel="stylesheet" href="/system/adminLTE/plugins/select2/css/select2.min.css" />
+        <link rel="stylesheet" href="/system/adminLTE/plugins/dropzone/css/dropzone.min.css" />
+        <link rel="stylesheet" href="/system/adminLTE/plugins/fontawesome-free/css/all.min.css" />
+        <link rel="stylesheet" href="/system/adminLTE/plugins/summernote/css/summernote.min.css" />
+        <link rel="stylesheet" href="/system/adminLTE/plugins/bs-stepper/css/bs-stepper.min.css" />
+        <link rel="stylesheet" href="/system/adminLTE/plugins/flag-icon-css/css/flag-icon.min.css" />
+        <link rel="stylesheet" href="/system/adminLTE/plugins/ekko-lightbox/css/ekko-lightbox.css" />
+        <link rel="stylesheet" href="/system/adminLTE/plugins/sweetalert2/css/sweetalert2.min.css" />
+        <link rel="stylesheet" href="/system/adminLTE/plugins/summernote/css/summernote-bs4.min.css" />
+        <link rel="stylesheet" href="/system/adminLTE/plugins/select2/css/select2-bootstrap4.min.css" />
+        <link rel="stylesheet" href="/system/adminLTE/plugins/daterangepicker/css/daterangepicker.css" />
+        <link rel="stylesheet" href="/system/adminLTE/plugins/icheck-bootstrap/icheck-bootstrap.min.css" />
+        <link rel="stylesheet" href="/system/adminLTE/plugins/ion-rangeslider/css/ion.rangeSlider.min.css" />
+        <link rel="stylesheet" href="/system/adminLTE/plugins/overlayScrollbars/css/OverlayScrollbars.min.css" />
+        <link rel="stylesheet" href="/system/adminLTE/plugins/tempusdominus/css/tempusdominus-bootstrap-4.min.css" />
+
+        <link rel="stylesheet" href="/css/global.css" />
+        <link rel="stylesheet" href="/css/navbar.css" />
+
+        <link rel="stylesheet" href="/css/tablas-menu.css" />
+        <link rel="stylesheet" href="/css/proyecto-detalle.css" />
+
+        <script src="/js/popper/popper.js"></script>
+        <script src="/js/sweetalert2/sweetalert2.js"></script>
+        <script src="/js/jquery/jquery-3.3.1.min.js"></script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+    </head>
+
+    <body class="sidebar-mini-md layout-fixed control-sidebar-slide-open">
+        <div class="wrapper">
+            <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link navbar-icon-menu" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown user-menu">
+                        <a href="" class="nav-link dropdown-toggle nav-drop-img" data-toggle="dropdown">
+                            <img src="/resources/img/usuario.jpg" class="user-image img-circle elevation-2" alt="Imagen Usuario" />
+                            <span class="d-none d-md-inline">Héctor López</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right" style="left: inherit; right: 0px">
+                            <li class="user-header bg-primary">
+                                <img src="/resources/img/usuario.jpg" class="user-image img-circle elevation-2" alt="Imagen Usuario Dropdown" />
+                                <p class="text-capitalize">Héctor López <small>Gerente Logística</small></p>
+                            </li>
+                            <li class="user-footer d-flex justify-content-between">
+                                <a href="/aplication/perfil.html" class="btn btn-default">Perfil</a>
+                                <a href="https://www.reachmx.com/" class="btn btn-default ml-auto">Cerrar Session</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <aside class="main-sidebar main-sidebar-custom sidebar-dark-primary elevation-4">
+                <a href="https://www.reachmx.com/" class="brand-link">
+                    <img src="/resources/svg/tu_logo_icon.svg" class="brand-image" alt="Logo Empresa" />
+                    <span class="brand-text font-weight-light"> <img src="/resources/svg/tu_logo.svg" class="brand-imagen img-fluid img-sm" alt="Nombre Empresa" />&nbsp; </span>
+                </a>
+                <div class="sidebar">
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column nav-flat nav-compact nav-collapse-hide-child" data-widget="treeview" role="menu" data-accordion="false">
+                            <li class="nav-item">
+                                <a href="/index.html" class="nav-link">
+                                    <i class="nav-icon fas fa-home"></i>
+                                    <p class="nav-titles">Dashboard</p>
+                                </a>
+                            </li>
+                            <li class="nav-item menu-open">
+                                <a href="#" class="nav-link active">
+                                    <i class="nav-icon fas fa-archive"></i>
+                                    <p class="nav-titles">Proyectos<i class="fas fa-angle-left right"></i></p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    <li class="nav-item">
+                                        <a href="/aplication/proyectos-nuevo.html" class="nav-link">
+                                            <i class="nav-icon fas fa-plus"></i>
+                                            <p class="nav-titles">Nuevo</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/aplication/proyectos-detalle.html" class="nav-link active">
+                                            <i class="nav-icon fas fa-record-vinyl"></i>
+                                            <p class="nav-titles">Detalle</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/aplication/proyectos-todos.html" class="nav-link">
+                                            <i class="nav-icon fas fa-record-vinyl"></i>
+                                            <p class="nav-titles">Todos</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/aplication/proyectos-activos.html" class="nav-link">
+                                            <i class="nav-icon fas fa-record-vinyl"></i>
+                                            <p class="nav-titles">Activos</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/aplication/proyectos-concluidos.html" class="nav-link">
+                                            <i class="nav-icon fas fa-record-vinyl"></i>
+                                            <p class="nav-titles">Concluidos</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/aplication/proyectos-eliminados.html" class="nav-link">
+                                            <i class="nav-icon fas fa-record-vinyl"></i>
+                                            <p class="nav-titles">Eliminados</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/aplication/proyectos-mis-asignados.html" class="nav-link">
+                                            <i class="nav-icon fas fa-record-vinyl"></i>
+                                            <p class="nav-titles">Mis proyectos asignados</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="/aplication/proyectos-mis-concluidos.html" class="nav-link">
+                                            <i class="nav-icon fas fa-record-vinyl"></i>
+                                            <p class="nav-titles">Mis proyectos concluidos</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/aplication/asesores.html" class="nav-link">
+                                    <i class="nav-icon fas fa-id-card-alt"></i>
+                                    <p class="nav-titles">Asesores</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/aplication/clientes.html" class="nav-link">
+                                    <i class="nav-icon fas fa-users"></i>
+                                    <p class="nav-titles">Clientes</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/aplication/productos.html" class="nav-link">
+                                    <i class="nav-icon fas fa-boxes"></i>
+                                    <p class="nav-titles">Productos</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/aplication/proveedores.html" class="nav-link">
+                                    <i class="nav-icon fas fa-city"></i>
+                                    <p class="nav-titles">Proveedores</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/aplication/cotizaciones.html" class="nav-link">
+                                    <i class="nav-icon fas fa-file-invoice-dollar"></i>
+                                    <p class="nav-titles">Cotizaciones</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/aplication/agentes-carga.html" class="nav-link">
+                                    <i class="nav-icon fas fa-dolly-flatbed"></i>
+                                    <p class="nav-titles">Agentes carga</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/aplication/agencias-aduanales.html" class="nav-link">
+                                    <i class="nav-icon fas fa-route"></i>
+                                    <p class="nav-titles">Agencias aduanales</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="sidebar-custom">
+                    <nav>
+                        <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent nav-compact nav-flat" role="menu">
+                            <li class="nav-item">
+                                <a href="/aplication/views/terminos_condiciones.html" class="nav-link">
+                                    <i class="nav-icon fas fa-file-signature"></i>
+                                    <p class="nav-titles">Términos y condiciones</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/aplication/views/aviso_privacidad.html" class="nav-link">
+                                    <i class="nav-icon fas fa-file-archive"></i>
+                                    <p class="nav-titles">Aviso de privacidad</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </aside>
+
+            <div class="content-wrapper">
+                <section class="content-header">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h1 class="h1-title">Detalles</h1>
+                            </div>
+                            <div class="col-sm-6">
+                                <ol class="breadcrumb float-sm-right">
+                                    <li class="breadcrumb-item">
+                                        <a href="/index.html"><i class="nav-icon fas fa-home"></i> Home</a>
+                                    </li>
+                                    <li class="breadcrumb-item">
+                                        <a href="/aplication/proyectos-todos.html">Todos los proyectos</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">Detalles</li>
+                                </ol>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <br>
-
-            <div class="col-12 ml-auto text-right" style="margin-top: 3.2px;">
-                <button type="button" id="btnNuevoPuerto" class="btn btn-sm btn-outline-primary btn-nuevo add_puerto">
-                    Nuevo Puerto <span><i class="fas fa-plus"></i></span>
-                </button>
-                <button type="button" id="btnNuevoAgente" class="btn btn-sm btn-outline-primary btn-nuevo">
-                    Nuevo Agente <span><i class="fas fa-plus"></i></span>
-                </button>
-            </div>
-            <br>
-            <section class="content">
-                <div class="container-fluid">
-                    <div>
-                        <div class="col-12" style="margin-bottom: 1rem">
-                            <div class="card shadow-lg tarjeta">
-                                <div class="card-body" style="padding-bottom: 0rem;">
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <p style=" font-size: 14px;" class="font-weight-bold text-uppercase">
-
-                                            </p>
-                                        </div>
-                                        <div class="col-2 ml-auto text-right margin-edit">
-                                            <a href="" class="editAgencia" type="button"><i class="far fa-edit"></i></a>
+                </section>
+                <section class="content">
+                    <div class="container-fluid">
+                        <div class="card card-base card-outline">
+                            <div class="card-header">
+                                <h5 class="card-title h5-title"><i class="far fa-file-alt"></i> <span id="dataFolio">2021-01</span>_<span id="dataProyecto"> Prueba I</span></h5>
+                                <div class="card-tools ml-auto">
+                                    <a href type="button" class="btn btn-colap" data-card-widget="collapse">
+                                        <i class="fas fa-minus"></i>
+                                    </a>
+                                    <a href type="button" class="btn btn-edit editProyecto">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body" style="display: block">
+                                <div class="row">
+                                    <div class="col-xm-12 col-sm-4">
+                                        <strong class="text-mute">Cliente</strong>
+                                        <p class="mb-0"><span class="text-muted" id="dataCliente">Hector Cliente</span></p>
+                                    </div>
+                                    <div class="col-xm-12 col-sm-4">
+                                        <strong class="text-mute">Estatus</strong>
+                                        <p class="mb-0"><span class="text-muted" id="dataStatus">Producción</span></p>
+                                    </div>
+                                    <div class="col-xm-12 col-sm-4">
+                                        <strong class="text-mute">Asesor</strong>
+                                        <p class="mb-0"><span class="text-muted" id="dataAsesor">Héctor López</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-1-12 col-sm-7 col-md-8">
+                                <input type="hidden" id="txtTabDrop" value="" />
+                                <div class="card card-second card-outline">
+                                    <div class="card-header">
+                                        <ul class="nav nav-tabs nav-fill responsive-tabs" role="tablist">
+                                            <li id="liActive" class="nav-item liCollapsed hidden">
+                                                <a class="nav-link" id="tabActive" data-toggle="tab" href="" role="tab" aria-selected="true"></a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link active" id="tabProductos" data-toggle="tab" href="#Productos" role="tab" aria-selected="true">Productos</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="tabDocumentos" data-toggle="tab" href="#Documentos" role="tab" aria-selected="false">Documentos</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="tabCotizacion" data-toggle="tab" href="#Cotizacion" role="tab" aria-selected="false">Cotizacion</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" id="tabChecklist" data-toggle="tab" href="#Checklist" role="tab" aria-selected="false">Checklist</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-body body-tabs">
+                                        <div class="tab-content" id="myTabContent">
+                                            <div class="tab-pane fade show active" id="Productos" role="tabpanel">
+                                                <div class="post">
+                                                    <div class="card card-content">
+                                                        <div class="card-header">
+                                                            <h3 class="card-title mr-auto">Termos</h3>
+                                                            <div class="card-tools ml-auto">
+                                                                <a type="button" class="btn btn-min" data-card-widget="collapse" title="Collapse">
+                                                                    <i class="fas fa-minus"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body" style="display: block">
+                                                            <div class="row media">
+                                                                <div class="col-12 media-body">
+                                                                    <div class="text-muted">
+                                                                        <p class="text-sm m-0">
+                                                                            <strong>Producto: </strong>
+                                                                            <span> Termo</span>
+                                                                        </p>
+                                                                        <p class="text-sm m-0">
+                                                                            <strong>Prec. Unit.: </strong>
+                                                                            <span> $3.45<small class="smaller"> USD</small></span>
+                                                                        </p>
+                                                                        <p class="text-sm m-0">
+                                                                            <strong>Cantidad: </strong>
+                                                                            <span> 3,000.00<small> pzas.</small></span>
+                                                                        </p>
+                                                                        <p class="text-sm mb-1">
+                                                                            <strong>Total neto: </strong>
+                                                                            <span> $10,350.00<small class="smaller"> USD</small></span>
+                                                                        </p>
+                                                                        <p class="text-sm mb-1">
+                                                                            <strong>Especificaciones: </strong>
+                                                                            <span> Capacidades entre 125ml, 500ml, 750ml, 1lt Distintos tipos, tamaños y colores.</span>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="post">
+                                                    <div class="card card-content collapsed-card">
+                                                        <div class="card-header">
+                                                            <h3 class="card-title mr-auto">Prensa francesa</h3>
+                                                            <div class="card-tools ml-auto">
+                                                                <a type="button" class="btn btn-min" data-card-widget="collapse" title="Collapse">
+                                                                    <i class="fas fa-plus"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body" style="display: none">
+                                                            <div class="row media">
+                                                                <div class="col-sm-12 col-md-4 imgs">
+                                                                    <div class="single">
+                                                                        <img class="img-single img-fluid" src="/resources/proyecto/productos/producto_02-1.jpg" alt="First slide" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-12 col-md-7 media-body">
+                                                                    <div class="text-muted">
+                                                                        <p class="text-sm m-0">
+                                                                            <strong>Producto: </strong>
+                                                                            <span> Termo</span>
+                                                                        </p>
+                                                                        <p class="text-sm m-0">
+                                                                            <strong>Prec. Unit.: </strong>
+                                                                            <span> $3.45<small class="smaller"> USD</small></span>
+                                                                        </p>
+                                                                        <p class="text-sm m-0">
+                                                                            <strong>Cantidad: </strong>
+                                                                            <span> 3,000.00<small> pzas.</small></span>
+                                                                        </p>
+                                                                        <p class="text-sm m-0">
+                                                                            <strong>Total neto: </strong>
+                                                                            <span> $10,350.00<small class="smaller"> USD</small></span>
+                                                                        </p>
+                                                                        <!-- <p class="text-sm mb-1">
+                                                                            <ul class="list-unstyled m-0">
+                                                                                <li>
+                                                                                    <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-file-word"></i> Functional-requirements.docx</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-file-pdf"></i> UAT.pdf</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-envelope"></i> Email-from-flatbal.mln</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-image"></i> Logo.png</a>
+                                                                                </li>
+                                                                                <li>
+                                                                                    <a href="" class="btn-link text-secondary"><i class="far fa-fw fa-file-word"></i> Contract-10_12_2014.docx</a>
+                                                                                </li>
+                                                                            </ul>
+                                                                        </p> -->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="post">
+                                                    <div class="card card-content collapsed-card">
+                                                        <div class="card-header">
+                                                            <h3 class="card-title mr-auto">Vaso acrilico</h3>
+                                                            <div class="card-tools ml-auto">
+                                                                <a type="button" class="btn btn-min" data-card-widget="collapse" title="Collapse">
+                                                                    <i class="fas fa-plus"></i>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body" style="display: none">
+                                                            <div class="row media">
+                                                                <div class="col-sm-12 col-md-4 imgs">
+                                                                    <div class="carousel">
+                                                                        <div id="CarProducto_03" class="carousel slide" data-ride="carousel">
+                                                                            <div class="carousel-inner" style="padding: 0px 12px">
+                                                                                <div id="imgCarFirst_03" class="carousel-item active">
+                                                                                    <img class="img-carousel img-fluid" src="/resources/proyecto/productos/producto_03-1.png" alt="First slide" />
+                                                                                </div>
+                                                                                <div id="imgCarSecond_03" class="carousel-item">
+                                                                                    <img class="img-carousel img-fluid" src="/resources/proyecto/productos/producto_03-2.png" alt="Second slide" />
+                                                                                </div>
+                                                                                <div id="imgCarThird_03" class="carousel-item">
+                                                                                    <img class="img-carousel img-fluid" src="/resources/proyecto/productos/producto_03-3.png" alt="Third slide" />
+                                                                                </div>
+                                                                            </div>
+                                                                            <a class="carousel-control-prev" href="#CarProducto_03" role="button" data-slide="prev">
+                                                                                <i class="fas fa-caret-left"></i>
+                                                                            </a>
+                                                                            <a class="carousel-control-next" href="#CarProducto_03" role="button" data-slide="next">
+                                                                                <i class="fas fa-caret-right"></i>
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="minis">
+                                                                        <a href="" class="imgFirst child-carousel mt-0 mx-0 mb-1" data-id="03">
+                                                                            <img src="/resources/proyecto/productos/producto_03-1.png" class="img-fluid" />
+                                                                        </a>
+                                                                        <a href="" class="imgSecond child-carousel mt-0 mx-0 mb-1" data-id="03">
+                                                                            <img src="/resources/proyecto/productos/producto_03-2.png" class="img-fluid" />
+                                                                        </a>
+                                                                        <a href="" class="imgThird child-carousel mt-0 mx-0 mb-1" data-id="03">
+                                                                            <img src="/resources/proyecto/productos/producto_03-3.png" class="img-fluid" />
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-sm-12 col-md-7 media-body">
+                                                                    <div class="text-muted">
+                                                                        <p class="text-sm m-0">
+                                                                            <strong>Producto: </strong>
+                                                                            <span> Termo</span>
+                                                                        </p>
+                                                                        <p class="text-sm m-0">
+                                                                            <strong>Prec. Unit.: </strong>
+                                                                            <span> $3.45<small class="smaller"> USD</small></span>
+                                                                        </p>
+                                                                        <p class="text-sm m-0">
+                                                                            <strong>Cantidad: </strong>
+                                                                            <span> 3,000.00<small> pzas.</small></span>
+                                                                        </p>
+                                                                        <p class="text-sm m-0">
+                                                                            <strong>Total neto: </strong>
+                                                                            <span> $10,350.00<small class="smaller"> USD</small></span>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="Documentos" role="tabpanel">
+                                                <ul class="docs-list">
+                                                    <li class="lstDocs">
+                                                        <span class="span-rg text-left">
+                                                            <span id="docName01">Ordenes de compra</span>
+                                                            <a href="" id="docFile01" class="btn-link docFile hidden" data-id="01"> <i class="far fa-fw fa-file-pdf"></i>Ordenes de compra.pdf </a>
+                                                        </span>
+                                                        <span class="span-rg text-right spTools">
+                                                            <a href="" data-id="01" id="fileClip01" class="fileClip" data-toggle="tooltip" data-placement="bottom" title="Seleccionar archivo">
+                                                                <label for="inpFiles01" id="lblClip01" class="fileClip icon-label" data-id="01">
+                                                                    <i class="fas fa-paperclip"></i>
+                                                                </label>
+                                                                <input id="inpFiles01" class="fileClip hidden" data-id="01" accept=".pdf" type="file" />
+                                                                <div class="nameFile01 hidden"></div>
+                                                            </a>
+                                                            <a type="button" href="#" data-id="01" id="upFiles01" class="upFiles hidden">
+                                                                <i class="fas fa-upload"></i>
+                                                            </a>
+                                                            <a type="button" href="#" data-id="01" id="cancelEx01" class="cancelEx hidden">
+                                                                <i class="fas fa-times"></i>
+                                                            </a>
+                                                            <a type="button" href="#" data-id="01" id="trashCan01" class="trashCan hidden">
+                                                                <i class="fas fa-trash-alt"></i>
+                                                            </a>
+                                                        </span>
+                                                    </li>
+                                                    <li class="lstDocs">
+                                                        <span class="span-rg text-left">
+                                                            <span id="docName02">Proforma invoice</span>
+                                                            <a href="" id="docFile02" class="btn-link docFile hidden" data-id="02"><i class="far fa-fw fa-file-pdf"></i>Proforma invoice.pdf</a>
+                                                        </span>
+                                                        <span class="span-rg text-right spTools">
+                                                            <a href="" data-id="02" id="fileClip02" class="fileClip" data-toggle="tooltip" data-placement="bottom" title="Seleccionar archivo">
+                                                                <label for="inpFiles02" id="lblClip02" class="fileClip icon-label" data-id="02">
+                                                                    <i class="fas fa-paperclip"></i>
+                                                                </label>
+                                                                <input id="inpFiles02" class="fileClip hidden" data-id="02" accept=".pdf" type="file" />
+                                                                <div class="nameFile02 hidden"></div>
+                                                            </a>
+                                                            <a type="button" href="#" data-id="02" id="upFiles02" class="upFiles hidden">
+                                                                <i class="fas fa-upload"></i>
+                                                            </a>
+                                                            <a type="button" href="#" data-id="02" id="cancelEx02" class="cancelEx hidden">
+                                                                <i class="fas fa-times"></i>
+                                                            </a>
+                                                            <a type="button" href="#" data-id="02" id="trashCan02" class="trashCan hidden">
+                                                                <i class="fas fa-trash-alt"></i>
+                                                            </a>
+                                                        </span>
+                                                    </li>
+                                                    <li class="lstDocs">
+                                                        <span class="span-rg text-left">
+                                                            <span id="docName03">Lista de empaque</span>
+                                                            <a href="" id="docFile03" class="btn-link docFile hidden" data-id="03"><i class="far fa-fw fa-file-pdf"></i>Lista de empaque.pdf</a>
+                                                        </span>
+                                                        <span class="span-rg text-right spTools">
+                                                            <a href="" data-id="03" id="fileClip03" class="fileClip" data-toggle="tooltip" data-placement="bottom" title="Seleccionar archivo">
+                                                                <label for="inpFiles03" id="lblClip03" class="fileClip icon-label" data-id="03">
+                                                                    <i class="fas fa-paperclip"></i>
+                                                                </label>
+                                                                <input id="inpFiles03" class="fileClip hidden" data-id="03" accept=".pdf" type="file" />
+                                                                <div class="nameFile03 hidden"></div>
+                                                            </a>
+                                                            <a type="button" href="#" data-id="03" id="upFiles03" class="upFiles hidden">
+                                                                <i class="fas fa-upload"></i>
+                                                            </a>
+                                                            <a type="button" href="#" data-id="03" id="cancelEx03" class="cancelEx hidden">
+                                                                <i class="fas fa-times"></i>
+                                                            </a>
+                                                            <a type="button" href="#" data-id="03" id="trashCan03" class="trashCan hidden">
+                                                                <i class="fas fa-trash-alt"></i>
+                                                            </a>
+                                                        </span>
+                                                    </li>
+                                                    <li class="lstDocs">
+                                                        <span class="span-rg text-left">
+                                                            <span id="docName04">Guía de embarques</span>
+                                                            <a href="" id="docFile04" class="btn-link docFile hidden" data-id="04"><i class="far fa-fw fa-file-pdf"></i>Guía de embarques.pdf</a>
+                                                        </span>
+                                                        <span class="span-rg text-right spTools">
+                                                            <a href="" data-id="04" id="fileClip04" class="fileClip" data-toggle="tooltip" data-placement="bottom" title="Seleccionar archivo">
+                                                                <label for="inpFiles04" id="lblClip04" class="fileClip icon-label" data-id="04">
+                                                                    <i class="fas fa-paperclip"></i>
+                                                                </label>
+                                                                <input id="inpFiles04" class="fileClip hidden" data-id="04" accept=".pdf" type="file" />
+                                                                <div class="nameFile04 hidden"></div>
+                                                            </a>
+                                                            <a type="button" href="#" data-id="04" id="upFiles04" class="upFiles hidden">
+                                                                <i class="fas fa-upload"></i>
+                                                            </a>
+                                                            <a type="button" href="#" data-id="04" id="cancelEx04" class="cancelEx hidden">
+                                                                <i class="fas fa-times"></i>
+                                                            </a>
+                                                            <a type="button" href="#" data-id="04" id="trashCan04" class="trashCan hidden">
+                                                                <i class="fas fa-trash-alt"></i>
+                                                            </a>
+                                                        </span>
+                                                    </li>
+                                                    <li class="lstDocs">
+                                                        <span class="span-rg text-left">
+                                                            <span id="docName05">Pedimentos</span>
+                                                            <a href="" id="docFile05" class="btn-link docFile hidden" data-id="05"><i class="far fa-fw fa-file-pdf"></i>Pedimentos.pdf</a>
+                                                        </span>
+                                                        <span class="span-rg text-right spTools">
+                                                            <a href="" data-id="05" id="fileClip05" class="fileClip" data-toggle="tooltip" data-placement="bottom" title="Seleccionar archivo">
+                                                                <label for="inpFiles05" id="lblClip05" class="fileClip icon-label" data-id="05">
+                                                                    <i class="fas fa-paperclip"></i>
+                                                                </label>
+                                                                <input id="inpFiles05" class="fileClip hidden" data-id="05" accept=".pdf" type="file" />
+                                                            </a>
+                                                            <a type="button" href="#" data-id="05" class="upFiles hidden">
+                                                                <i class="fas fa-upload"></i>
+                                                            </a>
+                                                            <a type="button" href="#" data-id="05" class="cancelEx hidden">
+                                                                <i class="fas fa-times"></i>
+                                                            </a>
+                                                            <a type="button" href="#" data-id="05" class="trashCan hidden">
+                                                                <i class="fas fa-trash-alt"></i>
+                                                            </a>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="tab-pane fade" id="Cotizacion" role="tabpanel">c</div>
+                                            <div class="tab-pane fade" id="Checklist" role="tabpanel">
+                                                <div class="card card-tasks">
+                                                    <div class="card-header">
+                                                        <ul class="nav nav-tabs nav-fill" role="tablist">
+                                                            <li class="nav-item">
+                                                                <a class="nav-link active" id="tabs1" data-toggle="pill" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true"
+                                                                    ><span>1</span>
+                                                                    <p>Orden compra</p></a
+                                                                >
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="tabs2" data-toggle="pill" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false"
+                                                                    ><span>2</span>
+                                                                    <p>Producción</p></a
+                                                                >
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="tabs3" data-toggle="pill" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false"
+                                                                    ><span>3</span>
+                                                                    <p>Flete</p></a
+                                                                >
+                                                            </li>
+                                                            <li class="nav-item">
+                                                                <a class="nav-link" id="tabs4" data-toggle="pill" href="#tab4" role="tab" aria-controls="tab4" aria-selected="false"
+                                                                    ><span>4</span>
+                                                                    <p>Despacho aduna</p></a
+                                                                >
+                                                            </li>
+                                                        </ul>
+                                                        <hr />
+                                                    </div>
+                                                    <div class="card-body p-0">
+                                                        <div class="tab-content">
+                                                            <div class="tab-pane fade active show" id="tab1" role="tabpanel" aria-labelledby="tabs1">
+                                                                <div class="tab-custom-content"><p class="lead mb-0">Orden de compra</p></div>
+                                                                <ul class="todo-list" data-widget="todo-list">
+                                                                    <li class="lstTask" data-id="1">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo1" id="todoCheck1" />
+                                                                            <label for="todoCheck1"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Se selecciono al proveedor correcto</span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck1" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                    <li class="lstTask" data-id="2">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo2" id="todoCheck2" />
+                                                                            <label for="todoCheck2"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Se verificaron los SKUs con el sistema interno</span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck2" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                    <li class="lstTask" data-id="3">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo2" id="todoCheck3" />
+                                                                            <label for="todoCheck3"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Cantidades coinciden con el requerimiento solicitado </span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck3" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                    <li class="lstTask" data-id="4">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo2" id="todoCheck4" />
+                                                                            <label for="todoCheck4"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Se solicito descuento a proveedor por volumen</span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck4" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                    <li class="lstTask" data-id="5">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo2" id="todoCheck5" />
+                                                                            <label for="todoCheck5"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Proveedor confirmo de recibido la orden de compra</span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck5" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                    <li class="lstTask" data-id="6">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo2" id="todoCheck6" />
+                                                                            <label for="todoCheck6"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Almacen notificado de fecha estimada de entrega</span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck6" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                    <li class="lstTask" data-id="7">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo2" id="todoCheck7" />
+                                                                            <label for="todoCheck7"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Anticipo realizado a proveedor</span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck7" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tabs2">
+                                                                <div class="tab-custom-content"><p class="lead mb-0">Producción</p></div>
+                                                                <ul class="todo-list" data-widget="todo-list">
+                                                                    <li class="lstTask" data-id="0-1">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo1" id="todoCheck0-1" />
+                                                                            <label for="todoCheck0-1"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Proveedor se mantiene alineado a fecha de entrega pactada</span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck0-1" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                    <li class="lstTask" data-id="0-2">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo2" id="todoCheck0-2" />
+                                                                            <label for="todoCheck0-2"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Inspección de calidad realizada</span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck0-2" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                    <li class="lstTask" data-id="0-3">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo2" id="todoCheck0-3" />
+                                                                            <label for="todoCheck0-3"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Agente de carga designado para operación</span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck0-3" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                    <li class="lstTask" data-id="0-4">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo2" id="todoCheck0-4" />
+                                                                            <label for="todoCheck0-4"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Agente aduanal designado para operación</span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck0-4" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                    <li class="lstTask" data-id="0-5">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo2" id="todoCheck0-5" />
+                                                                            <label for="todoCheck0-5"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Fecha de término de producción confirmada</span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck0-5" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                    <li class="lstTask" data-id="0-6">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo2" id="todoCheck0-6" />
+                                                                            <label for="todoCheck0-6"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Liquidación a proveedor</span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck0-6" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                    <li class="lstTask" data-id="0-7">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo2" id="todoCheck0-7" />
+                                                                            <label for="todoCheck0-7"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Documentos de embarque recibidos</span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck0-7" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="tabs3">
+                                                                <div class="tab-custom-content"><p class="lead mb-0">Flete</p></div>
+                                                                <ul class="todo-list" data-widget="todo-list">
+                                                                    <li class="lstTask" data-id="01">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo1" id="todoCheck01" />
+                                                                            <label for="todoCheck01"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Packing list recibido por agente de carga</span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck01" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                    <li class="lstTask" data-id="02">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo2" id="todoCheck02" />
+                                                                            <label for="todoCheck02"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Booking realizado</span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck02" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                    <li class="lstTask" data-id="03">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo2" id="todoCheck03" />
+                                                                            <label for="todoCheck03"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Documentos de carga recibidos</span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck03" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                    <li class="lstTask" data-id="04">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo2" id="todoCheck04" />
+                                                                            <label for="todoCheck04"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Fecha de arribo a puerto confirmada</span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck04" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                    <li class="lstTask" data-id="05">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo2" id="todoCheck05" />
+                                                                            <label for="todoCheck05"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Pago realizado a agente de carga</span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck05" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="tabs4">
+                                                                <div class="tab-custom-content"><p class="lead mb-0">Despacho aduana</p></div>
+                                                                <ul class="todo-list" data-widget="todo-list">
+                                                                    <li class="lstTask" data-id="0_1">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo1" id="todoCheck0_1" />
+                                                                            <label for="todoCheck0_1"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Documentos de mercancia enviados a agente aduanal</span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck0_1" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                    <li class="lstTask" data-id="0_2">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo2" id="todoCheck0_2" />
+                                                                            <label for="todoCheck0_2"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Mercancia recibida en aduana</span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck0_2" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                    <li class="lstTask" data-id="0_3">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo2" id="todoCheck0_3" />
+                                                                            <label for="todoCheck0_3"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Fracciones arancelarias confirmadas</span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck0_3" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                    <li class="lstTask" data-id="0_4">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo2" id="todoCheck0_4" />
+                                                                            <label for="todoCheck0_4"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Pro forma de pedimento recibida</span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck0_4" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                    <li class="lstTask" data-id="0_5">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo2" id="todoCheck0_5" />
+                                                                            <label for="todoCheck0_5"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Pago realizado a agente aduanal</span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck0_5" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                    <li class="lstTask" data-id="0_6">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo2" id="todoCheck0_6" />
+                                                                            <label for="todoCheck0_6"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Mercancia liberada</span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck0_6" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                    <li class="lstTask" data-id="0_7">
+                                                                        <div class="icheck icheck-success d-inline">
+                                                                            <input type="checkbox" value="" name="todo2" id="todoCheck0_7" />
+                                                                            <label for="todoCheck0_7"></label>
+                                                                        </div>
+                                                                        <span class="span-rg text-left">Pedimento y cuenta de gastos recibida</span>
+                                                                        <span class="span-rg text-right"><small id="badgetCheck0_7" class="badge badge-light badgeCheck hidden"></small></span>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <form class="margin-details">
-                                        <div class="form-row">
-                                            <div class="col-md-4">
-                                                <label for="ShipmentName" style="margin-bottom: 0rem;"
-                                                    class="font-weight-bold">
-                                                    Correo
-                                                </label>
-                                                <p for="ShipmentName" style="font-size: 14px;"
-                                                    class="font-weight-light">
+                                </div>
 
-                                                </p>
+                                <div class="card card-map collapsed-card">
+                                    <!--  style="display: flex; align-items: center; margin-bottom: 0px !important; justify-content: space-between; padding: 8px 5px 5px 12px !important" -->
+                                    <div class="card-header">
+                                        <!--  style="font-size: 20px; font-weight: 600 !important; line-height: 20px !important; font-family: sans-serif !important" -->
+                                        <h3 class="card-title mr-auto">Mapa</h3>
+                                        <div class="card-tools ml-auto" style="margin: -3px 0px 0px !important">
+                                            <a type="button" class="btn btn-min" data-card-widget="collapse" title="Collapse" style="font-size: 12px; line-height: 0rem; padding: 0rem 0.75rem; vertical-align: baseline">
+                                                <i class="fas fa-plus"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="card-body" style="display: none">
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3486.4506061989196!2d-110.95029088540284!3d29.09237546987128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ce858f714cee0d%3A0x29010f6b3a544538!2sReachmx%20Trade%20Solutions!5e0!3m2!1ses!2smx!4v1629782645866!5m2!1ses!2smx" width="650" height="250" style="border: 0" allowfullscreen="" loading="lazy"></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xm-12 col-sm-5 col-md-4">
+                                <div class="card card-base">
+                                    <div class="card-header">
+                                        <h3 class="card-title mr-auto">Proyecto</h3>
+                                        <div class="card-tools ml-auto">
+                                            <a href type="button" class="btn btn-colap" data-card-widget="collapse">
+                                                <i class="fas fa-minus"></i>
+                                            </a>
+                                            <a href type="button" class="btn btn-edit editProyect">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="card-body p-2">
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item border-0">
+                                                <a class="list-group-item flex-column align-items-center border-0 px_0-5">
+                                                    <div class="d-flex justify-content-between">
+                                                        <span class="span-rg text-left">No. Contenedor</span>
+                                                        <span class="span-rg text-right">COSU6261141790</span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item border-0">
+                                                <a class="list-group-item flex-column align-items-center border-0 px_05">
+                                                    <div class="d-flex justify-content-between">
+                                                        <span class="span-rg text-left">Fecha salida</span>
+                                                        <span class="span-rg text-right">19/07/2021</span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item border-0">
+                                                <a class="list-group-item flex-column align-items-center border-0 px_05">
+                                                    <div class="d-flex justify-content-between">
+                                                        <span class="span-rg text-left">Fecha llegada</span>
+                                                        <span class="span-rg text-right">30/08/2021</span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item border-0">
+                                                <a class="list-group-item flex-column align-items-center border-0 px_05">
+                                                    <div class="d-flex justify-content-between">
+                                                        <span class="span-rg text-left">Resticciones</span>
+                                                        <span class="span-rg text-right">NOM. 050 Etiquetado</span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item border-0">
+                                                <a class="list-group-item flex-column align-items-center border-0 px_05">
+                                                    <div class="d-flex justify-content-between">
+                                                        <span class="span-rg text-left">Frac. Arancel</span>
+                                                        <span class="span-rg text-right">90041001</span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item border-0">
+                                                <a class="list-group-item flex-column align-items-center border-0 px_0_5">
+                                                    <div class="d-flex justify-content-between">
+                                                        <span class="span-rg text-left">No. Viaje</span>
+                                                        <span class="span-rg text-right">2033</span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item border-0">
+                                                <a class="list-group-item flex-column align-items-center border-0 px_05">
+                                                    <div class="d-flex justify-content-between">
+                                                        <span class="span-rg text-left">Buque carga</span>
+                                                        <span class="span-rg text-right">CMA CGM LISA MARIE 0MH59E1</span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="card card-third card-outline">
+                                    <div class="card-header">
+                                        <h3 class="card-title mr-auto">Resumen de gastos</h3>
+                                        <div class="card-tools ml-auto">
+                                            <a href type="button" class="btn btn-colap" data-card-widget="collapse">
+                                                <i class="fas fa-minus"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="card-body p-2" style="display: block">
+                                        <ul class="nav flex-column">
+                                            <li class="nav-item border-0">
+                                                <a class="list-group-item flex-column align-items-center border-0 px_0-5">
+                                                    <div class="d-flex justify-content-between">
+                                                        <span class="span-rg">Valor mercancía (USD)</span>
+                                                        <span class="span-rg">$13,320.00</span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item border-0">
+                                                <a class="list-group-item flex-column align-items-center border-0 px_05">
+                                                    <div class="d-flex justify-content-between">
+                                                        <span class="span-rg">Tipo de cambio</span>
+                                                        <span class="span-rg">$20.20</span>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        <div class="card card-extend collapsed-card">
+                                            <div class="card-tools">
+                                                <a href="" type="button" class="btn btn-extend" data-card-widget="collapse">
+                                                    <span id="extendText"> Ver más</span>
+                                                </a>
                                             </div>
-                                            <div class="col-md-4">
-                                                <label for="ShipmentName" style="margin-bottom: 0rem;"
-                                                    class="font-weight-bold">
-                                                    Contacto
-                                                </label>
-                                                <p for="ShipmentName" style="font-size: 14px;"
-                                                    class="font-weight-light">
-
-                                                </p>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="ShipmentName" style="margin-bottom: 0rem;"
-                                                    class="font-weight-bold">
-                                                    Teléfono
-                                                </label>
-                                                <p for="ShipmentName" style="font-size: 14px;"
-                                                    class="font-weight-light">
-
-                                                </p>
+                                            <div class="card-body" style="display: none; padding: 5px 0px; margin: 0px -5px">
+                                                <ul class="nav flex-column">
+                                                    <li class="nav-item border-0">
+                                                        <a class="nav-link d-flex justify-content-between" style="padding: 5px">
+                                                            <span class="span-rg">Logística internacional (USD)</span>
+                                                            <span class="span-rg">$6,200.00</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item border-0">
+                                                        <a class="nav-link d-flex justify-content-between" style="padding: 5px">
+                                                            <span class="span-rg">Despacho aduanal</span>
+                                                            <span class="span-rg">$20,174.37</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item border-0">
+                                                        <a class="nav-link d-flex justify-content-between" style="padding: 5px">
+                                                            <span class="span-rg">Arancel (0%)</span>
+                                                            <span class="span-rg">$6,308.86</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item border-0">
+                                                        <a class="nav-link d-flex justify-content-between" style="padding: 5px">
+                                                            <span class="span-rg">Flete nacional</span>
+                                                            <span class="span-rg">$19,715.20</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item border-0">
+                                                        <a class="nav-link d-flex justify-content-between" style="padding: 5px">
+                                                            <span class="span-rg">Honorarios</span>
+                                                            <span class="span-rg">$33,000.00</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item border-0">
+                                                        <a class="nav-link d-flex justify-content-between" style="padding: 5px">
+                                                            <span class="span-rg">Subtotal</span>
+                                                            <span class="span-rg">$473,502.43</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item border-0">
+                                                        <a class="nav-link d-flex justify-content-between" style="padding: 5px">
+                                                            <span class="span-rg">IVA (16%)</span>
+                                                            <span class="span-rg">$75,760.39</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
                                             </div>
                                         </div>
-                                        <div class="form-row">
-                                            <div class="col-md-4">
-                                                <label for="ShipmentName" style="margin-bottom: 0rem;"
-                                                    class="font-weight-bold">
-                                                    Honorarios
-                                                </label>
-                                                <p for="ShipmentName" style="font-size: 14px;"
-                                                    class="font-weight-light">
+                                    </div>
+                                    <div class="card-footer">
+                                        <label>Total neto</label>
+                                        <h3>$549,262.82</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                                                </p>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="ShipmentName" style="margin-bottom: 0rem;"
-                                                    class="font-weight-bold">
-                                                    Revaldación
-                                                </label>
-                                                <p for="ShipmentName" style="font-size: 14px;"
-                                                    class="font-weight-light">
-
-                                                </p>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="ShipmentName" style="margin-bottom: 0rem;"
-                                                    class="font-weight-bold">
-                                                    Complementarios
-                                                </label>
-                                                <p for="ShipmentName" style="font-size: 14px;"
-                                                    class="font-weight-light">
-
-                                                </p>
+                        <div class="modal fade" id="modalProyecto" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modalProyecto" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 id="titleModalP" class="modal-title title-color"></h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    </div>
+                                    <form class="form-horizontal" id="guardarProyecto">
+                                        <div class="modal-body p-0">
+                                            <div class="card-body cards-productos pb-0">
+                                                <div class="form-group">
+                                                    <label class="font-weight-normal">Pendiente</label>
+                                                    <input required id="txtCliente" type="text" class="form-control form-control-border" placeholder="Cliente" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="font-weight-normal">Pendiente</label>
+                                                    <select class="custom-select form-control-border border-width-2" id="selEstatus">
+                                                        <option>Nuevo</option>
+                                                        <option>producción</option>
+                                                        <option>Log.Internacional</option>
+                                                        <option>En proceso</option>
+                                                        <option>Despacho aduanal</option>
+                                                        <option>Tránsito</option>
+                                                        <option>Concluido</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="font-weight-normal">Pendiente</label>
+                                                    <select class="custom-select form-control-border border-width-2" id="selAsesor">
+                                                        <option>Héctor López</option>
+                                                        <option>Monica Badillo</option>
+                                                        <option>Gerardo Sanchez</option>
+                                                        <option>Carla García</option>
+                                                        <option>Jose Gómez</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="form-row">
-                                            <div class="col-md-4">
-                                                <label for="ShipmentName" style="margin-bottom: 0rem;"
-                                                    class="font-weight-bold">
-                                                    Previo
-                                                </label>
-                                                <p for="ShipmentName" style="font-size: 14px;"
-                                                    class="font-weight-light">
-
-                                                </p>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="ShipmentName" style="margin-bottom: 0rem;"
-                                                    class="font-weight-bold">
-                                                    Maniobras puerto
-                                                </label>
-                                                <p for="ShipmentName" style="font-size: 14px;"
-                                                    class="font-weight-light">
-
-                                                </p>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <label for="ShipmentName" style="margin-bottom: 0rem;"
-                                                    class="font-weight-bold">
-                                                    Desconsolidación
-                                                </label>
-                                                <p for="ShipmentName" style="font-size: 14px;"
-                                                    class="font-weight-light">
-
-                                                </p>
-                                            </div>
+                                        <div class="modal-footer d-flex justify-content-between">
+                                            <button type="button" class="btn btn-outline-secondary btn-sm btn-nuevo" data-dismiss="modal">Cancelar</button>
+                                            <button type="submit" class="btn btn-outline-success btn-sm btn-nuevo saveProyect" id="btn-proyecto">Guardar</button>
                                         </div>
                                     </form>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12" style="margin-bottom: 1rem">
-                            <div class="card shadow-lg tarjeta">
-                                <div class="card-body">
-                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home"
-                                                role="tab" aria-controls="home" aria-selected="true">Puertos</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile"
-                                                role="tab" aria-controls="profile" aria-selected="false">Agentes</a>
-                                        </li>
-                                    </ul>
-                                    <div class="tab-content" id="myTabContent">
-                                        <div class="tab-pane fade show active" id="home" role="tabpanel"
-                                            aria-labelledby="home-tab">
-                                            <br>
-                                            <table id="tblPuertosAgencia"
-                                                class="table table-borderless responsive nowrap" style="width: 100%">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Puerto</th>
-                                                        <th>Clave</th>
-                                                        <th></th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr class="shadow border-row" id="">
-                                                        <td style="vertical-align: middle"></td>
-                                                        <td style="vertical-align: middle"></td>
-                                                        <td style="vertical-align: middle; text-align: center">
-                                                            <a type="button" href="" data-id="" class="edit_puerto"
-                                                                title="Modificar puerto" data-toggle="tooltip"
-                                                                data-placement="top">
-                                                                <i class="far fa-edit"></i>
-                                                            </a>
-                                                            <a type="button" href="" data-id="" class="eliminar_puerto"
-                                                                style="color: #dc3545;" title="Eliminar puerto"
-                                                                data-toggle="tooltip" data-placement="top">
-                                                                <i class="far fa-trash-alt"></i>
-                                                            </a>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="tab-pane fade" id="profile" role="tabpanel"
-                                            aria-labelledby="profile-tab">
-                                            <br>
-                                            <table id="tblAgentes" class="table table-borderless responsive nowrap"
-                                                style="width: 100%">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Nombre</th>
-                                                        <th>Correo</th>
-                                                        <th>Telefono</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr class="shadow border-row" id="">
-                                                        <td style="vertical-align: middle"></td>
 
-                                                        <td style="vertical-align: middle"></td>
-                                                        <td style="vertical-align: middle"></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+                        <div class="modal fade" id="modalProyect" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modalProyect" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 id="titleModal" class="modal-title title-color"></h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    </div>
+                                    <form class="form-horizontal" id="guardarProyect">
+                                        <div class="modal-body p-0">
+                                            <div class="card-body cards-productos pb-0">
+                                                <div class="form-group">
+                                                    <label class="font-weight-normal">Pendiente</label>
+                                                    <input required id="txtContenedor" type="text" class="form-control form-control-border" placeholder="N° Contenedor" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="font-weight-normal">Fecha Limite</label>
+                                                    <input required="" id="txtETD" type="date" max="3000-12-31" min="1950-01-01" class="form-control form-control-border" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" inputmode="numeric" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="font-weight-normal">Fecha llegada</label>
+                                                    <input id="txtETA" type="date" max="3000-12-31" min="1950-01-01" class="form-control form-control-border" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" inputmode="numeric" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="font-weight-normal">Pendiente</label>
+                                                    <input required id="txtRestricciones" type="text" class="form-control form-control-border" placeholder="Restricciones" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="font-weight-normal">Pendiente</label>
+                                                    <input required id="txtFraccAran" type="text" class="form-control form-control-border" placeholder="Fracc. Arancelaria" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="font-weight-normal">Pendiente</label>
+                                                    <input required id="txtNoViaje" type="text" class="form-control form-control-border" placeholder="N° Viaje" />
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="font-weight-normal">Pendiente</label>
+                                                    <input required id="txtBuque" type="text" class="form-control form-control-border" placeholder="Bueque carga" />
+                                                </div>
+                                            </div>
                                         </div>
+                                        <div class="modal-footer d-flex justify-content-between">
+                                            <button type="button" class="btn btn-outline-secondary btn-sm btn-nuevo" data-dismiss="modal">Cancelar</button>
+                                            <button type="submit" class="btn btn-outline-success btn-sm btn-nuevo saveProyect" id="btn-proyect">Guardar</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="modal fade" id="modalDocs" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="modalDocs" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 id="titleModalDoc" class="modal-title title-color"></h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    </div>
+                                    <div class="modal-body p-0">
+                                        <div class="card-body cards-productos p-0">
+                                            <embed src="/resources/proyecto/documentos/docExample.pdf" frameborder="0" width="100%" height="440px" />
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer ml-auto">
+                                        <button type="button" class="btn btn-outline-secondary btn-sm btn-nuevo" data-dismiss="modal">Cerrar</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12" style="margin-bottom: 1rem">
-                        </div>
                     </div>
-
-                    <!--Editar agencia-->
-                    <div class="modal fade" id="modal_add_editAgencia" tabindex="-1" role="dialog"
-                        aria-labelledby="modal_add_editAgenciaLabel" aria-hidden="true">
-
-                    </div>
-                    <!--Fin modal editar-->
-
-                    <!-- Modal para editar puerto -->
-                    <div class="modal fade" id="modal_puerto" tabindex="-1" role="dialog"
-                        aria-labelledby="modal_puertoLabel" aria-hidden="true">
-
-                    </div>
-                    <!--Fin modal editar-->
-
-                    <!--Crear agente-->
-                    <div class="modal fade" id="modal_add_agente" tabindex="-1" role="dialog"
-                        aria-labelledby="modal_add_agenteLabel" aria-hidden="true">
-
-                    </div>
-                    <!--Fin modal crear-->
-
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
+
         <footer class="main-footer">
             <strong><a target="_blank" href="https://reachmx.com">ReachMX&#174;</a></strong>
             <div class="float-right d-none d-sm-inline-block"></div>
         </footer>
-    </div>
 
-    <script src="/js/tablas.js"></script>
+        <script src="/js/tablas-menu.js"></script>
+        <script src="/js/global.js"></script>
 
-    
+        <script src="/js/mask/jquery.mask.js"></script>
+        <script src="/js/popper/popper.min.js"></script>
+        <script src="/js/toastr/toastr.min.js"></script>
+        <script src="/js/mask/jquery.mask.min.js"></script>
 
-    <script src="/js/popper/popper.min.js"></script>
+        <script src="/js/chartJs/Chart.js"></script>
+        <script src="/js/chartJs/Chart.min.js"></script>
+        <script src="/js/chartJS/Chart.bundle.js"></script>
+        <script src="/js/chartJs/Chart.bundle.min.js"></script>
 
-    <script src="/js/toastr/toastr.min.js"></script>
+        <script src="/js/bootstrap/bootstrap-table.js"></script>
+        <script src="/js/bootstrap/bootstrap-table.min.js"></script>
+        <script src="/js/bootstrap/bootstrap-table-export.js"></script>
+        <script src="/js/bootstrap/bootstrap-table-export.min.js"></script>
+        <script src="/js/bootstrap/bootstrap-table-locale-all.js"></script>
+        <script src="/js/bootstrap/bootstrap-switch-button.min.js"></script>
+        <script src="/js/bootstrap/bootstrap-table-locale-all.min.js"></script>
 
-    <script src="/js/mascaras.js"></script>
-    <script src="/js/mask/jquery.mask.js"></script>
-    <script src="/js/mask/jquery.mask.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+        <script src="/system/dataTable/responsive/js/dataTables.responsive.min.js"></script>
+        <script src="/system/dataTable/datatables/js/dataTables.bootstrap4.min.js"></script>
+        <script src="/system/dataTable/responsive/js/responsive.bootstrap4.min.js"></script>
+        <script src="/system/dataTable/jsZip/jszip.min.js"></script>
+        <script src="/system/dataTable/pdfmake/vfs_fonts.js"></script>
+        <script src="/system/dataTable/pdfmake/pdfmake.min.js"></script>
+        <script src="/system/dataTable/buttons/js/buttons.print.min.js"></script>
+        <script src="/system/dataTable/buttons/js/buttons.html5.min.js"></script>
+        <script src="/system/dataTable/buttons/js/buttons.colVis.min.js"></script>
+        <script src="/system/dataTable/buttons/js/buttons.bootstrap4.min.js"></script>
 
-    <script src="/js/chartJs/Chart.js"></script>
-    <script src="/js/chartJs/Chart.min.js"></script>
-    <script src="/js/chartJS/Chart.bundle.js"></script>
-    <script src="/js/chartJs/Chart.bundle.min.js"></script>
+        <script src="/system/adminLTE/js/adminlte.min.js"></script>
+        <script src="/system/adminLTE/plugins/chart/js/Chart.min.js"></script>
+        <script src="/system/adminLTE/plugins/inputmask/inputmask.js"></script>
+        <script src="/system/adminLTE/plugins/sparklines/sparkline.js"></script>
+        <script src="/system/adminLTE/plugins/toastr/js/toastr.min.js"></script>
+        <script src="/system/adminLTE/plugins/moment/js/moment.min.js"></script>
+        <script src="/system/adminLTE/plugins/dropzone/js/dropzone.min.js"></script>
+        <script src="/system/adminLTE/plugins/select2/js/select2.full.min.js"></script>
+        <script src="/system/adminLTE/plugins/bs-stepper/js/bs-stepper.min.js"></script>
+        <script src="/system/adminLTE/plugins/inputmask/jquery.inputmask.bundle.js"></script>
+        <script src="/system/adminLTE/plugins/daterangepicker/js/daterangepicker.js"></script>
+        <script src="/system/adminLTE/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 
-    <script src="/js/bootstrap/bootstrap-table.js"></script>
-    <script src="/js/bootstrap/bootstrap-table.min.js"></script>
-    <script src="/js/bootstrap/bootstrap-table-export.js"></script>
-    <script src="/js/bootstrap/bootstrap-table-export.min.js"></script>
-    <script src="/js/bootstrap/bootstrap-table-locale-all.js"></script>
-    <script src="/js/bootstrap/bootstrap-switch-button.min.js"></script>
-    <script src="/js/bootstrap/bootstrap-table-locale-all.min.js"></script>
+        <script src="/system/adminLTE/plugins/sweetalert2/js/sweetalert2.min.js"></script>
+        <script src="/system/adminLTE/plugins/sweetalert2/js/sweetalert2.all.min.js"></script>
 
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
-    <script src="/js/datatables/dataTables.bootstrap4.min.js"></script>
-    <script src="/js/datatables/dataTables.responsive.min.js"></script>
-    <script src="/js/datatables/responsive.bootstrap4.min.js"></script>
-    <script src="/js/datatables/jszip.min.js"></script>
-    <script src="/js/datatables/vfs_fonts.js"></script>
-    <script src="/js/datatables/pdfmake.min.js"></script>
-    <script src="/js/datatables/buttons.print.min.js"></script>
-    <script src="/js/datatables/buttons.html5.min.js"></script>
-    <script src="/js/datatables/buttons.colVis.min.js"></script>
-    <script src="/js/datatables/buttons.bootstrap4.min.js"></script>
+        <script src="/system/adminLTE/plugins/bootstrap/js/bootstrap-switch.min.js"></script>
+        <script src="/system/adminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="/system/adminLTE/plugins/bootstrap/js/bootstrap-colorpicker.min.js"></script>
+        <script src="/system/adminLTE/plugins/bootstrap/js/bootstrap-tempusdominus.min.js"></script>
+        <script src="/system/adminLTE/plugins/bootstrap/js/jquery.bootstrap-duallistbox.min.js"></script>
 
+        <script src="/system/adminLTE/plugins/summernote/js/summernote.min.js"></script>
+        <script src="/system/adminLTE/plugins/summernote/js/summernote-bs4.min.js"></script>
+        <script src="/system/adminLTE/plugins/summernote/js/summernote-lite.min.js"></script>
 
-    <script src="/system/adminLTE/js/adminlte.min.js"></script>
+        <script src="/system/adminLTE/plugins/jquery/js/jquery.min.js"></script>
+        <script src="/system/adminLTE/plugins/jquery/js/jquery-ui.min.js"></script>
+        <script src="/system/adminLTE/plugins/jquery/js/jquery.knob.min.js"></script>
+        <script src="/system/adminLTE/plugins/jquery/js/jquery.vmap.min.js"></script>
+        <script src="/system/adminLTE/plugins/jquery/js/maps/jquery.vmap.world.js"></script>
+        <script src="/system/adminLTE/plugins/jquery/js/jquery.overlayScrollbars.min.js"></script>
 
-    <script src="/system/adminLTE/js/demo.js"></script>
-
-    <script src="/system/adminLTE/plugins/chart/js/Chart.min.js"></script>
-
-    <script src="/system/adminLTE/plugins/sparklines/sparkline.js"></script>
-
-    <script src="/system/adminLTE/plugins/toastr/js/toastr.min.js"></script>
-
-    <script src="/system/adminLTE/plugins/moment/js/moment.min.js"></script>
-
-    <script src="/system/adminLTE/plugins/select2/js/select2.full.min.js"></script>
-
-    <script src="/system/adminLTE/plugins/daterangepicker/js/daterangepicker.js"></script>
-
-    <script src="/system/adminLTE/plugins/sweetalert2/js/sweetalert2.min.js"></script>
-    <script src="/system/adminLTE/plugins/sweetalert2/js/sweetalert2.all.min.js"></script>
-
-    <script src="/system/adminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="/system/adminLTE/plugins/bootstrap/js/bootstrap-colorpicker.min.js"></script>
-    <script src="/system/adminLTE/plugins/bootstrap/js/bootstrap-tempusdominus.min.js"></script>
-
-    <script src="/system/adminLTE/plugins/summernote/js/summernote.min.js"></script>
-    <script src="/system/adminLTE/plugins/summernote/js/summernote-bs4.min.js"></script>
-    <script src="/system/adminLTE/plugins/summernote/js/summernote-lite.min.js"></script>
-
-    <script src="/system/adminLTE/plugins/jquery/js/jquery.min.js"></script>
-    <script src="/system/adminLTE/plugins/jquery/js/jquery-ui.min.js"></script>
-    <script src="/system/adminLTE/plugins/jquery/js/jquery.knob.min.js"></script>
-    <script src="/system/adminLTE/plugins/jquery/js/jquery.vmap.min.js"></script>
-    <script src="/system/adminLTE/plugins/jquery/js/maps/jquery.vmap.world.js"></script>
-    <script src="/system/adminLTE/plugins/jquery/js/jquery.overlayScrollbars.min.js"></script>
-</body>
-
+        <script src="/js/proyectos-detalle.js"></script>
+    </body>
 </html>
