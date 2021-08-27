@@ -121,15 +121,6 @@
 .dropdown-menu {
     padding: 0rem 0rem !important;
 }
-
-.infoArancel {
-    color: #ffc107 !important;
-}
-
-.infoArancel:hover {
-    color: #e0a800 !important;
-}
-
 .hide-button {
     display: none;
 }
@@ -141,6 +132,14 @@
 .holder {
     opacity: 1 !important;
     color: #939ba2 !important;
+}
+
+.infoWarning {
+    color: #ffc107 !important;
+}
+
+.infoWarning:hover {
+    color: #e0a800 !important;
 }
 
 .collBar {
@@ -741,6 +740,16 @@ iframe {
     margin-bottom: 0px;
 }
 
+.card-third.card-outline .card-extend .sp-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-third.card-outline .card-extend .sp-info small.s-sm{
+    margin-left: 2px;
+}
+
 .card-third.card-outline .card-extend .card-tools {
     padding: 8px;
     display: block;
@@ -809,8 +818,12 @@ iframe {
     object-fit: scale-down;
 }
 
-.smaller {
+.s-xs {
     font-size: 61%;
+}
+
+.s-sm {
+    font-size: 71%;
 }
 
 .carousel .carousel-item .img-carousel {
@@ -1114,7 +1127,12 @@ div.dataTables_wrapper div.dataTables_filter label {
     vertical-align: middle !important;
 }
 
-@media (max-width: 2560px) {
+.form-group.form-sm {
+    width: 12%;
+    text-align: right;
+}
+
+@media (max-width: 2560px) {    
     .buttons_filter {
         width: 100% !important;
     }
@@ -1126,17 +1144,27 @@ div.dataTables_wrapper div.dataTables_filter label {
     }
 }
 
-/* @media (min-width: 992px) {
-    .sidebar-mini-xs-xs.sidebar-collapse.layout-fixed .brand-link {
-        width: 4rem;
-        padding: 12px 2px;
+@media (min-width: 992px) {
+    .form-group.form-sm {
+        width: 20%;
+        text-align: right;
     }
-} */
+}
 
 @media (max-width: 900px) {
     .buttons_filter {
         width: 100% !important;
     }
+}
+
+@media (max-width: 768px) {
+    .form-group.form-sm {
+        width: 30%;
+        text-align: right;
+    }
+}
+
+@media (max-width: 650px) {
 }
 
 @media (max-width: 500px) {
@@ -1151,8 +1179,7 @@ div.dataTables_wrapper div.dataTables_filter label {
     }
 }
 
-@media (max-width: 320px) {
-    .buttons_filter {
+@media (max-width: 320px) {.buttons_filter {
         width: 100% !important;
     }
 }
